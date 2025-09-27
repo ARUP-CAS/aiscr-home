@@ -1,0 +1,119 @@
+---
+title: "Digitalizace archeologických sbírek"
+excerpt: "Nový projekt digitalizace přináší online přístup k tisícům archeologických nálezů. Moderní 3D skenování umožňuje detailní prohlížení."
+date: "2024-03-10"
+category: "Technologie"
+---
+
+<script>
+	function formatDate(dateString) {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('cs-CZ', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	}
+</script>
+
+<svelte:head>
+	<title>{title} - AISCR Blog</title>
+	<meta name="description" content={excerpt} />
+</svelte:head>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+	<article class="prose prose-lg max-w-none">
+		<header class="mb-12 not-prose">
+			<nav class="mb-8">
+				<a href="/blog" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+					<svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+					</svg>
+					Zpět na blog
+				</a>
+			</nav>
+			
+			<div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
+				<time datetime={date}>{formatDate(date)}</time>
+				{#if category}
+					<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+						{category}
+					</span>
+				{/if}
+			</div>
+			
+			<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+				{title}
+			</h1>
+			
+			{#if excerpt}
+				<p class="text-xl text-gray-600 mt-6 leading-relaxed">
+					{excerpt}
+				</p>
+			{/if}
+		</header>
+
+		<div class="prose-headings:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+			# Digitalizace archeologických sbírek
+
+			V rámci modernizace archeologických informačních systémů byl zahájen ambiciózní projekt digitalizace sbírek. Cílem je zpřístupnit široké veřejnosti i odborníkům tisíce archeologických nálezů prostřednictvím moderních technologií.
+
+			## Použité technologie
+
+			### 3D skenování
+			Nejvýznamnější nálezy jsou dokumentovány pomocí 3D skenování, které umožňuje:
+
+			- **Detailní prohlížení** - Uživatelé si mohou prohlédnout artefakty ze všech úhlů
+			- **Měření** - Možnost přesného měření rozměrů
+			- **Virtuální výstavy** - Vytváření online expozic
+
+			### Fotogrammetrie
+			Pro menší předměty využíváme fotogrammetrii:
+
+			- Vysoké rozlišení snímků
+			- Automatické zpracování
+			- Rychlá dokumentace
+
+			## Aktuální stav projektu
+
+			Do dnešního dne bylo digitalizováno:
+
+			| Kategorie | Počet položek | Stav |
+			|-----------|---------------|------|
+			| Bronzové předměty | 1,247 | ✅ Dokončeno |
+			| Keramika | 3,891 | 🔄 Probíhá |
+			| Kamenné nástroje | 2,156 | ⏳ Plánováno |
+			| Mince | 5,432 | ⏳ Plánováno |
+
+			## Přístup k digitálním sbírkám
+
+			Digitalizované nálezy jsou dostupné prostřednictvím našeho online katalogu. Každý záznam obsahuje:
+
+			- Detailní popis nálezu
+			- Fotografické dokumentace
+			- 3D model (kde je k dispozici)
+			- Informace o lokalitě nálezu
+			- Datování a kulturní kontext
+
+			## Budoucí plány
+
+			V příštích měsících plánujeme:
+
+			1. **Rozšíření 3D modelů** - Digitalizace dalších významných nálezů
+			2. **Mobilní aplikace** - Vývoj aplikace pro smartphony a tablety
+			3. **Virtuální realita** - Experimentování s VR technologiemi
+			4. **API pro vývojáře** - Zpřístupnění dat pro externí aplikace
+
+			## Spolupráce s institucemi
+
+			Projekt probíhá ve spolupráci s:
+
+			- Národním muzeem
+			- Moravským zemským muzeem
+			- Univerzitami po celé republice
+			- Regionálními muzei
+
+			*Více informací o digitálních sbírkách najdete v našem online katalogu.*
+		</div>
+	</article>
+</div>
