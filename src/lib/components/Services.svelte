@@ -2,6 +2,13 @@
 	// Služby AIS CR - bento grid layout
 	import { Flag, Church, Atom, BookOpen } from '@lucide/svelte';
 	import amcrPin from '/amcr-pin.svg';
+	
+	// Import background obrázků
+	import amcrBg from '/amcr-bg.jpg';
+	import atlasBg from '/atlas-bg.png';
+	import prahaBg from '/praha-bg.jpg';
+	import c14Bg from '/c14-bg.jpg';
+	import teaterBg from '/teater-bg.jpg';
 </script>
 
 <section id="services" class="bg-gray-100" style="font-family: 'Roboto', sans-serif; padding: 128px 0 80px 0;">
@@ -21,8 +28,8 @@
 		<!-- Bento Grid -->
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 h-auto" style="margin-top: 80px;">
 			
-			<!-- Mapujte a objevujte - velká karta vlevo nahoře -->
-			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/amcr-bg.jpg'); background-size: cover; background-position: center; padding: 32px;">
+		<!-- Mapujte a objevujte - velká karta vlevo nahoře -->
+		<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url({amcrBg}); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(114, 28, 23, 0.8); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
@@ -41,8 +48,8 @@
 				</div>
 			</div>
 
-			<!-- Vydejte se za archeology - fialová karta vpravo nahoře -->
-			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/atlas-bg.png'); background-size: cover; background-position: center; padding: 32px;">
+		<!-- Vydejte se za archeology - fialová karta vpravo nahoře -->
+		<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url({atlasBg}); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 35, 118, 0.8); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
@@ -61,8 +68,8 @@
 				</div>
 			</div>
 
-			<!-- Poznávejte Prahu - červená karta vlevo dole -->
-			<div class="lg:col-span-1 overflow-hidden" style="background-image: url('/praha-bg.jpg'); background-size: cover; background-position: center; padding: 24px;">
+		<!-- Poznávejte Prahu - červená karta vlevo dole -->
+		<div class="lg:col-span-1 overflow-hidden" style="background-image: url({prahaBg}); background-size: cover; background-position: center; padding: 24px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(198, 54, 46, 0.8); padding: 16px;">
 					<Church size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 24px;">
@@ -80,8 +87,8 @@
 				</div>
 			</div>
 
-			<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
-			<div class="lg:col-span-1 overflow-hidden" style="background-image: url('/c14-bg.jpg'); background-size: cover; background-position: center; padding: 24px;">
+		<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
+		<div class="lg:col-span-1 overflow-hidden" style="background-image: url({c14Bg}); background-size: cover; background-position: center; padding: 24px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 142, 152, 0.8); padding: 16px;">
 					<Atom size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 24px;">
@@ -99,8 +106,8 @@
 				</div>
 			</div>
 
-			<!-- Neztraťte se v pojmech - hnědá karta vpravo dole -->
-			<div class="lg:col-span-2 overflow-hidden" style="background-image: url('/teater-bg.jpg'); background-size: cover; background-position: center; padding: 32px;">
+		<!-- Neztraťte se v pojmech - hnědá karta vpravo dole -->
+		<div class="lg:col-span-2 overflow-hidden" style="background-image: url({teaterBg}); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(219, 145, 52, 0.8); padding: 24px;">
 					<BookOpen size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
