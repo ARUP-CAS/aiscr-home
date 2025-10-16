@@ -1,6 +1,14 @@
 <script lang="ts">
 	// Footer komponenta
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
+	
+	// Import obrázků
+	import rorLogo from '/ror-logo_BW.png';
+	import aisCrLogo from '/ais-cr-black.png';
+	import logoArub from '/logo-arub.png';
+	import logoAru from '/logo-aru.png';
+	import akademieVedLogo from '/akademie-ved-black.png';
+	import infraLogo from '/infra-black.png';
 </script>
 
 <footer id="contact" class="bg-gray-200 py-16 border-t border-black" style="font-family: 'Roboto', sans-serif;">
@@ -103,19 +111,19 @@
 		<div class="mb-12">
 			<div class="text-sm text-black border-t border-dashed border-gray-400 pt-8 flex items-center" style="font-family: 'Roboto', sans-serif;">
 				<span>AIS CR je registrován v</span>
-				<img src="/ror-logo_BW.png" alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
+				<img src={rorLogo} alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
 			</div>
 		</div>
 
 		<!-- Partner logos -->
 		<div class="mb-12">
-			<div class="flex flex-wrap gap-8 items-center">
-				<img src="/ais-cr-black.png" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
-				<img src="/logo-arub.png" alt="ARUB" style="max-height: 48px; width: auto;" />
-				<img src="/logo-aru.png" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
-				<img src="/akademie-ved-black.png" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
-				<img src="/infra-black.png" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
-			</div>
+		<div class="flex flex-wrap gap-8 items-center">
+			<img src={aisCrLogo} alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+			<img src={logoArub} alt="ARUB" style="max-height: 48px; width: auto;" />
+			<img src={logoAru} alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+			<img src={akademieVedLogo} alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+			<img src={infraLogo} alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+		</div>
 		</div>
 
 		<!-- Bottom section -->

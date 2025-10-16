@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Header komponenta pro navigaci
 	import { Menu, Facebook, Linkedin, Youtube, Github } from '@lucide/svelte';
+	import logoAis from '/Logo AIS kratke.svg';
 	
 	let mobileMenuOpen = $state(false);
 </script>
@@ -8,10 +9,10 @@
 <header class="bg-black" style="height: 120px;">
 	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
-			<!-- Logo -->
-			<a href="/" class="flex items-center">
-				<img src="/Logo AIS kratke.svg" alt="AIS CR Logo" style="height: 60px;" />
-			</a>
+		<!-- Logo -->
+		<a href="/" class="flex items-center">
+			<img src={logoAis} alt="AIS CR Logo" style="height: 60px;" />
+		</a>
 			
 			<!-- Menu a ikony zarovnané doprava -->
 			<div class="hidden lg:flex items-center">

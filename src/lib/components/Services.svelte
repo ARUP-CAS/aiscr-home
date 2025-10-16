@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Služby AIS CR - bento grid layout
 	import { Flag, Church, Atom, BookOpen } from '@lucide/svelte';
+	import amcrPin from '/amcr-pin.svg';
 </script>
 
 <section id="services" class="bg-gray-100" style="font-family: 'Roboto', sans-serif; padding: 128px 0 80px 0;">
@@ -25,7 +26,7 @@
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(114, 28, 23, 0.8); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
-							<img src="/amcr-pin.svg" alt="AMČR" width="48" height="48" class="mb-6" />
+							<img src={amcrPin} alt="AMČR" width="48" height="48" class="mb-6" />
 							<h3 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
 								Mapujte a objevujte s námi minulost
 							</h3>

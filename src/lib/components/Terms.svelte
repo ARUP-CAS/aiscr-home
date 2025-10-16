@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Podmínky využití AIS CR
 	import { ShieldCheck, ClipboardPenLine, ListTodo, BellDot, CreativeCommons, UserLock } from '@lucide/svelte';
+	import termsImage from '/terms-image.png';
 </script>
 
 <section id="terms" class="py-20 bg-gray-100" style="font-family: 'Roboto', sans-serif;">
@@ -24,7 +25,7 @@
 			
 			<!-- Right column - image -->
 			<div>
-				<img src="/terms-image.png" alt="Archeologické nálezy" style="width: 100%; height: auto;" />
+				<img src={termsImage} alt="Archeologické nálezy" style="width: 100%; height: auto;" />
 			</div>
 		</div>
 

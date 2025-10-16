@@ -1,6 +1,30 @@
 <script lang="ts">
 	// O nás sekce
 	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
+	
+	// Import obrázků - Vite automaticky přidá správné cesty
+	import aboutImage from '/about-image.png';
+	import logoArub from '/logo-arub.png';
+	import logoAru from '/logo-aru.png';
+	import teamPhoto from '/team.png';
+	import olgaPhoto from '/olga.png';
+	import davidPhoto from '/david.png';
+	import petrPhoto from '/petr.png';
+	import ondraPhoto from '/ondra.png';
+	import financeImage from '/finance.png';
+	import euMsmtLogo from '/eu-msmt.png';
+	import ministerstvoKulturyLogo from '/ministerstvo-kultury.png';
+	import akademieVedLogo from '/akademie-ved.png';
+	import ariadneLogo from '/ariadne.png';
+	import lindatLogo from '/lindat.png';
+	import npuLogo from '/npu.png';
+	import carareLogo from '/carare.png';
+	import ntkLogo from '/ntk.png';
+	import botanickyUstavLogo from '/botanicky-ustav.png';
+	import itamLogo from '/itam.png';
+	import prahaLogo from '/praha.png';
+	import pernikariLogo from '/pernikari.png';
+	import axiellLogo from '/axiell.png';
 </script>
 
 <!-- Main About section -->
@@ -24,7 +48,7 @@
 				</p>
 				
 				<div style="margin-bottom: 24px;">
-					<img src="/about-image.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
+					<img src={aboutImage} alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
 				</div>
 				
 				<!-- Quote -->
@@ -193,16 +217,16 @@
 					</p>
 					
 					<div class="flex gap-8 items-center">
-						<img src="/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
-						<img src="/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
+						<img src={logoArub} alt="ARÚB" style="max-height: 60px; width: auto;" />
+						<img src={logoAru} alt="ARÚ" style="max-height: 60px; width: auto;" />
 					</div>
 				</div>
 			</div>
 			
-			<!-- Team photo -->
-		<div style="margin-top: 48px;">
-			<img src="/team.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
-		</div>
+		<!-- Team photo -->
+	<div style="margin-top: 48px;">
+		<img src={teamPhoto} alt="Tým AIS CR" style="width: 100%; height: auto;" />
+	</div>
 	</div>
 </section>
 
@@ -231,8 +255,8 @@
 
 			<!-- Executive Board Team members -->
 			<div class="flex justify-end" style="gap: 128px; padding-right: 64px;">
-				<div class="text-center">
-					<img src="/olga.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<img src={olgaPhoto} alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Olga Lečbychová
 					</h4>
@@ -241,8 +265,8 @@
 					</p>
 				</div>
 
-				<div class="text-center">
-					<img src="/david.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<img src={davidPhoto} alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						David Novák
 					</h4>
@@ -251,8 +275,8 @@
 					</p>
 				</div>
 
-				<div class="text-center">
-					<img src="/petr.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<img src={petrPhoto} alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Petr Pajdla
 					</h4>
@@ -261,8 +285,8 @@
 					</p>
 				</div>
 
-				<div class="text-center">
-					<img src="/ondra.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<img src={ondraPhoto} alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Ondřej Švejcar
 					</h4>
@@ -378,7 +402,7 @@
 						</h3>
 					</div>
 					
-					<img src="/finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
+					<img src={financeImage} alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
 				</div>
 
 				<!-- Right column - Funding description -->
@@ -415,7 +439,7 @@
 					</p>
 					
 					<div style="margin-top: 24px;">
-						<img src="/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
+						<img src={euMsmtLogo} alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
 					</div>
 				</div>
 			</div>
@@ -458,58 +482,58 @@
 			</div>
 
 			<!-- Partner logos grid -->
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-				<div class="flex items-center justify-center">
-					<img src="/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/akademie-ved.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
-				</div>
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+			<div class="flex items-center justify-center">
+				<img src={ministerstvoKulturyLogo} alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
 			</div>
 
-			<!-- Second row of partner logos -->
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
-				<div class="flex items-center justify-center">
-					<img src="/ntk.png" alt="NTK" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/itam.png" alt="ITAM" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/praha.png" alt="Praha" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/pernikari.png" alt="Pernikáři" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
-				</div>
+			<div class="flex items-center justify-center">
+				<img src={akademieVedLogo} alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
 			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={ariadneLogo} alt="ARIADNE" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={lindatLogo} alt="LINDAT" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={npuLogo} alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={carareLogo} alt="CARARE" style="max-height: 80px; width: auto;" />
+			</div>
+		</div>
+
+		<!-- Second row of partner logos -->
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
+			<div class="flex items-center justify-center">
+				<img src={ntkLogo} alt="NTK" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={botanickyUstavLogo} alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={itamLogo} alt="ITAM" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={prahaLogo} alt="Praha" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={pernikariLogo} alt="Pernikáři" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={axiellLogo} alt="Axiell" style="max-height: 80px; width: auto;" />
+			</div>
+		</div>
 		</div>
 	</div>
 </section>
