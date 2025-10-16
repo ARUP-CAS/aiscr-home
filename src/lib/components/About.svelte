@@ -4,7 +4,7 @@
 </script>
 
 <!-- Main About section -->
-<section class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
+<section id="about" class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
