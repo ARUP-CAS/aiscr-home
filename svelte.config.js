@@ -20,9 +20,13 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/aiscr-home' : ''
+		},
 		prerender: {
 			handleMissingId: 'ignore',
-			handleUnseenRoutes: 'ignore'
+			handleUnseenRoutes: 'ignore',
+			handleHttpError: 'ignore'
 		}
 	},
 	extensions: ['.svelte', '.svx', '.md']
