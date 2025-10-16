@@ -5,14 +5,14 @@
 
 <section class="bg-gray-200 flex items-center" style="font-family: 'Roboto', sans-serif; min-height: 780px;">
 	<!-- Vnitřní div vycentrovaný s max 1100px a šířka 100% -->
-	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1100px; margin: 0 auto;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		<!-- Blok omezený na 800px zarovnaný doleva -->
 		<div style="max-width: 800px;">
 			<h1 class="mb-6" style="font-family: 'Roboto Slab', serif; font-size: 56px; color: #C6362E; font-weight: 700; line-height: 1.2;">
 				Archeologický informační<br>systém České republiky
 			</h1>
 			
-			<p class="mb-8" style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #000000; line-height: 1.4;">
+			<p style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #000000; line-height: 1.4; font-weight: bold; margin-bottom: 96px;">
 				Digitální brána do světa české archeologie
 			</p>
 			

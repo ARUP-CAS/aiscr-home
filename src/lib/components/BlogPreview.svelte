@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Preview nejnovějších blog postů
-	import { Pickaxe, ArrowLeft, ArrowRight } from '@lucide/svelte';
+	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	
 	const blogPosts = [
@@ -93,31 +93,31 @@
 
 	function scrollLeft() {
 		if (!canScrollLeft || !scrollContainer) return;
-		const cardWidth = 344; // 320px karta + 24px gap
+		const cardWidth = 414; // 390px karta + 24px gap
 		scrollContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
 		setTimeout(updateScrollButtons, 500);
 	}
 
 	function scrollRight() {
 		if (!canScrollRight || !scrollContainer) return;
-		const cardWidth = 344; // 320px karta + 24px gap
+		const cardWidth = 414; // 390px karta + 24px gap
 		scrollContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
 		setTimeout(updateScrollButtons, 500);
 	}
 </script>
 
-<section class="py-20" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5;">
-	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1100px; margin: 0 auto;">
+<section style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
 		<div class="text-center mb-16">
-			<div class="flex justify-center mb-6">
-				<Pickaxe size="48" color="#C6362E" />
+			<div class="flex justify-center" style="margin-bottom: 16px;">
+				<Shovel size="63" color="#721C17" />
 			</div>
-			<h2 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
+			<h2 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #721C17; font-size: 48px;">
 				Blog AIS CR
 			</h2>
-			<p class="text-lg mb-2" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
+			<p class="text-lg mb-2" style="font-family: 'Roboto', sans-serif; color: #721C17;">
 				Archeodata po lopatě – příspěvky o archeologii, datech a světě AIS CR.
 			</p>
 			<p class="text-base text-gray-700 max-w-4xl mx-auto leading-relaxed" style="font-family: 'Roboto', sans-serif;">
@@ -135,16 +135,16 @@
 				onscroll={updateScrollButtons}
 			>
 				{#each blogPosts as post}
-					<article class="flex-none w-80 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col" style="scroll-snap-align: start;">
+					<article class="flex-none bg-white shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col" style="scroll-snap-align: start; width: 390px; height: 629px; padding: 24px;">
 						<!-- Image placeholder -->
-						<div class="h-48 bg-gray-300 flex items-center justify-center">
+						<div class="bg-gray-300 flex items-center justify-center" style="height: 300px; width: 100%;">
 							<div class="w-16 h-16 bg-gray-400 rounded"></div>
 						</div>
 						
-						<div class="p-6 flex flex-col flex-1">
+						<div class="flex flex-col flex-1" style="margin-top: 24px;">
 							<!-- Category badge -->
 							<div class="mb-3">
-								<span class="text-white text-xs px-3 py-1 rounded {post.categoryColor}" style="font-family: 'Roboto', sans-serif;">
+								<span class="text-white text-xs px-3 py-1 {post.categoryColor}" style="font-family: 'Roboto', sans-serif;">
 									{post.category}
 								</span>
 							</div>
@@ -163,10 +163,10 @@
 							
 							<!-- Author and meta info - always at bottom -->
 							<div class="flex items-start space-x-3 mt-auto" style="font-family: 'Roboto', sans-serif;">
-								<div class="w-8 h-8 bg-gray-400 rounded-full flex-shrink-0"></div>
-								<div class="flex-1">
-									<div class="font-medium text-gray-900 text-sm">{post.author}</div>
-									<div class="text-xs text-gray-500 flex items-center space-x-2">
+								<div class="bg-gray-400 rounded-full flex-shrink-0" style="width: 48px; height: 48px;"></div>
+								<div class="flex-1 flex flex-col justify-between" style="height: 48px;">
+									<div class="font-bold text-gray-900" style="font-size: 14px;">{post.author}</div>
+									<div class="text-gray-500 flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
 										<span>•</span>
 										<span>čas čtení {post.readTime}</span>

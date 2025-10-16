@@ -1,7 +1,6 @@
 <script lang="ts">
 	// FAQ sekce - Časté dotazy
-	import { HelpCircle, ChevronDown } from '@lucide/svelte';
-	import { onMount } from 'svelte';
+	import { BadgeHelp, ChevronDown, MessageSquarePlus } from '@lucide/svelte';
 	
 	let expandedItems = $state(new Set());
 	
@@ -68,26 +67,27 @@
 	}
 </script>
 
-<section id="faq" class="py-20 bg-white" style="font-family: 'Roboto', sans-serif;">
-	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1100px; margin: 0 auto;">
+<section id="faq" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF; padding-top: 128px; padding-bottom: 80px;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
 		<div class="mb-12">
 			<div class="flex items-center mb-4">
-				<HelpCircle size="32" color="#9CA3AF" class="mr-3" />
-				<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #9CA3AF; font-size: 40px;">
+				<BadgeHelp size="63" color="#808E98" class="mr-3" />
+				<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #808E98; font-size: 40px;">
 					Časté dotazy
 				</h2>
 			</div>
 		</div>
 
 		<!-- FAQ Accordion Items -->
-		<div class="space-y-1">
+		<div class="space-y-0">
 			{#each faqItems as item}
-				<div class="border-b border-gray-200">
+				<div style="border-bottom: 1px solid #000000;">
 					<!-- Collapsible header -->
 					<button 
-						class="w-full py-6 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
 						onclick={() => toggleItem(item.id)}
 					>
 						<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
@@ -102,7 +102,7 @@
 					
 					<!-- Collapsible content -->
 					{#if expandedItems.has(item.id)}
-						<div class="pb-6">
+						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
 							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 								{item.answer}
 							</p>
@@ -113,24 +113,22 @@
 		</div>
 
 		<!-- Contact section -->
-		<div class="mt-16 p-6 bg-gray-50 rounded-lg">
-			<div class="flex items-start space-x-4">
-				<HelpCircle size="24" color="#9CA3AF" class="mt-1 flex-shrink-0" />
-				<div>
-					<h3 class="font-bold text-gray-900 mb-2" style="font-family: 'Roboto', sans-serif;">
-						Máte další otázky?
-					</h3>
-					<p class="text-gray-700 mb-4" style="font-family: 'Roboto', sans-serif;">
-						Nenašli jste, co jste hledali?<br>
-						Ozvěte se – jsme tu pro vás.
+		<div class="mt-16">
+			<div>
+				<MessageSquarePlus size="48" color="#808E98" style="margin-bottom: 16px;" />
+				<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #808E98; font-size: 32px; margin-bottom: 16px;">
+					Máte další otázky?
+				</h3>
+				<p class="font-bold" style="font-family: 'Roboto', sans-serif; color: #000000; font-size: 18px; margin-bottom: 16px;">
+					Nenašli jste, co jste hledali?<br>
+					Ozvěte se – jsme tu pro vás.
+				</p>
+				<div style="font-family: 'Roboto', sans-serif; color: #000000; font-size: 18px;">
+					<p style="margin-bottom: 8px;">Napište nám na:</p>
+					<p>
+						<strong>amcr@arup.cas.cz</strong> (podpora pro Čechy) nebo<br>
+						<strong>amcr@arub.cz</strong> (podpora pro Moravu a Slezsko)
 					</p>
-					<div class="space-y-2 text-sm" style="font-family: 'Roboto', sans-serif;">
-						<p class="text-gray-600">Napište nám na:</p>
-						<p class="text-gray-900">
-							<strong>amcr@arup.cas.cz</strong> (podpora pro Čechy) nebo<br>
-							<strong>amcr@arub.cz</strong> (podpora pro Moravu a Slezsko)
-						</p>
-					</div>
 				</div>
 			</div>
 		</div>

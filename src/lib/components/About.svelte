@@ -1,32 +1,35 @@
 <script lang="ts">
 	// O nás sekce
-	import { Info, Database, Archive, FileText, Users, BarChart3, Globe, Target, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake } from '@lucide/svelte';
+	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
 </script>
 
-<section id="about" class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
-	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1100px; margin: 0 auto;">
+<!-- Main About section -->
+<section class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
-		<!-- Header -->
-		<div class="mb-16">
-			<div class="flex items-center mb-6">
-				<Info size="32" color="#8B5CF6" class="mr-3" />
-				<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #8B5CF6; font-size: 40px;">
-					O nás
-				</h2>
-			</div>
-		</div>
-
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 			
 			<!-- Left column with text -->
 			<div>
-				<p class="text-lg text-gray-900 leading-relaxed mb-8" style="font-family: 'Roboto', sans-serif;">
-					<strong>Archeologický informační systém České republiky (AIS CR)</strong> vznikl jako dlouhodobý projekt Akademie věd ČR v Praze a Brně od roku 2016 je součástí <strong>Cestovní mapy velkých výzkumných infrastruktur ČR</strong>. Je tak dlouhodobě finančně podporován Ministerstvem školství, mládeže a tělovýchovy České republiky.
+				<!-- Header -->
+				<div class="flex items-center" style="margin-bottom: 24px;">
+					<Info size="63" color="#802376" class="mr-3" />
+					<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #802376; font-size: 48px;">
+						O nás
+					</h2>
+				</div>
+				
+				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
+					Archeologický informační systém České republiky (AIS CR) vznikl jako dlouhodobý projekt Akademie věd ČR v Praze a Brně od roku 2016 je součástí Cestovní mapy velkých výzkumných infrastruktur ČR. Je tak dlouhodobě finančně podporován Ministerstvem školství, mládeže a tělovýchovy České republiky.
 				</p>
-
+				
+				<div style="margin-bottom: 24px;">
+					<img src="/about-image.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
+				</div>
+				
 				<!-- Quote -->
-				<div class="bg-purple-50 border-l-4 border-purple-500 p-6 mb-8">
-					<blockquote class="text-purple-900 italic text-lg leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+				<div class="border-l-4 p-6" style="border-color: #802376;">
+					<blockquote class="italic text-lg leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #802376;">
 						"Cílem AIS CR je odborně spravovat, zpřístupňovat a trvale uchovávat data z archeologických terénních výzkumů z území České republiky a budovat digitální ekosystém české archeologie."
 					</blockquote>
 				</div>
@@ -38,7 +41,7 @@
 				
 				<!-- Feature items -->
 				<div class="flex items-start space-x-4">
-					<Database size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<History size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Pokrýváme <strong>archeologická data</strong> od nejstarších výzkumů v 19. století až po aktuálně probíhající výzkumy.
@@ -47,7 +50,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Archive size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<CloudCheck size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Uchovávame fyzické a digitální záznamy a zpřístupňujeme je prostřednictvím online nástrojů, v souvislostech a bez zbytečných bariér. Vytváříme tak <strong>důvěryhodný digitální repositář</strong>.
@@ -56,7 +59,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<FileText size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<FileText size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Digitálně zpracováváme <strong>dokumenty shromážděné od roku 1919</strong> a zároveň průběžně dohlížíme na kvalitu evidence a dokumentace aktuálně probíhajících archeologických výzkumů.
@@ -65,7 +68,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Users size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<GitPullRequestArrow size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Kvalitu záznamů zvyšujeme propojováním souvisejících dokumentů, doplňováním chybějících starších dat a budováním autoritních seznamů <strong>archeologických výzkumů a lokalit</strong>.
@@ -74,7 +77,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<BarChart3 size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<QrCode size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Sledujeme <strong>nejnovější trendy</strong> v oblasti digitální správy dat (digitální kurátorství) a podporujeme zavádění technologických inovací.
@@ -83,7 +86,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Globe size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<ListTodo size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Do českého archeologického prostředí přinášíme <strong>standardy</strong> založené na mezinárodně uznávaných FAIR principech a mezioborových <strong>prostředí pro správu výzkumných dat</strong>.
@@ -92,7 +95,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Target size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<Users size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Uvědomujeme si rozmanitost naší <strong>uživatelské základny</strong> – od odborné a amatérské komunity přes státní správu po veřejnost – a tomu přizpůsobujeme podobu a zaměření našich nástrojů.
@@ -101,7 +104,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Globe size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<Link size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Usilujeme o to, aby data AIS CR byla <strong>součástí propojených webů</strong>, tj. standardizovaná a technicky kompatibilní s dalšími informačními systémy, a aby byla dohledatelná i mezinárodně.
@@ -110,7 +113,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Users size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<HandHeart size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Udržujeme <strong>expertní tým</strong>, který spravuje data, vyvíjí aplikační nástroje a rozvíjí nezbytné digitální dovednosti našich uživatelů a uživatelek.
@@ -119,7 +122,7 @@
 				</div>
 
 				<div class="flex items-start space-x-4">
-					<Target size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
+					<Earth size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							Napomáháme porozumění <strong>roli archeologie ve společnosti</strong> a cíleně posilujeme využití výsledků výzkumu v praxi.
@@ -128,26 +131,27 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</section>
 
-		<!-- Bottom section separated by dotted border -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Why AIS CR is essential section -->
+<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 				
 				<!-- Left column - Question and quote -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<Star size="24" color="#0D9488" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900 mb-4" style="font-family: 'Roboto', sans-serif;">
-								Proč je AIS CR nezastupitelný?
-							</h3>
-							
-							<div class="bg-teal-50 border-l-4 border-teal-500 p-4">
-								<blockquote class="text-teal-700 italic leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-									"Jedinečná a nenahraditelná archeologická data si zaslouží profesionální péči – proto je tu AIS CR."
-								</blockquote>
-							</div>
-						</div>
+					<div class="flex items-center space-x-4 mb-6">
+						<Star size="36" color="#1B998B" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #1B998B; font-size: 24px;">
+							Proč je AIS CR nezastupitelný?
+						</h3>
+					</div>
+					
+					<div class="border-l-4 p-4" style="border-color: #1B998B;">
+						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #1B998B;">
+							"Jedinečná a nenahraditelná archeologická data si zaslouží profesionální péči – proto je tu AIS CR."
+						</blockquote>
 					</div>
 				</div>
 
@@ -158,52 +162,62 @@
 					</p>
 				</div>
 			</div>
-		</div>
+	</div>
+</section>
 
-		<!-- Who creates AIS CR section -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Who creates AIS CR section -->
+<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 				
 				<!-- Left column - Question and quote -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<Building size="24" color="#DC2626" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900 mb-4" style="font-family: 'Roboto', sans-serif;">
-								Kdo AIS CR tvoří?
-							</h3>
-							
-							<div class="bg-red-50 border-l-4 border-red-500 p-4">
-								<blockquote class="text-red-700 italic leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-									"Jsme expertní tým s hlubokou znalostí oboru – data jsou s AIS CR v bezpečí."
-								</blockquote>
-							</div>
-						</div>
+					<div class="flex items-center space-x-4 mb-6">
+						<Landmark size="36" color="#C6362E" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
+							Kdo AIS CR tvoří?
+						</h3>
+					</div>
+					
+					<div class="border-l-4 p-4" style="border-color: #C6362E;">
+						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
+							"Jsme expertní tým s hlubokou znalostí oboru – data jsou s AIS CR v bezpečí."
+						</blockquote>
 					</div>
 				</div>
 
 				<!-- Right column - Team description -->
 				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						AIS CR koordinuje <strong>Archeologický ústav AV ČR, Brno</strong> (Archiv ARUB, kde jsou spravovány datové sady a archivní fond pro Moravu a České Slezsko) ve spolupráci s <strong>Archeologickým ústavem AV ČR, Praha</strong> (Oddělení informačních zdrojů a archeologie krajiny ARÚ se správou pro území Čech).
+					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
+						AIS CR koordinují Archeologický ústav AV ČR, Brno (Archiv ARÚB, kde jsou spravovány datové sady a archivní fond pro Moravu a České Slezsko) společně s Archeologickým ústavem AV ČR, Praha (Oddělení informačních zdrojů a archeologie krajiny ARÚ se správou pro území Čech).
 					</p>
+					
+					<div class="flex gap-8 items-center">
+						<img src="/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
+						<img src="/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
+					</div>
 				</div>
 			</div>
+			
+			<!-- Team photo -->
+		<div style="margin-top: 48px;">
+			<img src="/team.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
 		</div>
+	</div>
+</section>
 
-		<!-- Executive Board section -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
+<!-- Executive Board section -->
+<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
 				
 				<!-- Left column - Title -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<UserCheck size="24" color="#DC2626" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900" style="font-family: 'Roboto', sans-serif;">
-								Výkonný výbor AIS CR
-							</h3>
-						</div>
+					<div class="flex items-center space-x-4">
+						<CircleUser size="36" color="#C6362E" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
+							Výkonný výbor AIS CR
+						</h3>
 					</div>
 				</div>
 
@@ -216,9 +230,9 @@
 			</div>
 
 			<!-- Executive Board Team members -->
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+			<div class="flex justify-end" style="gap: 128px; padding-right: 64px;">
 				<div class="text-center">
-					<div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-4"></div>
+					<img src="/olga.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Olga Lečbychová
 					</h4>
@@ -228,7 +242,7 @@
 				</div>
 
 				<div class="text-center">
-					<div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-4"></div>
+					<img src="/david.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						David Novák
 					</h4>
@@ -238,7 +252,7 @@
 				</div>
 
 				<div class="text-center">
-					<div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-4"></div>
+					<img src="/petr.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Petr Pajdla
 					</h4>
@@ -248,7 +262,7 @@
 				</div>
 
 				<div class="text-center">
-					<div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-4"></div>
+					<img src="/ondra.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Ondřej Švejcar
 					</h4>
@@ -257,21 +271,22 @@
 					</p>
 				</div>
 			</div>
-		</div>
+	</div>
+</section>
 
-		<!-- Scientific Advisory Board section -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
+<!-- Scientific Advisory Board section -->
+<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
 				
 				<!-- Left column - Title -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<GraduationCap size="24" color="#DC2626" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900" style="font-family: 'Roboto', sans-serif;">
-								Vědecký poradní výbor AIS CR
-							</h3>
-						</div>
+					<div class="flex items-center space-x-4">
+						<Brain size="36" color="#C6362E" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
+							Vědecký poradní výbor AIS CR
+						</h3>
 					</div>
 				</div>
 
@@ -284,83 +299,86 @@
 			</div>
 
 			<!-- Scientific Advisory Board members -->
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
+			<div class="flex justify-between gap-4">
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Stefan Eichert
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 						Naturhistorisches Museum Wien, předseda
 					</p>
 				</div>
 
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
-						Cynthia Dunning
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+						Cynthia Dunning Thierstein
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
-						Thinktank Archaeoconcept
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+						Archaeoconcept
 					</p>
 				</div>
 
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Johanna Hilpert
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 						Universität zu Köln, Philosophische Fakultät, Institut für Ur- und Frühgeschichte
 					</p>
 				</div>
 
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Axel G. Posluschny
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
-						Keltenwell, an der Mathematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+						Keltenwell am Glauberg
 					</p>
 				</div>
 
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
-						Pavel Staněk
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+						Pavel Straňák
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 						Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
 					</p>
 				</div>
 
-				<div class="text-center">
-					<div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3"></div>
-					<h4 class="font-semibold text-gray-900 text-xs leading-tight" style="font-family: 'Roboto', sans-serif;">
+				<div class="text-center flex-1">
+					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
+					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 						Benjamin Štular
 					</h4>
-					<p class="text-xs text-gray-600 mt-1" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 						Institute of Archaeology of the Slovenian Academy of Sciences and Arts
 					</p>
 				</div>
 			</div>
 		</div>
+	</div>
+</section>
 
-		<!-- Funding Sources section -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Funding Sources section -->
+<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 				
 				<!-- Left column - Title -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<DollarSign size="24" color="#8B5CF6" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900" style="font-family: 'Roboto', sans-serif;">
-								Zdroje financování
-							</h3>
-						</div>
+					<div class="flex items-center space-x-4 mb-6" style="position: relative; z-index: 10;">
+						<PiggyBank size="36" color="#802376" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #802376; font-size: 24px;">
+							Zdroje financování
+						</h3>
 					</div>
+					
+					<img src="/finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
 				</div>
 
 				<!-- Right column - Funding description -->
@@ -395,23 +413,28 @@
 						Další související projekty a zdroje financování naleznete 
 						<a href="#" class="underline text-gray-900">zde</a>.
 					</p>
+					
+					<div style="margin-top: 24px;">
+						<img src="/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
+					</div>
 				</div>
 			</div>
-		</div>
+	</div>
+</section>
 
-		<!-- Partners and Data Providers section -->
-		<div class="mt-16 pt-16 border-t border-dashed border-gray-400">
+<!-- Partners and Data Providers section -->
+<section class="pt-16 pb-16 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF;">
+	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
+		<div>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
 				
 				<!-- Left column - Title -->
 				<div>
-					<div class="flex items-start space-x-4">
-						<Handshake size="24" color="#DC2626" class="mt-1 flex-shrink-0" />
-						<div>
-							<h3 class="font-bold text-xl text-gray-900" style="font-family: 'Roboto', sans-serif;">
-								Partneři a poskytovatelé dat
-							</h3>
-						</div>
+					<div class="flex items-center space-x-4">
+						<Handshake size="36" color="#721C17" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #721C17; font-size: 24px;">
+							Partneři a poskytovatelé dat
+						</h3>
 					</div>
 				</div>
 
@@ -429,47 +452,62 @@
 
 			<!-- Partners intro -->
 			<div class="mb-8">
-				<p class="text-gray-900 font-medium" style="font-family: 'Roboto', sans-serif;">
+				<p class="font-medium" style="font-family: 'Roboto', sans-serif; color: #721C17;">
 					Mezi důležité smluvní partnery AIS CR dále patří:
 				</p>
 			</div>
 
 			<!-- Partner logos grid -->
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">Ministerstvo kultury</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
 				</div>
 
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">Akademie věd ČR</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/akademie-ved.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
 				</div>
 
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">ARIADNE</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
 				</div>
 
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">LINDAT</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
 				</div>
 
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">Národní památkový ústav</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
 				</div>
 
-				<div class="flex items-center justify-center h-16 bg-white rounded-lg p-4">
-					<div class="w-full h-8 bg-gray-300 rounded flex items-center justify-center">
-						<span class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">CARARE</span>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
+				</div>
+			</div>
+
+			<!-- Second row of partner logos -->
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
+				<div class="flex items-center justify-center">
+					<img src="/ntk.png" alt="NTK" style="max-height: 80px; width: auto;" />
+				</div>
+
+				<div class="flex items-center justify-center">
+					<img src="/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+				</div>
+
+				<div class="flex items-center justify-center">
+					<img src="/itam.png" alt="ITAM" style="max-height: 80px; width: auto;" />
+				</div>
+
+				<div class="flex items-center justify-center">
+					<img src="/praha.png" alt="Praha" style="max-height: 80px; width: auto;" />
+				</div>
+
+				<div class="flex items-center justify-center">
+					<img src="/pernikari.png" alt="Pernikáři" style="max-height: 80px; width: auto;" />
+				</div>
+
+				<div class="flex items-center justify-center">
+					<img src="/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
 		</div>

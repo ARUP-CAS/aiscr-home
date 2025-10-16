@@ -1,20 +1,17 @@
 <script lang="ts">
 	// Header komponenta pro navigaci
-	import { Menu, Facebook, Linkedin, Youtube, Twitter, Github } from '@lucide/svelte';
+	import { Menu, Facebook, Linkedin, Youtube, Github } from '@lucide/svelte';
 	
 	let mobileMenuOpen = $state(false);
 </script>
 
 <header class="bg-black" style="height: 120px;">
-	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1100px;">
+	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
 			<!-- Logo -->
-			<div class="flex items-center space-x-3">
-				<div class="w-10 h-10 bg-gray-700 rounded-full"></div>
-				<div class="text-xl font-semibold text-white tracking-wide">
-					AIS CR
-				</div>
-			</div>
+			<a href="/" class="flex items-center">
+				<img src="/Logo AIS kratke.svg" alt="AIS CR Logo" style="height: 60px;" />
+			</a>
 			
 			<!-- Menu a ikony zarovnané doprava -->
 			<div class="hidden lg:flex items-center">
@@ -39,8 +36,10 @@
 					<a href="https://youtube.com" class="text-white hover:text-gray-300 transition-colors" aria-label="YouTube">
 						<Youtube size="20" />
 					</a>
-					<a href="https://twitter.com" class="text-white hover:text-gray-300 transition-colors" aria-label="Twitter/X">
-						<Twitter size="20" />
+					<a href="https://bsky.app" class="text-white hover:text-gray-300 transition-colors" aria-label="Bluesky">
+						<svg width="20" height="20" viewBox="0 0 600 530" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+						</svg>
 					</a>
 					<a href="https://github.com" class="text-white hover:text-gray-300 transition-colors" aria-label="GitHub">
 						<Github size="20" />
@@ -84,8 +83,10 @@
 						<a href="https://youtube.com" class="text-white hover:text-gray-300 transition-colors" aria-label="YouTube">
 							<Youtube size="20" />
 						</a>
-						<a href="https://twitter.com" class="text-white hover:text-gray-300 transition-colors" aria-label="Twitter/X">
-							<Twitter size="20" />
+						<a href="https://bsky.app" class="text-white hover:text-gray-300 transition-colors" aria-label="Bluesky">
+							<svg width="20" height="20" viewBox="0 0 600 530" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+							</svg>
 						</a>
 						<a href="https://github.com" class="text-white hover:text-gray-300 transition-colors" aria-label="GitHub">
 							<Github size="20" />
