@@ -1,5 +1,6 @@
 <script lang="ts">
 	// Preview nejnovějších blog postů
+	import { resolve } from '$app/paths';
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	
@@ -149,12 +150,12 @@
 								</span>
 							</div>
 							
-							<!-- Title -->
-							<h3 class="text-xl font-semibold text-gray-900 mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
-								<a href="/blog/{post.slug}" class="hover:text-red-600 transition-colors">
-									{post.title}
-								</a>
-							</h3>
+						<!-- Title -->
+						<h3 class="text-xl font-semibold text-gray-900 mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
+							<a href={resolve(`/blog/${post.slug}`)} class="hover:text-red-600 transition-colors">
+								{post.title}
+							</a>
+						</h3>
 							
 							<!-- Excerpt -->
 							<p class="text-gray-600 leading-relaxed mb-6 text-sm flex-1" style="font-family: 'Roboto', sans-serif;">

@@ -1,5 +1,6 @@
 <script lang="ts">
 	// Header komponenta pro navigaci
+	import { resolve } from '$app/paths';
 	import { Menu, Facebook, Linkedin, Youtube, Github } from '@lucide/svelte';
 	import logoAis from '/Logo AIS kratke.svg';
 	
@@ -9,22 +10,22 @@
 <header class="bg-black" style="height: 120px;">
 	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
-		<!-- Logo -->
-		<a href="/" class="flex items-center">
-			<img src={logoAis} alt="AIS CR Logo" style="height: 60px;" />
-		</a>
+	<!-- Logo -->
+	<a href={resolve('/')} class="flex items-center">
+		<img src={logoAis} alt="AIS CR Logo" style="height: 60px;" />
+	</a>
 			
 			<!-- Menu a ikony zarovnané doprava -->
 			<div class="hidden lg:flex items-center">
-				<!-- Navigační menu -->
-				<nav class="flex items-center" style="gap: 32px;">
-					<a href="#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Služby</a>
-					<a href="/blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Blog</a>
-					<a href="#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Časté dotazy</a>
-					<a href="#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Využití</a>
-					<a href="#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">O nás</a>
-					<a href="#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Kontakt</a>
-				</nav>
+			<!-- Navigační menu -->
+			<nav class="flex items-center" style="gap: 32px;">
+				<a href="{resolve('/')}#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Služby</a>
+				<a href={resolve('/blog')} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Blog</a>
+				<a href="{resolve('/')}#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Časté dotazy</a>
+				<a href="{resolve('/')}#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Využití</a>
+				<a href="{resolve('/')}#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">O nás</a>
+				<a href="{resolve('/')}#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Kontakt</a>
+			</nav>
 
 				<!-- Sociální ikony -->
 				<div class="flex items-center ml-8" style="gap: 12px;">
@@ -64,14 +65,14 @@
 		<!-- Mobile menu -->
 		{#if mobileMenuOpen}
 			<div class="lg:hidden border-t border-gray-800">
-				<div class="px-2 pt-2 pb-3 space-y-1">
-					<a href="#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Služby</a>
-					<a href="/blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Blog</a>
-					<a href="#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Časté dotazy</a>
-					<a href="#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Využití</a>
-					<a href="#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">O nás</a>
-					<a href="#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Kontakt</a>
-				</div>
+			<div class="px-2 pt-2 pb-3 space-y-1">
+				<a href="{resolve('/')}#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Služby</a>
+				<a href={resolve('/blog')} class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Blog</a>
+				<a href="{resolve('/')}#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Časté dotazy</a>
+				<a href="{resolve('/')}#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Využití</a>
+				<a href="{resolve('/')}#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">O nás</a>
+				<a href="{resolve('/')}#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Kontakt</a>
+			</div>
 				<!-- Mobile social icons -->
 				<div class="px-5 py-3 border-t border-gray-800">
 					<div class="flex items-center" style="gap: 12px;">

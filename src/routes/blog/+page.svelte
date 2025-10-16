@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 	
 	let { data }: { data: PageData } = $props();
@@ -40,17 +41,17 @@
 					{/if}
 				</div>
 				
-				<h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
-					<a href="/blog/{post.slug}">{post.title}</a>
-				</h2>
-				
-				{#if post.excerpt}
-					<p class="text-gray-600 leading-relaxed mb-6">
-						{post.excerpt}
-					</p>
-				{/if}
-				
-				<a href="/blog/{post.slug}" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+			<h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
+				<a href={resolve(`/blog/${post.slug}`)}>{post.title}</a>
+			</h2>
+			
+			{#if post.excerpt}
+				<p class="text-gray-600 leading-relaxed mb-6">
+					{post.excerpt}
+				</p>
+			{/if}
+			
+			<a href={resolve(`/blog/${post.slug}`)} class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
 					Číst celý článek
 					<svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
