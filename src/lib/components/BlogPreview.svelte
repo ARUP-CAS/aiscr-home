@@ -2,6 +2,7 @@
 	// Preview nejnovějších blog postů
 	import { resolve } from '$app/paths';
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	import { onMount } from 'svelte';
 	
 	const blogPosts = [
@@ -116,13 +117,13 @@
 				<Shovel size="63" color="#721C17" />
 			</div>
 			<h2 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #721C17; font-size: 48px;">
-				Blog AIS CR
+				{m.blog_heading()}
 			</h2>
 			<p class="text-lg mb-2" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-				Archeodata po lopatě – příspěvky o archeologii, datech a světě AIS CR.
+				{m.blog_subtitle()}
 			</p>
 			<p class="text-base text-gray-700 max-w-4xl mx-auto leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-				Blog AIS CR nabízí srozumitelný pohled na archeologická data, nástroje i dění v zákulisí. Pomáhá se zorientovat v zákoutích digitální archeologie, ukazuje tipy z praxe a odpovídá šířeji na otázky, na které jste se chtěli zeptat.
+				{m.blog_description()}
 			</p>
 		</div>
 
@@ -170,7 +171,7 @@
 									<div class="text-gray-500 flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
 										<span>•</span>
-										<span>čas čtení {post.readTime}</span>
+										<span>{m.blog_read_time({ time: post.readTime })}</span>
 									</div>
 								</div>
 							</div>

@@ -1,10 +1,30 @@
 <script lang="ts">
 	// Header komponenta pro navigaci
 	import { resolve } from '$app/paths';
-	import { Menu, Facebook, Linkedin, Youtube, Github } from '@lucide/svelte';
+	import { Menu, Facebook, Linkedin, Youtube, Github, Globe } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale, setLocale, locales } from '$lib/paraglide/runtime';
 	import logoAis from '/Logo AIS kratke.svg';
 	
 	let mobileMenuOpen = $state(false);
+	let langMenuOpen = $state(false);
+	
+	const languages = [
+		{ code: 'cs', name: 'Čeština' },
+		{ code: 'en', name: 'English' },
+		{ code: 'de', name: 'Deutsch' },
+		{ code: 'sk', name: 'Slovenčina' },
+		{ code: 'pl', name: 'Polski' },
+		{ code: 'fr', name: 'Français' },
+		{ code: 'it', name: 'Italiano' },
+		{ code: 'es', name: 'Español' },
+		{ code: 'ua', name: 'Українська' }
+	];
+	
+	function switchLanguage(lang: string) {
+		setLocale(lang as any);
+		langMenuOpen = false;
+	}
 </script>
 
 <header class="bg-black" style="height: 120px;">
@@ -19,12 +39,35 @@
 			<div class="hidden lg:flex items-center">
 			<!-- Navigační menu -->
 			<nav class="flex items-center" style="gap: 32px;">
-				<a href="{resolve('/')}#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Služby</a>
-				<a href={resolve('/blog')} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Blog</a>
-				<a href="{resolve('/')}#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Časté dotazy</a>
-				<a href="{resolve('/')}#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Využití</a>
-				<a href="{resolve('/')}#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">O nás</a>
-				<a href="{resolve('/')}#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">Kontakt</a>
+				<a href="{resolve('/')}#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_services()}</a>
+				<a href={resolve('/blog')} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_blog()}</a>
+				<a href="{resolve('/')}#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_faq()}</a>
+				<a href="{resolve('/')}#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_terms()}</a>
+				<a href="{resolve('/')}#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_about()}</a>
+				<a href="{resolve('/')}#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m.nav_contact()}</a>
+				
+				<!-- Language Switcher -->
+				<div class="relative">
+					<button 
+						class="text-white hover:text-gray-300 transition-colors flex items-center gap-2"
+						onclick={() => langMenuOpen = !langMenuOpen}
+					>
+						<Globe size="20" />
+						<span class="uppercase text-sm">{getLocale()}</span>
+					</button>
+					{#if langMenuOpen}
+						<div class="absolute right-0 top-full mt-2 bg-white rounded shadow-lg py-2 min-w-40 z-50">
+							{#each languages as lang}
+								<button
+									class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 {getLocale() === lang.code ? 'bg-gray-50 font-bold' : ''}"
+									onclick={() => switchLanguage(lang.code)}
+								>
+									{lang.name}
+								</button>
+							{/each}
+						</div>
+					{/if}
+				</div>
 			</nav>
 
 				<!-- Sociální ikony -->
@@ -54,7 +97,7 @@
 				<button 
 					type="button" 
 					class="text-white hover:text-gray-300 transition-colors" 
-					aria-label="Otevřít menu"
+					aria-label={m.nav_menu_open()}
 					onclick={() => mobileMenuOpen = !mobileMenuOpen}
 				>
 					<Menu size="24" />
@@ -66,12 +109,12 @@
 		{#if mobileMenuOpen}
 			<div class="lg:hidden border-t border-gray-800">
 			<div class="px-2 pt-2 pb-3 space-y-1">
-				<a href="{resolve('/')}#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Služby</a>
-				<a href={resolve('/blog')} class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Blog</a>
-				<a href="{resolve('/')}#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Časté dotazy</a>
-				<a href="{resolve('/')}#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Využití</a>
-				<a href="{resolve('/')}#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">O nás</a>
-				<a href="{resolve('/')}#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">Kontakt</a>
+				<a href="{resolve('/')}#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_services()}</a>
+				<a href={resolve('/blog')} class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_blog()}</a>
+				<a href="{resolve('/')}#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_faq()}</a>
+				<a href="{resolve('/')}#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_terms()}</a>
+				<a href="{resolve('/')}#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_about()}</a>
+				<a href="{resolve('/')}#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m.nav_contact()}</a>
 			</div>
 				<!-- Mobile social icons -->
 				<div class="px-5 py-3 border-t border-gray-800">

@@ -1,21 +1,22 @@
 <script lang="ts">
 	// Sekce s funkcemi a možnostmi
 	import { Users, FlaskConical, Database } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	
 	const features = [
 		{
-			title: "Otevřená výzkumná infrastruktura",
-			description: "<strong>Otevřená výzkumná infrastruktura</strong>, která slouží vědecké obci, studentstvu, orgánům památkové péče a veřejné správy i zvídavé veřejnosti.",
+			title: m.features_infrastructure_title,
+			description: m.features_infrastructure_desc,
 			icon: Users
 		},
 		{
-			title: "Kvalitní věda a výzkum",
-			description: "Podporuje kvalitní <strong>vědu a výzkum</strong> – umožňuje vyhledávat, sdílet i analyzovat informace z archeologických výzkumů napříč časem i prostorem.",
+			title: m.features_science_title,
+			description: m.features_science_desc,
 			icon: FlaskConical
 		},
 		{
-			title: "Archeologická data",
-			description: "Shromažďuje, integruje a dlouhodobě uchovává <strong>archeologická data</strong>, neopakovatelnou součást archeologického dědictví České republiky.",
+			title: m.features_data_title,
+			description: m.features_data_desc,
 			icon: Database
 		}
 	];
@@ -25,7 +26,7 @@
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		<div class="text-center mb-16">
 			<h2 class="font-bold text-gray-900 mb-4" style="font-family: 'Roboto', sans-serif; font-size: 24px; max-width: 800px; margin: 0 auto;">
-				AIS CR nabízí jednotné a přehledné digitální prostředí pro archeologická data z České republiky
+				{m.features_heading()}
 			</h2>
 		</div>
 
@@ -36,7 +37,7 @@
 						<svelte:component this={feature.icon} size="48" color="#000000" />
 					</div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 16px;">
-						{@html feature.description}
+						{@html feature.description()}
 					</p>
 				</div>
 			{/each}

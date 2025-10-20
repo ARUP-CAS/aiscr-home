@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Služby AIS CR - bento grid layout
 	import { Flag, Church, Atom, BookOpen } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	import amcrPin from '/amcr-pin.svg';
 	
 	// Import background obrázků
@@ -16,12 +17,12 @@
 		
 		<!-- Header -->
 		<div class="text-center mb-16">
-			<p class="text-sm text-gray-600" style="font-family: 'Roboto', sans-serif; font-weight: bold; margin-bottom: 16px;">Služby AIS CR</p>
+			<p class="text-sm text-gray-600" style="font-family: 'Roboto', sans-serif; font-weight: bold; margin-bottom: 16px;">{m.services_label()}</p>
 			<h2 class="text-4xl font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
-				Vše na jednom místě
+				{m.services_heading()}
 			</h2>
 			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; margin-top: 24px;">
-				Prozkoumejte širokou paletu digitálních nástrojů, které pro vás spravujeme.
+				{m.services_subheading()}
 			</p>
 		</div>
 
@@ -35,14 +36,14 @@
 						<div>
 							<img src={amcrPin} alt="AMČR" width="48" height="48" class="mb-6" />
 							<h3 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
-								Mapujte a objevujte s námi minulost
+								{m.services_amcr_title()}
 							</h3>
 							<p class="leading-relaxed mb-8" style="font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: normal;">
-								Prozkoumejte Archeologickou mapu České republiky a její nástroje, které zajistí každodenní evidenci archeologických terénních výzkumů – krok za krokem. Nabízí virtuální badatelnu otevřenou všem, jednoduché cesty k plnění zákonných povinností veřejnosti i archeologické obce, ale také formální rámec pro spolupráci mezi amatérskou a odbornou komunitou.
+								{m.services_amcr_desc()}
 							</p>
 						</div>
 						<button class="self-start border border-white text-white px-6 py-2 hover:bg-white hover:text-gray-800 transition-colors" style="font-family: 'Roboto', sans-serif;">
-							Přejít na web AMČR
+							{m.services_amcr_button()}
 						</button>
 					</div>
 				</div>
@@ -55,14 +56,14 @@
 						<div>
 							<Flag size={48} color="white" class="mb-6" />
 							<h3 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
-								Vydejte se za archeology do krajiny
+								{m.services_atlas_title()}
 							</h3>
 							<p class="leading-relaxed mb-8" style="font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: normal;">
-								Chybí vám archeolog nebo archeologka, kteří by vás vzali do terénu? Nechte to na našem Archeologickém atlasu! Vydejte se za poznáním archeologických památek České republiky a objevuje je přímo v krajině.
+								{m.services_atlas_desc()}
 							</p>
 						</div>
 						<button class="self-start border border-white text-white px-6 py-2 hover:bg-white hover:text-purple-800 transition-colors" style="font-family: 'Roboto', sans-serif;">
-							Přejít do Archeologického atlasu ČR
+							{m.services_atlas_button()}
 						</button>
 					</div>
 				</div>
@@ -73,13 +74,13 @@
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(198, 54, 46, 0.8); padding: 16px;">
 					<Church size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 24px;">
-						Poznávejte Prahu pod Prahou
+						{m.services_praha_title()}
 					</h3>
 					<p class="leading-relaxed mb-6" style="font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal;">
-						Zajímá vás, co se skrývá pod dlažbou hlavního města? Portál Praha archeologická vám to umožní zjistit. Zpřístupňuje archeologické památky z území Prahy, a to jak odborníkům a odbornicím, tak široké veřejnosti. Prozkoumejte skryté vrstvy pražské minulosti právě teď – online na našem portálu.
+						{m.services_praha_desc()}
 					</p>
 					<button class="flex items-center border border-white text-white px-4 py-2 hover:bg-white hover:text-red-800 transition-colors text-sm" style="font-family: 'Roboto', sans-serif;">
-						<span>Přejít do Prahy archeologické</span>
+						<span>{m.services_praha_button()}</span>
 						<svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 						</svg>
@@ -92,13 +93,13 @@
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 142, 152, 0.8); padding: 16px;">
 					<Atom size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 24px;">
-						Využijte 14C kalibrovaná data
+						{m.services_c14_title()}
 					</h3>
 					<p class="leading-relaxed mb-6" style="font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal;">
-						V České archeologické radiouhlíkové databázi průběžně shromažďujeme a aktualizujeme absolutní chronologická data z archeologických kontextů v ČR. Stáhněte si připravená data pro svůj výzkum nebo lépe pochopte výpovědní hodnotu svých dat s kalkulačkou rozložení 14C datování.
+						{m.services_c14_desc()}
 					</p>
 					<button class="flex items-center border border-white text-white px-4 py-2 hover:bg-white hover:text-gray-800 transition-colors text-sm" style="font-family: 'Roboto', sans-serif;">
-						<span>Přejít do ArCh14CZ</span>
+						<span>{m.services_c14_button()}</span>
 						<svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 						</svg>
@@ -111,13 +112,13 @@
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(219, 145, 52, 0.8); padding: 24px;">
 					<BookOpen size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
-						Neztraťte se v pojmech
+						{m.services_teater_title()}
 					</h3>
 					<p class="leading-relaxed mb-6" style="font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: normal;">
-						Hledáte slovník, se kterým se spolehlivě zorientujete mezi českou, anglickou a německou archeologickou terminologií? Pomůže vám Tezaurus archeologické terminologie, všejačný online výkladový slovník! Umožní vám pochopit pojmy v jejich odborném kontextu, a to bez nutnosti chodit do knihovny.
+						{m.services_teater_desc()}
 					</p>
 					<button class="border border-white text-white px-4 py-2 hover:bg-white hover:text-yellow-800 transition-colors text-sm" style="font-family: 'Roboto', sans-serif;">
-						Přejít do TEATERu
+						{m.services_teater_button()}
 					</button>
 				</div>
 			</div>

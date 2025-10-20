@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Footer komponenta
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	
 	// Import obrázků
 	import rorLogo from '/ror-logo_BW.png';
@@ -17,7 +18,7 @@
 		<!-- Main content -->
 		<div class="mb-12">
 			<h2 class="text-2xl font-bold text-black mb-8" style="font-family: 'Roboto', sans-serif;">
-				Kontakty
+				{m.footer_contacts()}
 			</h2>
 
 		<!-- Contact information grid -->
@@ -33,7 +34,7 @@
 						<div class="flex items-start space-x-3">
 							<CircleUser size="24" color="#000000" class="mt-1 flex-shrink-0" />
 							<div>
-								<p class="text-sm text-black" style="font-family: 'Roboto', sans-serif;">Odpovědná osoba:</p>
+								<p class="text-sm text-black" style="font-family: 'Roboto', sans-serif;">{m.footer_responsible_person()}</p>
 								<p class="text-sm font-medium text-black" style="font-family: 'Roboto', sans-serif;">Mgr. David Novák, Ph.D.</p>
 							</div>
 						</div>
@@ -74,7 +75,7 @@
 						<div class="flex items-start space-x-3">
 							<CircleUser size="24" color="#000000" class="mt-1 flex-shrink-0" />
 							<div>
-								<p class="text-sm text-black" style="font-family: 'Roboto', sans-serif;">Odpovědná osoba:</p>
+								<p class="text-sm text-black" style="font-family: 'Roboto', sans-serif;">{m.footer_responsible_person()}</p>
 								<p class="text-sm font-medium text-black" style="font-family: 'Roboto', sans-serif;">Mgr. Olga Lečbychová</p>
 							</div>
 						</div>
@@ -110,7 +111,7 @@
 		<!-- ROR registration -->
 		<div class="mb-12">
 			<div class="text-sm text-black border-t border-dashed border-gray-400 pt-8 flex items-center" style="font-family: 'Roboto', sans-serif;">
-				<span>AIS CR je registrován v</span>
+				<span>{m.footer_ror_text()}</span>
 				<img src={rorLogo} alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
 			</div>
 		</div>
@@ -133,10 +134,10 @@
 				<!-- Copyright and links -->
 				<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
 					<span>&copy; 2025 AIS CR</span>
-					<a href="#" class="hover:text-gray-700 underline">Zásady ochrany osobních údajů</a>
-					<a href="#" class="hover:text-gray-700 underline">Podmínky užití</a>
-					<a href="#" class="hover:text-gray-700 underline">Užívání cookies</a>
-					<span>design by Milan Filip</span>
+					<a href="#" class="hover:text-gray-700 underline">{m.footer_privacy()}</a>
+					<a href="#" class="hover:text-gray-700 underline">{m.footer_terms_of_use()}</a>
+					<a href="#" class="hover:text-gray-700 underline">{m.footer_cookies()}</a>
+					<span>{m.footer_design()}</span>
 				</div>
 
 				<!-- Social icons -->

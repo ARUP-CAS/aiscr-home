@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Rozbalovací sekce "Chcete vědět víc?"
 	import { ChevronDown } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
@@ -278,10 +279,10 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 		<!-- Header -->
 		<div class="mb-12">
 			<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
-				Chcete vědět víc?
+				{m.more_info_heading()}
 			</h2>
 			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
-				Součásti AIS CR přehledně
+				{m.more_info_subtitle()}
 			</p>
 		</div>
 
