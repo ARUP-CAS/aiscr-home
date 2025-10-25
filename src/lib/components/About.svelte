@@ -1,6 +1,7 @@
 <script lang="ts">
 	// O nás sekce
 	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 </script>
 
 <!-- Main About section -->
@@ -15,12 +16,12 @@
 				<div class="flex items-center" style="margin-bottom: 24px;">
 					<Info size="63" color="#802376" class="mr-3" />
 					<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #802376; font-size: 48px;">
-						O nás
+						{m['about.title']()}
 					</h2>
 				</div>
 				
 				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
-					Archeologický informační systém České republiky (AIS CR) vznikl jako dlouhodobý projekt Akademie věd ČR v Praze a Brně od roku 2016 je součástí Cestovní mapy velkých výzkumných infrastruktur ČR. Je tak dlouhodobě finančně podporován Ministerstvem školství, mládeže a tělovýchovy České republiky.
+					{m['about.intro']()}
 				</p>
 				
 				<div style="margin-bottom: 24px;">
@@ -30,7 +31,7 @@
 				<!-- Quote -->
 				<div class="border-l-4 p-6" style="border-color: #802376;">
 					<blockquote class="italic text-lg leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #802376;">
-						"Cílem AIS CR je odborně spravovat, zpřístupňovat a trvale uchovávat data z archeologických terénních výzkumů z území České republiky a budovat digitální ekosystém české archeologie."
+						"{m['about.quote']()}"
 					</blockquote>
 				</div>
 
@@ -44,7 +45,7 @@
 					<History size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Pokrýváme <strong>archeologická data</strong> od nejstarších výzkumů v 19. století až po aktuálně probíhající výzkumy.
+							{@html m['about.feature1']()}
 						</p>
 					</div>
 				</div>
@@ -53,7 +54,7 @@
 					<CloudCheck size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Uchovávame fyzické a digitální záznamy a zpřístupňujeme je prostřednictvím online nástrojů, v souvislostech a bez zbytečných bariér. Vytváříme tak <strong>důvěryhodný digitální repositář</strong>.
+							{@html m['about.feature2']()}
 						</p>
 					</div>
 				</div>
@@ -62,7 +63,7 @@
 					<FileText size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Digitálně zpracováváme <strong>dokumenty shromážděné od roku 1919</strong> a zároveň průběžně dohlížíme na kvalitu evidence a dokumentace aktuálně probíhajících archeologických výzkumů.
+							{@html m['about.feature3']()}
 						</p>
 					</div>
 				</div>
@@ -71,7 +72,7 @@
 					<GitPullRequestArrow size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Kvalitu záznamů zvyšujeme propojováním souvisejících dokumentů, doplňováním chybějících starších dat a budováním autoritních seznamů <strong>archeologických výzkumů a lokalit</strong>.
+							{@html m['about.feature4']()}
 						</p>
 					</div>
 				</div>
@@ -80,7 +81,7 @@
 					<QrCode size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Sledujeme <strong>nejnovější trendy</strong> v oblasti digitální správy dat (digitální kurátorství) a podporujeme zavádění technologických inovací.
+							{@html m['about.feature5']()}
 						</p>
 					</div>
 				</div>
@@ -89,7 +90,7 @@
 					<ListTodo size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Do českého archeologického prostředí přinášíme <strong>standardy</strong> založené na mezinárodně uznávaných FAIR principech a mezioborových <strong>prostředí pro správu výzkumných dat</strong>.
+							{@html m['about.feature6']()}
 						</p>
 					</div>
 				</div>
@@ -98,7 +99,7 @@
 					<Users size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Uvědomujeme si rozmanitost naší <strong>uživatelské základny</strong> – od odborné a amatérské komunity přes státní správu po veřejnost – a tomu přizpůsobujeme podobu a zaměření našich nástrojů.
+							{@html m['about.feature7']()}
 						</p>
 					</div>
 				</div>
@@ -107,7 +108,7 @@
 					<Link size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Usilujeme o to, aby data AIS CR byla <strong>součástí propojených webů</strong>, tj. standardizovaná a technicky kompatibilní s dalšími informačními systémy, a aby byla dohledatelná i mezinárodně.
+							{@html m['about.feature8']()}
 						</p>
 					</div>
 				</div>
@@ -116,7 +117,7 @@
 					<HandHeart size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Udržujeme <strong>expertní tým</strong>, který spravuje data, vyvíjí aplikační nástroje a rozvíjí nezbytné digitální dovednosti našich uživatelů a uživatelek.
+							{@html m['about.feature9']()}
 						</p>
 					</div>
 				</div>
@@ -125,7 +126,7 @@
 					<Earth size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
 						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							Napomáháme porozumění <strong>roli archeologie ve společnosti</strong> a cíleně posilujeme využití výsledků výzkumu v praxi.
+							{@html m['about.feature10']()}
 						</p>
 					</div>
 				</div>
@@ -144,13 +145,13 @@
 					<div class="flex items-center space-x-4 mb-6">
 						<Star size="36" color="#1B998B" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #1B998B; font-size: 24px;">
-							Proč je AIS CR nezastupitelný?
+							{m['about.whyTitle']()}
 						</h3>
 					</div>
 					
 					<div class="border-l-4 p-4" style="border-color: #1B998B;">
 						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #1B998B;">
-							"Jedinečná a nenahraditelná archeologická data si zaslouží profesionální péči – proto je tu AIS CR."
+							"{m['about.whyQuote']()}"
 						</blockquote>
 					</div>
 				</div>
@@ -158,7 +159,7 @@
 				<!-- Right column - Explanation text -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						Většina terénních archeologických výzkumů probíhá destruktivními metodami a obvykle na místech budoucí výstavby. Bez provedení výzkumu by hrozilo, že relisky minulosti – zbytky osídlení, pohřebiště a dalších projevů lidské činnosti v minulosti – budou při stavbě nenávratně zničeny. Zůstávají po nich jen nálezy a dokumentace získané během archeologických výzkumů. O nálezy pečují muzea. O záznamy a data se staráme my.
+						{m['about.whyExplanation']()}
 					</p>
 				</div>
 			</div>
@@ -175,13 +176,13 @@
 					<div class="flex items-center space-x-4 mb-6">
 						<Landmark size="36" color="#C6362E" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
-							Kdo AIS CR tvoří?
+							{m['about.whoTitle']()}
 						</h3>
 					</div>
 					
 					<div class="border-l-4 p-4" style="border-color: #C6362E;">
 						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
-							"Jsme expertní tým s hlubokou znalostí oboru – data jsou s AIS CR v bezpečí."
+							"{m['about.whoQuote']()}"
 						</blockquote>
 					</div>
 				</div>
@@ -189,7 +190,7 @@
 				<!-- Right column - Team description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
-						AIS CR koordinují Archeologický ústav AV ČR, Brno (Archiv ARÚB, kde jsou spravovány datové sady a archivní fond pro Moravu a České Slezsko) společně s Archeologickým ústavem AV ČR, Praha (Oddělení informačních zdrojů a archeologie krajiny ARÚ se správou pro území Čech).
+						{m['about.whoExplanation']()}
 					</p>
 					
 					<div class="flex gap-8 items-center">
@@ -216,7 +217,7 @@
 					<div class="flex items-center space-x-4">
 						<CircleUser size="36" color="#C6362E" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
-							Výkonný výbor AIS CR
+							{m['about.executiveTitle']()}
 						</h3>
 					</div>
 				</div>
@@ -224,7 +225,7 @@
 				<!-- Right column - Description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						Vyvážené partnerské řízení projektu je zajišťováno Výkonným výborem AIS CR, v němž jsou zastoupeni dva členové či členky z každé instituce.
+						{m['about.executiveDescription']()}
 					</p>
 				</div>
 			</div>
@@ -285,7 +286,7 @@
 					<div class="flex items-center space-x-4">
 						<Brain size="36" color="#C6362E" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #C6362E; font-size: 24px;">
-							Vědecký poradní výbor AIS CR
+							{m['about.advisoryTitle']()}
 						</h3>
 					</div>
 				</div>
@@ -293,7 +294,7 @@
 				<!-- Right column - Description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						Odborné poradenství v oblasti podpory výzkumu, technického rozvoje a uživatelských strategií zajišťuje Vědecký poradní výbor AIS CR, složený z mezinárodně uznávaných odborníků a odbornic na archeologii, digitální kulturní dědictví a výzkumné infrastruktury.
+						{m['about.advisoryDescription']()}
 					</p>
 				</div>
 			</div>
@@ -306,7 +307,7 @@
 						Stefan Eichert
 					</h4>
 					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Naturhistorisches Museum Wien, předseda
+						Naturhistorisches Museum Wien, {m['about.advisoryChairman']()}
 					</p>
 				</div>
 
@@ -374,7 +375,7 @@
 					<div class="flex items-center space-x-4 mb-6" style="position: relative; z-index: 10;">
 						<PiggyBank size="36" color="#802376" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #802376; font-size: 24px;">
-							Zdroje financování
+							{m['about.fundingTitle']()}
 						</h3>
 					</div>
 					
@@ -384,34 +385,26 @@
 				<!-- Right column - Funding description -->
 				<div class="space-y-6">
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						Hlavním zdrojem financování AIS CR je podpora velkých výzkumných infrastruktur zapsaných na 
-						<a href="#" class="underline text-gray-900">národní cestovní mapě</a>. Toto dlouhodobé 
-						financování je zajišťováno na základě důkladného mezinárodního hodnocení 
-						a je poskytováno Ministerstvem školství, mládeže a tělovýchovy ve víceletých 
-						cyklech od roku 2016 (projekty: <strong>LM2015080, LM2018134, LM2023031</strong>).
+						{@html m['about.fundingIntro']()}
 					</p>
 
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						Investiční náklady AIS CR jsou komplementárně pokrývány ze strukturálních 
-						fondů EU v projektech:
+						{m['about.fundingEu']()}
 					</p>
 
 					<ul class="space-y-2 text-gray-700" style="font-family: 'Roboto', sans-serif;">
 						<li class="flex items-start">
 							<span class="text-purple-600 mr-2">•</span>
-							<span>Archeologický informační systém ČR - druhá generace (OP VVV; 
-							<strong>EF16_013/0001439</strong>)</span>
+							<span>{@html m['about.fundingProject1']()}</span>
 						</li>
 						<li class="flex items-start">
 							<span class="text-purple-600 mr-2">•</span>
-							<span>Archeologický informační systém České republiky - obnova a rozšíření 
-							hardwarových kapacit (OP JAK; <strong>EH23_015/0008167</strong>)</span>
+							<span>{@html m['about.fundingProject2']()}</span>
 						</li>
 					</ul>
 
 					<p class="text-gray-700 leading-relaxed mt-6" style="font-family: 'Roboto', sans-serif;">
-						Další související projekty a zdroje financování naleznete 
-						<a href="#" class="underline text-gray-900">zde</a>.
+						{@html m['about.fundingMore']()}
 					</p>
 					
 					<div style="margin-top: 24px;">
@@ -433,7 +426,7 @@
 					<div class="flex items-center space-x-4">
 						<Handshake size="36" color="#721C17" class="flex-shrink-0" />
 						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #721C17; font-size: 24px;">
-							Partneři a poskytovatelé dat
+							{m['about.partnersTitle']()}
 						</h3>
 					</div>
 				</div>
@@ -441,11 +434,7 @@
 				<!-- Right column - Description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						AIS CR aktivně spolupracuje s více než stovkou organizací oprávněných provádět 
-						archeologické výzkumy v České republice. S nimi má uzavřeny dohody o odevzdání 
-						<a href="#" class="underline text-gray-900">archeologické mapy České republiky</a> 
-						a s většinou též licenční smlouvy umožňující 
-						sdílet uložitelnými dokumenty skrze <a href="#" class="underline text-gray-900">Digitální archiv AMČR</a>.
+						{@html m['about.partnersIntro']()}
 					</p>
 				</div>
 			</div>
@@ -453,7 +442,7 @@
 			<!-- Partners intro -->
 			<div class="mb-8">
 				<p class="font-medium" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-					Mezi důležité smluvní partnery AIS CR dále patří:
+					{m['about.partnersImportant']()}
 				</p>
 			</div>
 

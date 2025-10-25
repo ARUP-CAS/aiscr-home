@@ -1,4 +1,77 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"features": {
+		"openInfrastructure": {
+			"title": "Open Research Infrastructure"
+		},
+		"qualityScience": {
+			"title": "Quality Science and Research"
+		},
+		"archaeologicalData": {
+			"title": "Archaeological Data"
+		}
+	},
+	"about": {
+		"title": "About Us",
+		"intro": "The Archaeological Information System of the Czech Republic (AIS CR) was established as a long-term project of the Czech Academy of Sciences in Prague and Brno. Since 2016, it has been part of the Roadmap for Large Research Infrastructures of the Czech Republic. It is thus long-term financially supported by the Ministry of Education, Youth and Sports of the Czech Republic.",
+		"quote": "The goal of AIS CR is to professionally manage, make accessible, and permanently preserve data from archaeological field excavations from the territory of the Czech Republic and build a digital ecosystem for Czech archaeology.",
+		"feature1": "We cover <strong>archaeological data</strong> from the earliest excavations in the 19th century to currently ongoing research.",
+		"feature2": "We preserve physical and digital records and make them accessible through online tools, in context and without unnecessary barriers. We thus create a <strong>trustworthy digital repository</strong>.",
+		"feature3": "We digitally process <strong>documents collected since 1919</strong> and continuously oversee the quality of records and documentation of currently ongoing archaeological excavations.",
+		"feature4": "We improve record quality by linking related documents, supplementing missing older data, and building authority lists of <strong>archaeological excavations and sites</strong>.",
+		"feature5": "We follow the <strong>latest trends</strong> in digital data management (digital curation) and support the implementation of technological innovations.",
+		"feature6": "We bring <strong>standards</strong> based on internationally recognized FAIR principles and interdisciplinary <strong>research data management environments</strong> to the Czech archaeological community.",
+		"feature7": "We recognize the diversity of our <strong>user base</strong> – from professional and amateur communities through public administration to the general public – and adapt the form and focus of our tools accordingly.",
+		"feature8": "We strive for AIS CR data to be <strong>part of the linked web</strong>, i.e., standardized and technically compatible with other information systems, and to be discoverable internationally.",
+		"feature9": "We maintain an <strong>expert team</strong> that manages data, develops application tools, and develops the necessary digital skills of our users.",
+		"feature10": "We help understand the <strong>role of archaeology in society</strong> and purposefully strengthen the use of research results in practice.",
+		"whyTitle": "Why is AIS CR Irreplaceable?",
+		"whyQuote": "Unique and irreplaceable archaeological data deserve professional care – that's why AIS CR exists.",
+		"whyExplanation": "Most field archaeological excavations use destructive methods and usually take place at future construction sites. Without conducting the excavation, there would be a risk that relics of the past – remnants of settlements, burial grounds, and other manifestations of human activity in the past – would be irreversibly destroyed during construction. Only the finds and documentation obtained during archaeological excavations remain. Museums care for the finds. We care for the records and data.",
+		"whoTitle": "Who Creates AIS CR?",
+		"whoQuote": "We are an expert team with deep knowledge of the field – data is safe with AIS CR.",
+		"whoExplanation": "AIS CR is coordinated by the Institute of Archaeology of the CAS, Brno (ARÚB Archive, where datasets and archival fund for Moravia and Czech Silesia are managed) together with the Institute of Archaeology of the CAS, Prague (Department of Information Resources and Landscape Archaeology ARÚ with management for the territory of Bohemia).",
+		"executiveTitle": "Executive Board of AIS CR",
+		"executiveDescription": "Balanced partnership management of the project is ensured by the Executive Board of AIS CR, in which two members from each institution are represented.",
+		"advisoryTitle": "Scientific Advisory Board of AIS CR",
+		"advisoryDescription": "Professional advice in the field of research support, technical development, and user strategies is provided by the Scientific Advisory Board of AIS CR, composed of internationally recognized experts in archaeology, digital cultural heritage, and research infrastructures.",
+		"advisoryChairman": "chairman",
+		"fundingTitle": "Funding Sources",
+		"fundingIntro": "The main source of funding for AIS CR is support for large research infrastructures included in the <a href=\"#\" class=\"underline text-gray-900\">national roadmap</a>. This long-term funding is secured based on thorough international evaluation and is provided by the Ministry of Education, Youth and Sports in multi-year cycles since 2016 (projects: <strong>LM2015080, LM2018134, LM2023031</strong>).",
+		"fundingEu": "Investment costs of AIS CR are complementarily covered from EU structural funds in projects:",
+		"fundingProject1": "Archaeological Information System of the Czech Republic - second generation (OP VVV; <strong>EF16_013/0001439</strong>)",
+		"fundingProject2": "Archaeological Information System of the Czech Republic - renewal and expansion of hardware capacities (OP JAK; <strong>EH23_015/0008167</strong>)",
+		"fundingMore": "Other related projects and funding sources can be found <a href=\"#\" class=\"underline text-gray-900\">here</a>.",
+		"partnersTitle": "Partners and Data Providers",
+		"partnersIntro": "AIS CR actively cooperates with more than a hundred organizations authorized to conduct archaeological excavations in the Czech Republic. It has agreements with them on the submission of the <a href=\"#\" class=\"underline text-gray-900\">archaeological map of the Czech Republic</a> and also license agreements with most, enabling sharing of archival documents through the <a href=\"#\" class=\"underline text-gray-900\">Digital Archive AMČR</a>.",
+		"partnersImportant": "Other important contractual partners of AIS CR include:"
+	},
+	"terms": {
+		"title": "Terms of Use of AIS&nbsp;CR",
+		"intro": "<strong>AIS CR tools are available free of charge and openly to everyone, provided these basic conditions arising from the law are met</strong> (especially §32, paragraph 4, <a href=\"#\" class=\"underline text-gray-900\">Act No. 130/2002 Coll., on support for research and development</a>).",
+		"usageTitle": "Use of AIS CR in Outputs",
+		"usageImportance": "This information is essential for reporting the results of AIS CR infrastructure activities to funding providers.",
+		"obligation1Title": "Obligation to State in Output",
+		"obligation1Text": "Users are obliged to state in the usual manner the use of AIS CR infrastructure in their outputs, always with a specific reference to the data or tools used.",
+		"obligation2Title": "Obligation to State in RIV",
+		"obligation2Text": "When entering outputs into the Register of Information on Results (RIV), when using AIS CR, it is mandatory in the VVI field (Large Research Infrastructures) - infrastructure location of AIS CR, i.e., to select from the <a href=\"#\" class=\"underline text-gray-900\">Register of Large Research Infrastructures</a> the item \"AIS CR\" with the highest serial number marked with a Roman numeral (e.g., \"AIS CR III\").",
+		"obligation3Title": "Notification of Outputs",
+		"obligation3Text": "We will be very grateful if you inform us about the published output through this short form. This will significantly help us fulfill our reporting obligations.",
+		"openAccessTitle": "Open Access to Data",
+		"openAccessIntro": "Data made available in AIS CR tools are published in accordance with the open access policy to the maximum extent possible.",
+		"licenseTitle": "License",
+		"licenseText": "Unless otherwise stated, data and content of AIS CR websites are provided under the <a href=\"#\" class=\"underline text-gray-900 font-medium\">CC BY-NC 4.0</a> license (Creative Commons Attribution-NonCommercial 4.0 International).",
+		"licenseConditions": "This means they can be freely used provided:",
+		"licenseCondition1": "reference to the source is provided according to the recommended procedure;",
+		"licenseCondition2": "only for non-commercial purposes.",
+		"licenseExceptions": "Exceptions to this license include:",
+		"licenseException1": "materials that are in the public domain;",
+		"licenseException2": "cases that fall under exceptions or limitations of copyright law.",
+		"accessControlTitle": "Access Control",
+		"accessControlIntro": "Data openness is generally limited only by:",
+		"accessControlLimit1": "legal limits (e.g., copyright, personal data protection);",
+		"accessControlLimit2": "needs for protection of archaeological heritage in the landscape.",
+		"accessControlText": "For these reasons, access to some parts of AIS CR requires access through an <a href=\"#\" class=\"underline text-gray-900\">AMČR user account</a> with assignment of a <a href=\"#\" class=\"underline text-gray-900\">user role</a>."
+	},
+	"hello_world": "Hello, {name} from SvelteKit!"
 }

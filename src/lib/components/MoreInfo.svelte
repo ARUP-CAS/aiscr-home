@@ -1,257 +1,14 @@
 <script lang="ts">
 	// Rozbalovací sekce "Chcete vědět víc?"
 	import { ChevronDown } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
 	
-	const infoItems = [
-		{
-			id: 'amcr-map',
-			title: 'Archeologická mapa České republiky (AMČR)',
-			subtitle: 'Přehledný rozcestník nástrojů, popis jejich využití a další užitečné informace naleznete na webu AMČR',
-			content: `Archeologická mapa České republiky je komplexní informační systém, který slouží k evidenci, dokumentaci a prezentaci archeologických výzkumů a nálezů na území České republiky. Systém umožňuje archeologům, památkářům i široké veřejnosti přístup k aktuálním informacím o archeologických lokalitách, výzkumech a nálezech.
-
-Hlavní funkce AMČR:
-• Evidence archeologických výzkumů a akcí
-• Dokumentace archeologických nálezů a situací
-• Mapové zobrazení archeologických lokalit
-• Správa archeologické dokumentace
-• Podpora terénní práce archeologů
-• Přístup k archeologickým datům pro výzkumné účely
-
-Systém je neustále aktualizován a rozšiřován o nové funkce podle potřeb archeologické komunity.`
-		},
-		{
-			id: 'digital-archive',
-			title: 'Digitální archiv AMČR',
-			content: `Digitální archiv AMČR představuje rozsáhlé úložiště digitalizovaných archeologických dokumentů, fotografií, plánů a dalších materiálů souvisejících s archeologickými výzkumy v České republice.
-
-Obsah digitálního archivu:
-• Archeologické zprávy a dokumentace
-• Fotografie z archeologických výzkumů
-• Plány a kresby archeologických situací
-• Terénní deníky a záznamy
-• Katalogy nálezů
-• Historické archeologické dokumenty
-
-Archiv je průběžně doplňován o nové materiály a poskytuje výzkumníkům i veřejnosti jedinečný přístup k archeologickému dědictví České republiky.`
-		},
-		{
-			id: 'oao-map',
-			title: 'Mapa oprávněných archeologických organizací (Mapa OAO)',
-			content: `Mapa OAO poskytuje přehled oprávněných archeologických organizací v České republice, jejich působnosti a kontaktních údajů.
-
-Funkce mapy OAO:
-• Zobrazení územní působnosti archeologických organizací
-• Kontaktní údaje na jednotlivé organizace
-• Informace o specializaci organizací
-• Pomoc při hledání správné organizace pro konkrétní lokalitu
-• Aktuální přehled změn v oprávněních
-
-Mapa je důležitým nástrojem pro koordinaci archeologických aktivit na území České republiky.`
-		},
-		{
-			id: 'amcr-pas',
-			title: 'AMČR-PAS - Portál amatérských spolupracovníků a evidence samostatných nálezů',
-			content: `AMČR-PAS je specializovaná platforma určená pro evidenci archeologických nálezů objevených amatérskými spolupracovníky a detektorářskou komunitou.
-
-Hlavní funkce PAS:
-• Evidence samostatných archeologických nálezů
-• Spolupráce s amatérskými archeologickými spolupracovníky
-• Ověřování a validace hlášených nálezů
-• Vzdělávací materiály pro detektoráře
-• Koordinace mezi amatérskou a profesionální archeologickou komunitou
-• Ochrana archeologického dědictví prostřednictvím spolupráce
-
-Systém podporuje legální a zodpovědnou detektorářskou činnost v souladu s archeologickou legislativou.`
-		},
-		{
-			id: 'knihovna-3d',
-			title: 'Knihovna 3D',
-			content: `Knihovna 3D je inovativní platforma pro prezentaci a archivaci trojrozměrných modelů archeologických nálezů a lokalit.
-
-Obsah knihovny:
-• 3D modely archeologických artefaktů
-• Virtuální rekonstrukce archeologických situací
-• Interaktivní prohlížení nálezů
-• Měření a analýza 3D objektů
-• Vzdělávací 3D materiály
-• Virtuální výstavy archeologických nálezů
-
-Knihovna využívá nejmodernější technologie pro digitalizaci a prezentaci archeologického dědictví.`
-		},
-		{
-			id: 'amcr-api',
-			title: 'AMČR API',
-			content: `AMČR API poskytuje programový přístup k datům Archeologické mapy České republiky pro vývojáře a výzkumníky.
-
-Možnosti API:
-• Přístup k archeologickým datům ve strukturované podobě
-• Integrace s externími aplikacemi a systémy
-• Automatizované dotazy a analýzy
-• Real-time přístup k aktuálním datům
-• Podpora různých formátů dat (JSON, XML, GeoJSON)
-• Dokumentace a příklady použití
-
-API umožňuje vytváření specializovaných aplikací a analýz na základě archeologických dat.`
-		},
-		{
-			id: 'documentation',
-			title: 'Dokumentace AMČR',
-			content: `Komplexní dokumentace systému AMČR poskytuje podrobné informace o používání všech funkcí a nástrojů.
-
-Obsah dokumentace:
-• Uživatelské příručky pro jednotlivé moduly
-• Technická dokumentace pro správce systému
-• Návody pro začátečníky
-• Pokročilé funkce a tipy
-• FAQ - často kladené otázky
-• Video tutoriály a školící materiály
-• Kontakty na technickou podporu
-
-Dokumentace je pravidelně aktualizována podle vývoje systému a potřeb uživatelů.`
-		}
-	];
-	
-	const otherComponents = [
-		{
-			id: 'atlas',
-			title: 'Další součásti AIS CR',
-			subtitle: 'Prozkoumejte další nástroje a zdroje AIS CR',
-			content: `Archeologický atlas České republiky je specializovaný nástroj pro vizualizaci a prezentaci archeologických památek přímo v krajině.
-
-Hlavní funkce atlasu:
-• Mapové zobrazení archeologických památek
-• Turistické trasy k archeologickým lokalitám
-• Fotografie a rekonstrukce památek
-• Popis historických kontextů
-• Informace o přístupnosti lokalit
-• Vzdělávací a popularizační obsah
-
-Atlas propojuje archeologii s cestovním ruchem a zpřístupňuje archeologické dědictví široké veřejnosti.`
-		},
-		{
-			id: 'teater',
-			title: 'Tezaurus archeologické terminologie (TEATER)',
-			content: `TEATER je vícejazyčný slovník archeologické terminologie pro českou, anglickou a německou odbornou komunikaci.
-
-Obsah tezauru:
-• Standardizovaná archeologická terminologie
-• Vícejazyčné překlady odborných termínů
-• Hierarchická struktura pojmů
-• Definice a vysvětlení termínů
-• Vazby mezi souvisejícími pojmy
-• Podpora při katalogizaci a dokumentaci
-
-Tezaurus zajišťuje jednotnou terminologii v české archeologii a usnadňuje mezinárodní spolupráci.`
-		},
-		{
-			id: 'praha-arch',
-			title: 'Praha archeologická',
-			content: `Praha archeologická je specializovaný portál věnovaný archeologickému dědictví hlavního města České republiky.
-
-Obsah portálu:
-• Evidence archeologických výzkumů v Praze
-• Databáze archeologických nálezů z Prahy
-• Historie archeologického bádání v metropoli
-• Mapy archeologických lokalit
-• Virtuální prohlídky významných nálezů
-• Informace o pražských archeologických institucích
-
-Portál dokumentuje bohaté archeologické dědictví Prahy od pravěku po novověk.`
-		},
-		{
-			id: 'arch14cz',
-			title: 'Česká archeologická radiouhlíková databáze (Arch14CZ)',
-			content: `Arch14CZ shromažďuje a zpřístupňuje data radiouhlíkového datování z archeologických kontextů v České republice.
-
-Obsah databáze:
-• Radiouhlíková data z českých lokalit
-• Kalibrace a statistické zpracování dat
-• Vazba na archeologické kontexty
-• Chronologické modely
-• Nástroje pro analýzu 14C dat
-• Srovnání s evropskými databázemi
-
-Databáze přispívá k preciznímu datování archeologických situací a výzkumu pravěkého a středověkého osídlení.`
-		},
-		{
-			id: 'archeologie-online',
-			title: 'Archeologie online',
-			content: `Archeologie online je webový portál věnovaný popularizaci archeologie a prezentaci aktuálních archeologických objevů.
-
-Obsah portálu:
-• Aktuální zprávy z archeologických výzkumů
-• Články o významných objevech
-• Rozhovory s archeology
-• Popularizační texty o archeologii
-• Fotogalerie z výzkumů
-• Kalendář archeologických akcí
-
-Portál zpřístupňuje archeologické poznání široké veřejnosti srozumitelnou a atraktivní formou.`
-		},
-		{
-			id: 'thanados',
-			title: 'THANADOS',
-			content: `THANADOS je mezinárodní databázový systém pro evidenci a analýzu archeologických dat o pohřebních lokalitách.
-
-Funkce systému:
-• Evidence hrobových celků a pohřebišť
-• Antropologická data o pohřbených
-• Katalogizace hrobových příloh
-• Prostorová analýza pohřebišť
-• Statistické zpracování funerálních dat
-• Mezinárodní standardy popisu
-
-Systém umožňuje komplexní studium pohřebních zvyklostí napříč časem a prostorem.`
-		},
-		{
-			id: 'github',
-			title: 'Zdrojový kód nástrojů na GitHub',
-			content: `Repozitář na GitHubu poskytuje přístup ke zdrojovému kódu nástrojů a aplikací AIS CR.
-
-Obsah repozitáře:
-• Otevřený zdrojový kód aplikací
-• Dokumentace pro vývojáře
-• Issue tracking a správa chyb
-• Možnost přispívání komunitou
-• Verzování a historie změn
-• Licence open source
-
-Otevřený přístup podporuje transparentnost, spolupráci a další rozvoj systému.`
-		},
-		{
-			id: 'zenodo',
-			title: 'Dokumenty ke stažení na Zenodo',
-			content: `Zenodo archiv obsahuje publikace, datasety a dokumentaci související s AIS CR.
-
-Dostupné materiály:
-• Vědecké publikace o systému
-• Technická dokumentace
-• Uživatelské příručky
-• Datové sady pro výzkum
-• Prezentace a školící materiály
-• DOI identifikátory pro citovatelnost
-
-Archiv zajišťuje dlouhodobou dostupnost a citovatelnost výstupů projektu.`
-		},
-		{
-			id: 'other-tools',
-			title: 'Další pomůcky a aplikace',
-			content: `Kolekce dalších nástrojů a pomůcek pro archeologickou práci a výzkum.
-
-Dostupné nástroje:
-• Mobilní aplikace pro terénní práci
-• Formuláře a šablony dokumentace
-• Konverzní nástroje pro data
-• Pluginy pro GIS software
-• Skripty pro automatizaci
-• Návody a best practices
-
-Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokumentace.`
-		}
-	];
+	// Mapování ID na klíče v moreInfo.items
+	const infoItemIds = ['amcrMap', 'digitalArchive', 'oaoMap', 'amcrPas', 'library3d', 'amcrApi', 'documentation'];
+	const otherComponentIds = ['atlas', 'teater', 'prahaArch', 'arch14cz', 'archeologieOnline', 'thanados', 'github', 'zenodo', 'otherTools'];
 	
 	function toggleItem(itemId: string) {
 		if (expandedItems.has(itemId)) {
@@ -278,20 +35,20 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 		<!-- Header -->
 		<div class="mb-12">
 			<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
-				Chcete vědět víc?
+				{m['moreInfo.title']()}
 			</h2>
 			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
-				Součásti AIS CR přehledně
+				{m['moreInfo.subtitle']()}
 			</p>
 		</div>
 
 		<!-- Accordion Items -->
 		<div class="space-y-0">
-			{#each infoItems as item}
+			{#each infoItemIds as itemId, index}
 				<div style="border-bottom: 1px solid #000000;">
 					
 					<!-- Header with icon and title for first item -->
-					{#if item.id === 'amcr-map'}
+					{#if index === 0}
 						<div style="background-color: #FFFFFF; padding: 24px; border-bottom: 1px solid #000000;">
 							<div class="flex items-start space-x-4">
 								<div class="flex items-start justify-center flex-shrink-0">
@@ -312,10 +69,10 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 								</div>
 								<div class="flex-1">
 									<h3 class="text-lg font-semibold mb-2" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-										{item.title}
+										{m['moreInfo.amcrSectionTitle']()}
 									</h3>
 									<p class="text-sm" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-										{item.subtitle}
+										{m['moreInfo.amcrSectionSubtitle']()}
 									</p>
 								</div>
 							</div>
@@ -326,26 +83,26 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 					<button 
 						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
 						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem(item.id)}
+						onclick={() => toggleItem(itemId)}
 					>
 						<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
-							{item.title}
+							{(m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
 						<ChevronDown 
 							size="20" 
 							color="#666" 
-							class="transform transition-transform flex-shrink-0 {expandedItems.has(item.id) ? 'rotate-180' : ''}"
+							class="transform transition-transform flex-shrink-0 {expandedItems.has(itemId) ? 'rotate-180' : ''}"
 						/>
 					</button>
 					
 					<!-- Collapsible content -->
-					{#if expandedItems.has(item.id)}
+					{#if expandedItems.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
 							<div class="space-y-4">
-								{#each item.content.split('\n\n') as paragraph}
+								{#each (m as any)[`moreInfo.items.${itemId}.content`]().split('\n\n') as paragraph}
 									{#if paragraph.includes('•')}
 										<ul class="list-none space-y-2">
-											{#each paragraph.split('\n').filter(line => line.includes('•')) as listItem}
+											{#each paragraph.split('\n').filter((line: string) => line.includes('•')) as listItem}
 												<li class="flex items-start">
 													<span class="text-red-600 mr-2">•</span>
 													<span class="text-gray-700" style="font-family: 'Roboto', sans-serif;">
@@ -373,11 +130,11 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 
 		<!-- Second Accordion Items -->
 		<div class="space-y-0" style="margin-top: 80px;">
-			{#each otherComponents as item}
+			{#each otherComponentIds as itemId, index}
 				<div style="border-bottom: 1px solid #000000;">
 					
 					<!-- Header with icon and title for first item -->
-					{#if item.id === 'atlas'}
+					{#if index === 0}
 						<div style="background-color: #FFFFFF; padding: 24px; border-bottom: 1px solid #000000;">
 							<div class="flex items-center space-x-4">
 								<div class="flex items-center justify-center flex-shrink-0">
@@ -398,7 +155,7 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 								</div>
 								<div class="flex-1">
 									<h3 class="text-lg font-semibold" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-										{item.title}
+										{m['moreInfo.otherSectionTitle']()}
 									</h3>
 								</div>
 							</div>
@@ -409,26 +166,26 @@ Nástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokum
 					<button 
 						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
 						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem2(item.id)}
+						onclick={() => toggleItem2(itemId)}
 					>
 						<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
-							{item.id === 'atlas' ? item.subtitle : item.title}
+							{index === 0 ? m['moreInfo.otherSectionSubtitle']() : (m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
 						<ChevronDown 
 							size="20" 
 							color="#666" 
-							class="transform transition-transform flex-shrink-0 {expandedItems2.has(item.id) ? 'rotate-180' : ''}"
+							class="transform transition-transform flex-shrink-0 {expandedItems2.has(itemId) ? 'rotate-180' : ''}"
 						/>
 					</button>
 					
 					<!-- Collapsible content -->
-					{#if expandedItems2.has(item.id)}
+					{#if expandedItems2.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
 							<div class="space-y-4">
-								{#each item.content.split('\n\n') as paragraph}
+								{#each (m as any)[`moreInfo.items.${itemId}.content`]().split('\n\n') as paragraph}
 									{#if paragraph.includes('•')}
 										<ul class="list-none space-y-2">
-											{#each paragraph.split('\n').filter(line => line.includes('•')) as listItem}
+											{#each paragraph.split('\n').filter((line: string) => line.includes('•')) as listItem}
 												<li class="flex items-start">
 													<span class="text-red-600 mr-2">•</span>
 													<span class="text-gray-700" style="font-family: 'Roboto', sans-serif;">

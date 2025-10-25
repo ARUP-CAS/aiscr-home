@@ -1,4 +1,194 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from cs!"
+	"features": {
+		"openInfrastructure": {
+			"title": "Otevřená výzkumná infrastruktura",
+			"description": "<strong>Otevřená výzkumná infrastruktura</strong>, která slouží vědecké obci, studentstvu, orgánům památkové péče a veřejné správy i zvídavé veřejnosti."
+		},
+		"qualityScience": {
+			"title": "Kvalitní věda a výzkum",
+			"description": "Podporuje kvalitní <strong>vědu a výzkum</strong> – umožňuje vyhledávat, sdílet i analyzovat informace z archeologických výzkumů napříč časem i prostorem."
+		},
+		"archaeologicalData": {
+			"title": "Archeologická data",
+			"description": "Shromažďuje, integruje a dlouhodobě uchovává <strong>archeologická data</strong>, neopakovatelnou součást archeologického dědictví České republiky."
+		},
+		"title": "AIS CR nabízí jednotné a přehledné digitální prostředí pro archeologická data z České republiky"
+	},
+	"moreInfo": {
+		"otherSectionSubtitle": "Prozkoumejte další nástroje a zdroje AIS CR",
+		"items": {
+			"amcrMap": {
+				"title": "Archeologická mapa České republiky (AMČR)",
+				"content": "Archeologická mapa České republiky je komplexní informační systém, který slouží k evidenci, dokumentaci a prezentaci archeologických výzkumů a nálezů na území České republiky. Systém umožňuje archeologům, památkářům i široké veřejnosti přístup k aktuálním informacím o archeologických lokalitách, výzkumech a nálezech.\n\nHlavní funkce AMČR:\n• Evidence archeologických výzkumů a akcí\n• Dokumentace archeologických nálezů a situací\n• Mapové zobrazení archeologických lokalit\n• Správa archeologické dokumentace\n• Podpora terénní práce archeologů\n• Přístup k archeologickým datům pro výzkumné účely\n\nSystém je neustále aktualizován a rozšiřován o nové funkce podle potřeb archeologické komunity."
+			},
+			"digitalArchive": {
+				"title": "Digitální archiv AMČR",
+				"content": "Digitální archiv AMČR představuje rozsáhlé úložiště digitalizovaných archeologických dokumentů, fotografií, plánů a dalších materiálů souvisejících s archeologickými výzkumy v České republice.\n\nObsah digitálního archivu:\n• Archeologické zprávy a dokumentace\n• Fotografie z archeologických výzkumů\n• Plány a kresby archeologických situací\n• Terénní deníky a záznamy\n• Katalogy nálezů\n• Historické archeologické dokumenty\n\nArchiv je průběžně doplňován o nové materiály a poskytuje výzkumníkům i veřejnosti jedinečný přístup k archeologickému dědictví České republiky."
+			},
+			"oaoMap": {
+				"title": "Mapa oprávněných archeologických organizací (Mapa OAO)",
+				"content": "Mapa OAO poskytuje přehled oprávněných archeologických organizací v České republice, jejich působnosti a kontaktních údajů.\n\nFunkce mapy OAO:\n• Zobrazení územní působnosti archeologických organizací\n• Kontaktní údaje na jednotlivé organizace\n• Informace o specializaci organizací\n• Pomoc při hledání správné organizace pro konkrétní lokalitu\n• Aktuální přehled změn v oprávněních\n\nMapa je důležitým nástrojem pro koordinaci archeologických aktivit na území České republiky."
+			},
+			"amcrPas": {
+				"title": "AMČR-PAS - Portál amatérských spolupracovníků a evidence samostatných nálezů",
+				"content": "AMČR-PAS je specializovaná platforma určená pro evidenci archeologických nálezů objevených amatérskými spolupracovníky a detektorářskou komunitou.\n\nHlavní funkce PAS:\n• Evidence samostatných archeologických nálezů\n• Spolupráce s amatérskými archeologickými spolupracovníky\n• Ověřování a validace hlášených nálezů\n• Vzdělávací materiály pro detektoráře\n• Koordinace mezi amatérskou a profesionální archeologickou komunitou\n• Ochrana archeologického dědictví prostřednictvím spolupráce\n\nSystém podporuje legální a zodpovědnou detektorářskou činnost v souladu s archeologickou legislativou."
+			},
+			"library3d": {
+				"title": "Knihovna 3D",
+				"content": "Knihovna 3D je inovativní platforma pro prezentaci a archivaci trojrozměrných modelů archeologických nálezů a lokalit.\n\nObsah knihovny:\n• 3D modely archeologických artefaktů\n• Virtuální rekonstrukce archeologických situací\n• Interaktivní prohlížení nálezů\n• Měření a analýza 3D objektů\n• Vzdělávací 3D materiály\n• Virtuální výstavy archeologických nálezů\n\nKnihovna využívá nejmodernější technologie pro digitalizaci a prezentaci archeologického dědictví."
+			},
+			"amcrApi": {
+				"title": "AMČR API",
+				"content": "AMČR API poskytuje programový přístup k datům Archeologické mapy České republiky pro vývojáře a výzkumníky.\n\nMožnosti API:\n• Přístup k archeologickým datům ve strukturované podobě\n• Integrace s externími aplikacemi a systémy\n• Automatizované dotazy a analýzy\n• Real-time přístup k aktuálním datům\n• Podpora různých formátů dat (JSON, XML, GeoJSON)\n• Dokumentace a příklady použití\n\nAPI umožňuje vytváření specializovaných aplikací a analýz na základě archeologických dat."
+			},
+			"documentation": {
+				"title": "Dokumentace AMČR",
+				"content": "Komplexní dokumentace systému AMČR poskytuje podrobné informace o používání všech funkcí a nástrojů.\n\nObsah dokumentace:\n• Uživatelské příručky pro jednotlivé moduly\n• Technická dokumentace pro správce systému\n• Návody pro začátečníky\n• Pokročilé funkce a tipy\n• FAQ - často kladené otázky\n• Video tutoriály a školící materiály\n• Kontakty na technickou podporu\n\nDokumentace je pravidelně aktualizována podle vývoje systému a potřeb uživatelů."
+			},
+			"atlas": {
+				"title": "Archeologický atlas České republiky (Atlas)",
+				"subtitle": "Další součásti AIS CR",
+				"content": "Archeologický atlas České republiky je specializovaný nástroj pro vizualizaci a prezentaci archeologických památek přímo v krajině.\n\nHlavní funkce atlasu:\n• Mapové zobrazení archeologických památek\n• Turistické trasy k archeologickým lokalitám\n• Fotografie a rekonstrukce památek\n• Popis historických kontextů\n• Informace o přístupnosti lokalit\n• Vzdělávací a popularizační obsah\n\nAtlas propojuje archeologii s cestovním ruchem a zpřístupňuje archeologické dědictví široké veřejnosti."
+			},
+			"teater": {
+				"title": "Tezaurus archeologické terminologie (TEATER)",
+				"content": "TEATER je vícejazyčný slovník archeologické terminologie pro českou, anglickou a německou odbornou komunikaci.\n\nObsah tezauru:\n• Standardizovaná archeologická terminologie\n• Vícejazyčné překlady odborných termínů\n• Hierarchická struktura pojmů\n• Definice a vysvětlení termínů\n• Vazby mezi souvisejícími pojmy\n• Podpora při katalogizaci a dokumentaci\n\nTezaurus zajišťuje jednotnou terminologii v české archeologii a usnadňuje mezinárodní spolupráci."
+			},
+			"prahaArch": {
+				"title": "Praha archeologická",
+				"content": "Praha archeologická je specializovaný portál věnovaný archeologickému dědictví hlavního města České republiky.\n\nObsah portálu:\n• Evidence archeologických výzkumů v Praze\n• Databáze archeologických nálezů z Prahy\n• Historie archeologického bádání v metropoli\n• Mapy archeologických lokalit\n• Virtuální prohlídky významných nálezů\n• Informace o pražských archeologických institucích\n\nPortál dokumentuje bohaté archeologické dědictví Prahy od pravěku po novověk."
+			},
+			"arch14cz": {
+				"title": "Česká archeologická radiouhlíková databáze (Arch14CZ)",
+				"content": "Arch14CZ shromažďuje a zpřístupňuje data radiouhlíkového datování z archeologických kontextů v České republice.\n\nObsah databáze:\n• Radiouhlíková data z českých lokalit\n• Kalibrace a statistické zpracování dat\n• Vazba na archeologické kontexty\n• Chronologické modely\n• Nástroje pro analýzu 14C dat\n• Srovnání s evropskými databázemi\n\nDatabáze přispívá k preciznímu datování archeologických situací a výzkumu pravěkého a středověkého osídlení."
+			},
+			"archeologieOnline": {
+				"title": "Archeologie online",
+				"content": "Archeologie online je webový portál věnovaný popularizaci archeologie a prezentaci aktuálních archeologických objevů.\n\nObsah portálu:\n• Aktuální zprávy z archeologických výzkumů\n• Články o významných objevech\n• Rozhovory s archeology\n• Popularizační texty o archeologii\n• Fotogalerie z výzkumů\n• Kalendář archeologických akcí\n\nPortál zpřístupňuje archeologické poznání široké veřejnosti srozumitelnou a atraktivní formou."
+			},
+			"thanados": {
+				"title": "THANADOS",
+				"content": "THANADOS je mezinárodní databázový systém pro evidenci a analýzu archeologických dat o pohřebních lokalitách.\n\nFunkce systému:\n• Evidence hrobových celků a pohřebišť\n• Antropologická data o pohřbených\n• Katalogizace hrobových příloh\n• Prostorová analýza pohřebišť\n• Statistické zpracování funerálních dat\n• Mezinárodní standardy popisu\n\nSystém umožňuje komplexní studium pohřebních zvyklostí napříč časem a prostorem."
+			},
+			"github": {
+				"title": "Zdrojový kód nástrojů na GitHub",
+				"content": "Repozitář na GitHubu poskytuje přístup ke zdrojovému kódu nástrojů a aplikací AIS CR.\n\nObsah repozitáře:\n• Otevřený zdrojový kód aplikací\n• Dokumentace pro vývojáře\n• Issue tracking a správa chyb\n• Možnost přispívání komunitou\n• Verzování a historie změn\n• Licence open source\n\nOtevřený přístup podporuje transparentnost, spolupráci a další rozvoj systému."
+			},
+			"zenodo": {
+				"title": "Dokumenty ke stažení na Zenodo",
+				"content": "Zenodo archiv obsahuje publikace, datasety a dokumentaci související s AIS CR.\n\nDostupné materiály:\n• Vědecké publikace o systému\n• Technická dokumentace\n• Uživatelské příručky\n• Datové sady pro výzkum\n• Prezentace a školící materiály\n• DOI identifikátory pro citovatelnost\n\nArchiv zajišťuje dlouhodobou dostupnost a citovatelnost výstupů projektu."
+			},
+			"otherTools": {
+				"title": "Další pomůcky a aplikace",
+				"content": "Kolekce dalších nástrojů a pomůcek pro archeologickou práci a výzkum.\n\nDostupné nástroje:\n• Mobilní aplikace pro terénní práci\n• Formuláře a šablony dokumentace\n• Konverzní nástroje pro data\n• Pluginy pro GIS software\n• Skripty pro automatizaci\n• Návody a best practices\n\nNástroje usnadňují každodenní práci archeologů a zlepšují kvalitu dokumentace."
+			}
+		},
+		"title": "Chcete vědět víc?",
+		"subtitle": "Součásti AIS CR přehledně",
+		"amcrSectionTitle": "Archeologická mapa České republiky (AMČR)",
+		"amcrSectionSubtitle": "Přehledný rozcestník nástrojů, popis jejich využití a další užitečné informace naleznete na webu AMČR",
+		"otherSectionTitle": "Další součásti AIS CR"
+	},
+	"hello_world": "Ahoj, {name} ze SvelteKitu!",
+	"nav": {
+		"services": "Služby",
+		"blog": "Blog",
+		"faq": "Časté dotazy",
+		"terms": "Využití",
+		"about": "O nás",
+		"contact": "Kontakt",
+		"openMenu": "Otevřít menu"
+	},
+	"aria": {
+		"facebook": "Facebook",
+		"linkedin": "LinkedIn",
+		"youtube": "YouTube",
+		"bluesky": "Bluesky",
+		"github": "GitHub"
+	},
+	"hero": {
+		"title": "Archeologický informační<br>systém České republiky",
+		"subtitle": "Digitální brána do světa české archeologie",
+		"cta": "Vstupte do světa české archeologie"
+	},
+	"services": {
+		"sectionLabel": "Služby AIS CR",
+		"title": "Vše na jednom místě",
+		"subtitle": "Prozkoumejte širokou paletu digitálních nástrojů, které pro vás spravujeme.",
+		"amcr": {
+			"title": "Mapujte a objevujte s námi minulost",
+			"description": "Prozkoumejte Archeologickou mapu České republiky a její nástroje, které zajistí každodenní evidenci archeologických terénních výzkumů – krok za krokem. Nabízí virtuální badatelnu otevřenou všem, jednoduché cesty k plnění zákonných povinností veřejnosti i archeologické obce, ale také formální rámec pro spolupráci mezi amatérskou a odbornou komunitou.",
+			"cta": "Přejít na web AMČR"
+		},
+		"atlas": {
+			"title": "Vydejte se za archeology do krajiny",
+			"description": "Chybí vám archeolog nebo archeoložka, kteří by vás vzali do terénu? Nechte to na našem Archeologickém atlasu! Vydejte se za poznáním archeologických památek České republiky a objevuje je přímo v krajině.",
+			"cta": "Přejít do Archeologického atlasu ČR"
+		},
+		"praha": {
+			"title": "Poznávejte Prahu pod Prahou",
+			"description": "Zajímá vás, co se skrývá pod dlažbou hlavního města? Portál Praha archeologická vám to umožní zjistit. Zpřístupňuje archeologické památky z území Prahy, a to jak odborníkům a odbornicím, tak široké veřejnosti. Prozkoumejte skryté vrstvy pražské minulosti právě teď – online na našem portálu.",
+			"cta": "Přejít do Prahy archeologické"
+		},
+		"c14": {
+			"title": "Využijte 14C kalibrovaná data",
+			"description": "V České archeologické radiouhlíkové databázi průběžně shromažďujeme a aktualizujeme absolutní chronologická data z archeologických kontextů v ČR. Stáhněte si připravená data pro svůj výzkum nebo lépe pochopte výpovědní hodnotu svých dat s kalkulačkou rozložení 14C datování.",
+			"cta": "Přejít do ArCh14CZ"
+		},
+		"teater": {
+			"title": "Neztraťte se v pojmech",
+			"description": "Hledáte slovník, se kterým se spolehlivě zorientujete mezi českou, anglickou a německou archeologickou terminologií? Pomůže vám Tezaurus archeologické terminologie, všejačný online výkladový slovník! Umožní vám pochopit pojmy v jejich odborném kontextu, a to bez nutnosti chodit do knihovny.",
+			"cta": "Přejít do TEATERu"
+		}
+	},
+	"faq": {
+		"title": "Časté dotazy",
+		"q1": "Zajímají mě archeologické výzkumy. Kde o nich najdu informace?",
+		"a1": "Informace o archeologických výzkumech najdete v Archeologické mapě České republiky (AMČR). Systém obsahuje databázi všech evidovaných archeologických akcí, včetně jejich lokalizace, časového zařazení a základních výsledků. Můžete vyhledávat podle lokality, období nebo typu výzkumu.",
+		"q2": "Archeologie je mým koníčkem a chci amatérsky spolupracovat na archeologických výzkumech. Je to možné?",
+		"a2": "Ano, je to možné prostřednictvím systému AMČR-PAS (Portál amatérských spolupracovníků). Tento systém umožňuje registraci dobrovolníků, evidenci nálezů a koordinaci spolupráce mezi amatéry a profesionálními archeology. Je nutné dodržovat zákonné postupy a spolupracovat s oprávněnými archeologickými organizacemi.",
+		"q3": "Kde se v ČR nachází území s archeologickými nálezy?",
+		"a3": "Archeologické nálezy se nacházejí prakticky na celém území České republiky. Hustota nálezů se liší podle regionů a historického osídlení. Nejvíce nálezů je evidováno v oblastech s dlouhodobým kontinuálním osídlením, jako jsou úrodné nížiny a říční údolí. Přesné informace najdete v mapových aplikacích AMČR.",
+		"q4": "Na jakém území je vyžadován archeologický výzkum? A je vůbec povinný?",
+		"a4": "Archeologický výzkum je povinný podle zákona č. 20/1987 Sb. o státní památkové péči na územích s archeologickými nálezy při stavební činnosti. Povinnost se vztahuje na celé území ČR, přičemž intenzita výzkumu závisí na archeologickém potenciálu konkrétní lokality. Výzkum provádějí pouze oprávněné archeologické organizace.",
+		"q5": "Opravdu mám podle památkového zákona vždy povinnost podat oznámení o stavebním záměru či jiném terénním zásahu? Jaký je nejlepší způsob?",
+		"a5": "Ano, podle § 22 zákona č. 20/1987 Sb. je povinné oznámit stavební záměry a terénní zásahy příslušnému archeologickému ústavu. Nejjednodušší způsob je elektronické podání prostřednictvím portálu AMČR, kde najdete formuláře a návody. Oznámení je třeba podat minimálně 30 dnů před zahájením prací.",
+		"q6": "Plánuji stavbu a hledám instituci, která může provést archeologický výzkum. Jak mám postupovat?",
+		"a6": "Využijte Mapu oprávněných archeologických organizací (Mapa OAO), kde najdete přehled všech organizací oprávněných k provádění archeologických výzkumů v konkrétních regionech. Každá organizace má definovanou územní působnost a kontaktní údaje. Doporučujeme kontaktovat více organizací pro porovnání nabídek.",
+		"q7": "Mohu si prohlédnout archeologické nálezy z výzkumu online?",
+		"a7": "Ano, mnoho archeologických nálezů je dostupných online prostřednictvím Digitálního archivu AMČR a Knihovny 3D. Tyto platformy obsahují fotografické dokumentace, 3D modely vybraných artefaktů a detailní popisy nálezů. Přístup k některým materiálům může být omezen z důvodu ochrany kulturního dědictví.",
+		"q8": "Musím někde uvádět, že jsem při práci využil(a) AIS ČR?",
+		"a8": "Ano, při využití dat nebo nástrojů AIS ČR v publikacích, výzkumech nebo prezentacích je nutné uvést správnou citaci. Pomáhá to sledovat dopad systému a zajišťuje transparentnost výzkumu. Konkrétní citační formáty najdete v dokumentaci jednotlivých nástrojů.",
+		"q9": "Dají se archeologické lokality navštívit? A existuje nějaký výběr nebo mapa těch doporučených?",
+		"a9": "Některé archeologické lokality jsou veřejně přístupné, jiné jsou chráněné a návštěva je omezená. Doporučujeme využít Archeologický atlas, který obsahuje informace o veřejně přístupných lokalitách, včetně praktických informací o návštěvě. Vždy respektujte ochranná opatření a pokyny správců lokalit.",
+		"q10": "Kde se dozvím, co je v AIS ČR nového nebo co chystáte?",
+		"a10": "Aktuální informace o novinkách a plánovaných funkcích najdete na našem blogu, v newsletteru a na sociálních sítích. Pravidelně publikujeme články o nových funkcích, aktualizacích systémů a připravovaných projektech. Můžete se také přihlásit k odběru novinek.",
+		"moreQuestionsTitle": "Máte další otázky?",
+		"moreQuestionsSubtitle": "Nenašli jste, co jste hledali?<br>Ozvěte se – jsme tu pro vás.",
+		"contactText": "Napište nám na:",
+		"contactCz": "<strong>amcr@arup.cas.cz</strong> (podpora pro Čechy) nebo<br><strong>amcr@arub.cz</strong> (podpora pro Moravu a Slezsko)"
+	},
+	"footer": {
+		"title": "Kontakty",
+		"pragueOffice": "Archeologický ústav AV ČR, Praha, v. v. i.",
+		"responsiblePerson": "Odpovědná osoba:",
+		"brnoOffice": "Archeologický ústav AV ČR, Brno, v. v. i.",
+		"rorRegistered": "AIS CR je registrován v",
+		"copyright": "&copy; 2025 AIS CR",
+		"privacyPolicy": "Zásady ochrany osobních údajů",
+		"termsOfUse": "Podmínky užití",
+		"cookiePolicy": "Užívání cookies",
+		"designBy": "design by Milan Filip"
+	},
+	"blog": {
+		"title": "Blog AIS CR",
+		"subtitle": "Archeodata po lopatě – příspěvky o archeologii, datech a světě AIS CR.",
+		"description": "Blog AIS CR nabízí srozumitelný pohled na archeologická data, nástroje i dění v zákulisí. Pomáhá se zorientovat v zákoutích digitální archeologie, ukazuje tipy z praxe a odpovídá šířeji na otázky, na které jste se chtěli zeptat.",
+		"readTime": "čas čtení {time}",
+		"pageTitle": "Blog",
+		"pageDescription": "Nejnovější články a objevy z oblasti archeologie v České republice",
+		"readMore": "Číst celý článek",
+		"noArticles": "Zatím nejsou k dispozici žádné články."
+	}
 }
