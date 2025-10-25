@@ -4,6 +4,8 @@ excerpt: "Výzkum středověkého hradiště odhalil zajímavé informace o živ
 date: "2024-03-05"
 category: "Výzkum"
 published: true
+locale: "cs"
+slug: "stredoveke-hradiste"
 ---
 
 # Středověké hradiště u Prahy

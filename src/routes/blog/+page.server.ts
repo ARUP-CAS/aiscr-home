@@ -1,26 +1,34 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { getLocale } from '$lib/paraglide/runtime';
 
 export const load: PageServerLoad = async () => {
 	try {
-		// Načtení všech blog postů z routes/blog adresáře
-		const modules = import.meta.glob('/src/routes/blog/**/+page.svx', { eager: true });
+		const locale = getLocale();
 		
-		const posts = Object.entries(modules).map(([path, module]) => {
-			const pathParts = path.split('/');
-			const slug = pathParts[pathParts.length - 2]; // Získá název složky
-			const { metadata } = module as any;
-			
-			return {
-				slug,
-				title: metadata.title || 'Bez názvu',
-				excerpt: metadata.excerpt || '',
-				date: metadata.date || new Date().toISOString().split('T')[0],
-				category: metadata.category || '',
-				published: metadata.published !== false
-			};
-		}).filter(post => post.published)
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+		// Načtení všech blog postů z content/blog adresáře
+		const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+		
+		const posts = Object.entries(allModules)
+			.map(([path, module]) => {
+				const { metadata } = module as any;
+				const fileName = path.split('/').pop() || '';
+				
+				// Extrakce slug z názvu souboru (bez přípony .md nebo .cs.md/.en.md)
+				const slug = fileName.replace(/\.(cs|en)\.md$/, '').replace(/\.md$/, '');
+				
+				return {
+					slug,
+					title: metadata.title || 'Bez názvu',
+					excerpt: metadata.excerpt || '',
+					date: metadata.date || new Date().toISOString().split('T')[0],
+					category: metadata.category || '',
+					published: metadata.published !== false,
+					locale: metadata.locale || 'cs'
+				};
+			})
+			.filter(post => post.published && post.locale === locale)
+			.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 		return {
 			posts

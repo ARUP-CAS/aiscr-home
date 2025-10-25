@@ -3,46 +3,49 @@
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
-	const blogPosts = [
-		{
-			title: "Nové objevy z doby bronzové",
-			excerpt: "Během letošního archeologického výzkumu na Moravě došlo k několika významným objevům z období pozdní doby bronzové. Tyto nálezy přinášejí nové poznatky o životě našich předků...",
-			date: "2024-03-15",
-			slug: "nove-objevy-doba-bronzova",
-			category: "Objevy",
-			categoryColor: "bg-purple-600",
-			author: "Tom Pavlůn",
-			readTime: "5 minut",
-			image: "/images/blog/bronze-age.jpg"
-		},
-		{
-			title: "Digitalizace archeologických sbírek",
-			excerpt: "V rámci modernizace archeologických informačních systémů byl zahájen ambiciózní projekt digitalizace sbírek. Cílem je zpřístupnit široké veřejnosti i odborníkům tisíce archeologických nálezů...",
-			date: "2024-03-10",
-			slug: "digitalizace-sbirek",
-			category: "Technologie",
-			categoryColor: "bg-blue-600",
-			author: "Olga Lečbychová",
-			readTime: "4 minuty",
-			image: "/images/blog/digitalization.jpg"
-		},
-		{
-			title: "Středověké hradiště u Prahy",
-			excerpt: "Archeologický výzkum středověkého hradiště v blízkosti Prahy přinesl řadu zajímavých objevů, které osvětlují život v raném středověku...",
-			date: "2024-03-05",
-			slug: "stredoveke-hradiste",
-			category: "Výzkum",
-			categoryColor: "bg-green-600",
-			author: "David Novák",
-			readTime: "6 minut",
-			image: "/images/blog/medieval.jpg"
+	let blogPosts = $state<any[]>([]);
+	
+	onMount(async () => {
+		try {
+			const locale = getLocale();
+			const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+			
+			const posts = Object.entries(allModules)
+				.map(([path, module]) => {
+					const { metadata } = module as any;
+					const fileName = path.split('/').pop() || '';
+					const slug = fileName.replace(/\.(cs|en)\.md$/, '').replace(/\.md$/, '');
+					
+					return {
+						slug,
+						title: metadata.title || 'Bez názvu',
+						excerpt: metadata.excerpt || '',
+						date: metadata.date || new Date().toISOString().split('T')[0],
+						category: metadata.category || '',
+						published: metadata.published !== false,
+						locale: metadata.locale || 'cs',
+						categoryColor: metadata.category === 'Objevy' || metadata.category === 'Discoveries' ? 'bg-purple-600' : 
+									   metadata.category === 'Technologie' || metadata.category === 'Technology' ? 'bg-blue-600' : 'bg-green-600',
+						author: 'AIS CR Team',
+						readTime: locale === 'cs' ? '5 minut' : '5 minutes'
+					};
+				})
+				.filter(post => post.published && post.locale === locale)
+				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+				.slice(0, 3);
+			
+			blogPosts = posts;
+		} catch (err) {
+			console.error('Error loading blog posts:', err);
 		}
-	];
+	});
 
 	function formatDate(dateString: string) {
+		const locale = getLocale();
 		const date = new Date(dateString);
-		return date.toLocaleDateString('cs-CZ', {
+		return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'en-US', {
 			day: 'numeric',
 			month: 'long',
 			year: 'numeric'

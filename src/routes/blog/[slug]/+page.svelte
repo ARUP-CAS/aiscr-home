@@ -1,11 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	let { data }: { data: PageData } = $props();
 
 	function formatDate(dateString: string) {
+		const locale = getLocale();
 		const date = new Date(dateString);
-		return date.toLocaleDateString('cs-CZ', {
+		return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'en-US', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric'
@@ -27,7 +30,7 @@
 				<svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 				</svg>
-				Zpět na blog
+				{(m as any)['blog.backToBlog']()}
 			</a>
 		</nav>
 		

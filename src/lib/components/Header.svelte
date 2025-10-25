@@ -1,12 +1,20 @@
 <script lang="ts">
 	// Header komponenta pro navigaci
-	import { Menu, Facebook, Linkedin, Youtube, Github } from '@lucide/svelte';
+	import { Menu, Facebook, Linkedin, Youtube, Github, Globe } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
-	
+	import { setLocale, getLocale } from '$lib/paraglide/runtime';
+
 	let mobileMenuOpen = $state(false);
+	let currentLocale = $state(getLocale());
+	
+	function toggleLocale() {
+		const newLocale = currentLocale === 'cs' ? 'en' : 'cs';
+		setLocale(newLocale);
+		currentLocale = newLocale;
+	}
 </script>
 
-<header class="bg-black" style="height: 120px;">
+<header class="bg-black fixed top-0 left-0 right-0 z-50" style="height: 120px;">
 	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
 			<!-- Logo -->
@@ -26,8 +34,18 @@
 					<a href="#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
 				</nav>
 
+				<!-- Language switcher -->
+				<button 
+					onclick={toggleLocale}
+					class="flex items-center ml-8 mr-4 px-3 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded"
+					style="gap: 6px;"
+				>
+					<Globe size="16" />
+					<span class="text-sm font-medium uppercase">{currentLocale}</span>
+				</button>
+				
 				<!-- Sociální ikony -->
-				<div class="flex items-center ml-8" style="gap: 12px;">
+				<div class="flex items-center" style="gap: 12px;">
 					<a href="https://facebook.com" class="text-white hover:text-gray-300 transition-colors" aria-label={m['aria.facebook']()}>
 						<Facebook size="20" />
 					</a>
@@ -48,11 +66,20 @@
 				</div>
 			</div>
 
-			<!-- Mobile menu button -->
-			<div class="lg:hidden">
+			<!-- Mobile menu button and language switcher -->
+			<div class="lg:hidden flex items-center" style="gap: 12px;">
 				<button 
-					type="button" 
-					class="text-white hover:text-gray-300 transition-colors" 
+					onclick={toggleLocale}
+					class="flex items-center px-2 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded"
+					style="gap: 4px;"
+				>
+					<Globe size="16" />
+					<span class="text-xs font-medium uppercase">{currentLocale}</span>
+				</button>
+				
+				<button
+					type="button"
+					class="text-white hover:text-gray-300 transition-colors"
 					aria-label={m['nav.openMenu']()}
 					onclick={() => mobileMenuOpen = !mobileMenuOpen}
 				>
@@ -63,7 +90,7 @@
 
 		<!-- Mobile menu -->
 		{#if mobileMenuOpen}
-			<div class="lg:hidden border-t border-gray-800">
+			<div class="lg:hidden border-t border-gray-800 bg-black">
 				<div class="px-2 pt-2 pb-3 space-y-1">
 					<a href="#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.services']()}</a>
 					<a href="/blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.blog']()}</a>
