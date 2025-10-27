@@ -6,6 +6,11 @@ category: "Research"
 published: true
 locale: "en"
 slug: "stredoveke-hradiste"
+readingTime: "7 minutes"
+author: "David Novák"
+authorRole: "Chairman of the Board"
+authorImage: "/images/people/novak.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Medieval Hillfort - Research Results

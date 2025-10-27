@@ -4,6 +4,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 </script>
 
+<div class="about-section">
 <!-- Main About section -->
 <section class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
@@ -25,7 +26,7 @@
 				</p>
 				
 				<div style="margin-bottom: 24px;">
-					<img src="/about-image.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
+					<img src="/images/bg-about-info.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
 				</div>
 				
 				<!-- Quote -->
@@ -193,16 +194,16 @@
 						{m['about.whoExplanation']()}
 					</p>
 					
-					<div class="flex gap-8 items-center">
-						<img src="/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
-						<img src="/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
-					</div>
+				<div class="flex gap-8 items-center">
+					<img src="/images/logos/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
+					<img src="/images/logos/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
+				</div>
 				</div>
 			</div>
 			
 			<!-- Team photo -->
 		<div style="margin-top: 48px;">
-			<img src="/team.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
+			<img src="/images/people/ais-staff.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
 		</div>
 	</div>
 </section>
@@ -232,45 +233,45 @@
 
 			<!-- Executive Board Team members -->
 			<div class="flex justify-end" style="gap: 128px; padding-right: 64px;">
-				<div class="text-center">
-					<img src="/olga.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Olga Lečbychová
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						ARUB
-					</p>
-				</div>
+			<div class="text-center">
+				<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Olga Lečbychová
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					ARUB
+				</p>
+			</div>
 
-				<div class="text-center">
-					<img src="/david.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						David Novák
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						ARÚ
-					</p>
-				</div>
+			<div class="text-center">
+				<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					David Novák
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					ARÚ
+				</p>
+			</div>
 
-				<div class="text-center">
-					<img src="/petr.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Petr Pajdla
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						ARUB
-					</p>
-				</div>
+			<div class="text-center">
+				<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Petr Pajdla
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					ARUB
+				</p>
+			</div>
 
-				<div class="text-center">
-					<img src="/ondra.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Ondřej Švejcar
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						ARÚ
-					</p>
-				</div>
+			<div class="text-center">
+				<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Ondřej Švejcar
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					ARÚ
+				</p>
+			</div>
 			</div>
 	</div>
 </section>
@@ -301,65 +302,65 @@
 
 			<!-- Scientific Advisory Board members -->
 			<div class="flex justify-between gap-4">
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Stefan Eichert
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Naturhistorisches Museum Wien, {m['about.advisoryChairman']()}
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Stefan Eichert
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Naturhistorisches Museum Wien, {m['about.advisoryChairman']()}
+				</p>
+			</div>
 
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Cynthia Dunning Thierstein
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Archaeoconcept
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Cynthia Dunning Thierstein
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Archaeoconcept
+				</p>
+			</div>
 
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Johanna Hilpert
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Universität zu Köln, Philosophische Fakultät, Institut für Ur- und Frühgeschichte
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Johanna Hilpert
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Universität zu Köln, Philosophische Fakultät, Institut für Ur- und Frühgeschichte
+				</p>
+			</div>
 
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Axel G. Posluschny
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Keltenwell am Glauberg
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Axel G. Posluschny
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Keltenwell am Glauberg
+				</p>
+			</div>
 
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Pavel Straňák
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Pavel Straňák
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
+				</p>
+			</div>
 
-				<div class="text-center flex-1">
-					<div class="rounded-full mb-4 bg-gray-400 mx-auto" style="width: 80px; height: 80px;"></div>
-					<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-						Benjamin Štular
-					</h4>
-					<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-						Institute of Archaeology of the Slovenian Academy of Sciences and Arts
-					</p>
-				</div>
+			<div class="text-center flex-1">
+				<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+					Benjamin Štular
+				</h4>
+				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+					Institute of Archaeology of the Slovenian Academy of Sciences and Arts
+				</p>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -379,7 +380,7 @@
 						</h3>
 					</div>
 					
-					<img src="/finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
+					<img src="/images/bg-finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
 				</div>
 
 				<!-- Right column - Funding description -->
@@ -407,9 +408,9 @@
 						{@html m['about.fundingMore']()}
 					</p>
 					
-					<div style="margin-top: 24px;">
-						<img src="/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
-					</div>
+				<div style="margin-top: 24px;">
+					<img src="/images/logos/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
+				</div>
 				</div>
 			</div>
 	</div>
@@ -449,56 +450,70 @@
 			<!-- Partner logos grid -->
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
 				<div class="flex items-center justify-center">
-					<img src="/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/akademie-ved.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/av.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
 
 			<!-- Second row of partner logos -->
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
 				<div class="flex items-center justify-center">
-					<img src="/ntk.png" alt="NTK" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/narodni-technicka-knihovna.png" alt="NTK" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/itam.png" alt="ITAM" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/ustav-teoreticke-aplikovane-mechaniky.png" alt="ITAM" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/praha.png" alt="Praha" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/magistrat-prahy.png" alt="Praha" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/pernikari.png" alt="Pernikáři" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/pardubicky-kraj.png" alt="Pardubický kraj" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
+					<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+</div>
+
+<style>
+	.about-section {
+		background-image: url('/images/bg-about.png');
+		background-size: 1312px;
+		background-position: center top;
+		background-repeat: no-repeat;
+	}
+	
+	.about-section section {
+		opacity: 0.9;
+	}
+</style>

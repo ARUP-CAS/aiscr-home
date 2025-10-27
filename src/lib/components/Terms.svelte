@@ -24,7 +24,7 @@
 			
 			<!-- Right column - image -->
 			<div>
-				<img src="/terms-image.png" alt="Archeologické nálezy" style="width: 100%; height: auto;" />
+				<img src="/images/bg-terms.png" alt="Archeologické nálezy" style="width: 100%; height: auto;" />
 			</div>
 		</div>
 

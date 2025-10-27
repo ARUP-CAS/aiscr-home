@@ -6,6 +6,11 @@ category: "Technologie"
 published: true
 locale: "cs"
 slug: "digitalizace-sbirek"
+readingTime: "5 minut"
+author: "Tom Pavloň"
+authorRole: "Největší bedna, ARÚB"
+authorImage: "/images/people/ais-staff.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Digitalizace archeologických sbírek

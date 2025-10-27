@@ -6,6 +6,11 @@ category: "Technology"
 published: true
 locale: "en"
 slug: "digitalizace-sbirek"
+readingTime: "5 minutes"
+author: "Tom Pavloň"
+authorRole: "Head of Department, ARÚB"
+authorImage: "/images/people/ais-staff.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Digitization of Archaeological Collections

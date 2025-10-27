@@ -12,13 +12,9 @@ export const load: PageServerLoad = async () => {
 		const posts = Object.entries(allModules)
 			.map(([path, module]) => {
 				const { metadata } = module as any;
-				const fileName = path.split('/').pop() || '';
-				
-				// Extrakce slug z názvu souboru (bez přípony .md nebo .cs.md/.en.md)
-				const slug = fileName.replace(/\.(cs|en)\.md$/, '').replace(/\.md$/, '');
 				
 				return {
-					slug,
+					slug: metadata.slug,
 					title: metadata.title || 'Bez názvu',
 					excerpt: metadata.excerpt || '',
 					date: metadata.date || new Date().toISOString().split('T')[0],

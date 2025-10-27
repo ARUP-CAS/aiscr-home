@@ -6,6 +6,11 @@ category: "Discoveries"
 published: true
 locale: "en"
 slug: "nove-objevy-doba-bronzova"
+readingTime: "4 minutes"
+author: "Petr Pajdla"
+authorRole: "Executive Director, AIS CR"
+authorImage: "/images/people/pajdla.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # New Discoveries from the Bronze Age

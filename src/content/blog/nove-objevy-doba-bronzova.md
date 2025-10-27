@@ -6,6 +6,11 @@ category: "Objevy"
 published: true
 locale: "cs"
 slug: "nove-objevy-doba-bronzova"
+readingTime: "4 minuty"
+author: "Petr Pajdla"
+authorRole: "Výkonný ředitel AIS CR"
+authorImage: "/images/people/pajdla.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Nové objevy z doby bronzové
