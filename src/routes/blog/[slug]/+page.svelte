@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
@@ -30,11 +31,11 @@
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			<!-- Left Column (1/3) -->
 			<div class="lg:col-span-1">
-				<!-- Tlačítko zpět -->
-				<a href="/blog" class="inline-flex items-center text-black hover:text-gray-700 mb-6" style="font-family: 'Roboto', sans-serif; font-size: 16px;">
-					<ChevronLeft size="20" class="mr-2" />
-					{m['blog.backToBlog']()}
-				</a>
+			<!-- Tlačítko zpět -->
+			<a href={resolve("/blog")} class="inline-flex items-center text-black hover:text-gray-700 mb-6" style="font-family: 'Roboto', sans-serif; font-size: 16px;">
+				<ChevronLeft size="20" class="mr-2" />
+				{m['blog.backToBlog']()}
+			</a>
 				
 				<!-- Badge a čas čtení -->
 				<div class="flex items-center gap-3 mb-6">

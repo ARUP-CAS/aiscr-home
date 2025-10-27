@@ -1,10 +1,42 @@
 <script lang="ts">
 	// O nás sekce
+	import { resolve } from '$app/paths';
 	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	
+	// Import images
+	import bgAbout from '/images/bg-about.png';
+	import bgAboutInfo from '/images/bg-about-info.png';
+	import logoArub from '/images/logos/logo-arub.png';
+	import logoAru from '/images/logos/logo-aru.png';
+	import aisStaff from '/images/people/ais-staff.png';
+	import lecbychova from '/images/people/lecbychova.png';
+	import novak from '/images/people/novak.png';
+	import pajdla from '/images/people/pajdla.png';
+	import svejcar from '/images/people/svejcar.png';
+	import eichert from '/images/people/eichert.png';
+	import dunning from '/images/people/dunning.png';
+	import hilpert from '/images/people/hilpert.png';
+	import posluschny from '/images/people/posluschny.png';
+	import stranak from '/images/people/stranak.png';
+	import stular from '/images/people/stular.png';
+	import bgFinance from '/images/bg-finance.png';
+	import euMsmt from '/images/logos/eu-msmt.png';
+	import ministerstvoKultury from '/images/partners/ministerstvo-kultury.png';
+	import av from '/images/partners/av.png';
+	import ariadne from '/images/partners/ariadne.png';
+	import lindat from '/images/partners/lindat.png';
+	import npu from '/images/partners/npu.png';
+	import carare from '/images/partners/carare.png';
+	import ntk from '/images/partners/narodni-technicka-knihovna.png';
+	import botanickyUstav from '/images/partners/botanicky-ustav.png';
+	import itam from '/images/partners/ustav-teoreticke-aplikovane-mechaniky.png';
+	import magistratPrahy from '/images/partners/magistrat-prahy.png';
+	import pardubickyKraj from '/images/partners/pardubicky-kraj.png';
+	import axiell from '/images/partners/axiell.png';
 </script>
 
-<div class="about-section">
+<div class="about-section" style="background-image: url({bgAbout});">
 <!-- Main About section -->
 <section id="about" class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
@@ -25,9 +57,9 @@
 				{@html m['about.intro']()}
 			</p>
 				
-				<div style="margin-bottom: 24px;">
-					<img src="/images/bg-about-info.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
-				</div>
+			<div style="margin-bottom: 24px;">
+				<img src={bgAboutInfo} alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
+			</div>
 				
 				<!-- Quote -->
 				<div class="border-l-4 p-6" style="border-color: #802376;">
@@ -194,17 +226,17 @@
 					{@html m['about.whoExplanation']()}
 				</p>
 					
-				<div class="flex gap-8 items-center">
-					<img src="/images/logos/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
-					<img src="/images/logos/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
-				</div>
+			<div class="flex gap-8 items-center">
+				<img src={logoArub} alt="ARÚB" style="max-height: 60px; width: auto;" />
+				<img src={logoAru} alt="ARÚ" style="max-height: 60px; width: auto;" />
+			</div>
 				</div>
 			</div>
 			
-			<!-- Team photo -->
-		<div style="margin-top: 48px;">
-			<img src="/images/people/ais-staff.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
-		</div>
+		<!-- Team photo -->
+	<div style="margin-top: 48px;">
+		<img src={aisStaff} alt="Tým AIS CR" style="width: 100%; height: auto;" />
+	</div>
 	</div>
 </section>
 
@@ -234,7 +266,7 @@
 			<!-- Executive Board Team members -->
 			<div class="flex justify-end" style="gap: 128px; padding-right: 64px;">
 			<div class="text-center">
-				<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<img src={lecbychova} alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Olga Lečbychová
 				</h4>
@@ -244,7 +276,7 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<img src={novak} alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					David Novák
 				</h4>
@@ -254,7 +286,7 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<img src={pajdla} alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Petr Pajdla
 				</h4>
@@ -264,7 +296,7 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<img src={svejcar} alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Ondřej Švejcar
 				</h4>
@@ -303,7 +335,7 @@
 			<!-- Scientific Advisory Board members -->
 			<div class="flex justify-between gap-4">
 			<div class="text-center flex-1">
-				<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={eichert} alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Stefan Eichert
 				</h4>
@@ -313,7 +345,7 @@
 			</div>
 
 			<div class="text-center flex-1">
-				<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={dunning} alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Cynthia Dunning Thierstein
 				</h4>
@@ -323,7 +355,7 @@
 			</div>
 
 			<div class="text-center flex-1">
-				<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={hilpert} alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Johanna Hilpert
 				</h4>
@@ -333,7 +365,7 @@
 			</div>
 
 			<div class="text-center flex-1">
-				<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={posluschny} alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Axel G. Posluschny
 				</h4>
@@ -343,7 +375,7 @@
 			</div>
 
 			<div class="text-center flex-1">
-				<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={stranak} alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Pavel Straňák
 				</h4>
@@ -353,7 +385,7 @@
 			</div>
 
 			<div class="text-center flex-1">
-				<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+				<img src={stular} alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
 					Benjamin Štular
 				</h4>
@@ -380,7 +412,7 @@
 						</h3>
 					</div>
 					
-					<img src="/images/bg-finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
+					<img src={bgFinance} alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
 				</div>
 
 				<!-- Right column - Funding description -->
@@ -409,7 +441,7 @@
 					</p>
 					
 				<div style="margin-top: 24px;">
-					<img src="/images/logos/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
+					<img src={euMsmt} alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
 				</div>
 				</div>
 			</div>
@@ -450,54 +482,54 @@
 			<!-- Partner logos grid -->
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
+					<img src={ministerstvoKultury} alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/av.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
+					<img src={av} alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
+					<img src={ariadne} alt="ARIADNE" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
+					<img src={lindat} alt="LINDAT" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+					<img src={npu} alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
+					<img src={carare} alt="CARARE" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
 
 			<!-- Second row of partner logos -->
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/narodni-technicka-knihovna.png" alt="NTK" style="max-height: 80px; width: auto;" />
+					<img src={ntk} alt="NTK" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+					<img src={botanickyUstav} alt="Botanický ústav" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/ustav-teoreticke-aplikovane-mechaniky.png" alt="ITAM" style="max-height: 80px; width: auto;" />
+					<img src={itam} alt="ITAM" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/magistrat-prahy.png" alt="Praha" style="max-height: 80px; width: auto;" />
+					<img src={magistratPrahy} alt="Praha" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/pardubicky-kraj.png" alt="Pardubický kraj" style="max-height: 80px; width: auto;" />
+					<img src={pardubickyKraj} alt="Pardubický kraj" style="max-height: 80px; width: auto;" />
 				</div>
 
 				<div class="flex items-center justify-center">
-					<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
+					<img src={axiell} alt="Axiell" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
 		</div>
@@ -507,12 +539,11 @@
 
 <style>
 	.about-section {
-		background-image: url('/images/bg-about.png');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
 	}
-	
+
 	.about-section section {
 		opacity: 0.9;
 	}

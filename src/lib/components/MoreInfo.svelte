@@ -3,6 +3,9 @@
 	import { ChevronDown } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	
+	// Import background image
+	import bgMoreInfo from '/images/bg-more-info.png';
+	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
 	
@@ -29,7 +32,7 @@
 	}
 </script>
 
-<section class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; padding-top: 34px; padding-bottom: 80px;">
+<section class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; background-image: url({bgMoreInfo}); padding-top: 34px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header -->
@@ -215,7 +218,6 @@
 
 <style>
 	.more-info-section {
-		background-image: url('/images/bg-more-info.png');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

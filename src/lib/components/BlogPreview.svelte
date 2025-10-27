@@ -6,6 +6,9 @@
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
 	
+	// Import background image
+	import bgBlog from '/images/bg-blog.png';
+	
 	let blogPosts = $state<any[]>([]);
 	
 	onMount(async () => {
@@ -111,7 +114,7 @@
 	}
 </script>
 
-<section class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
+<section class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; background-image: url({bgBlog}); padding-top: 112px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -208,7 +211,6 @@
 
 <style>
 	.blog-section {
-		background-image: url('/images/bg-blog.png');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

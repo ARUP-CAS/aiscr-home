@@ -1,10 +1,22 @@
 <script lang="ts">
 	// Footer komponenta
+	import { resolve } from '$app/paths';
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	
+	// Import logos
+	import rorLogo from '/images/logos/ror-logo_BW.png';
+	import aisCrBlack from '/images/logos/ais-cr-black.png';
+	import logoArub from '/images/logos/logo-arub.png';
+	import logoAru from '/images/logos/logo-aru.png';
+	import akademieVedBlack from '/images/logos/akademie-ved-black.png';
+	import infraBlack from '/images/logos/infra-black.png';
+	
+	// Import background image
+	import bgFooter from '/images/bg-footer.png';
 </script>
 
-<footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb;">
+<footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb; --bg-footer-image: url({bgFooter});">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Main content -->
@@ -104,18 +116,18 @@
 		<div class="mb-12">
 			<div class="text-sm text-black border-t border-dashed border-gray-400 pt-8 flex items-center" style="font-family: 'Roboto', sans-serif;">
 				<span>{m['footer.rorRegistered']()} <a href="https://ror.org/01a7rqj69" class="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">https://ror.org/01a7rqj69</a></span>
-				<img src="/images/logos/ror-logo_BW.png" alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
+				<img src={rorLogo} alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
 			</div>
 		</div>
 
 		<!-- Partner logos -->
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
-				<img src="/images/logos/ais-cr-black.png" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/logo-arub.png" alt="ARUB" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/logo-aru.png" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/akademie-ved-black.png" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/infra-black.png" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+			<img src={aisCrBlack} alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+			<img src={logoArub} alt="ARUB" style="max-height: 48px; width: auto;" />
+			<img src={logoAru} alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+			<img src={akademieVedBlack} alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+			<img src={infraBlack} alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
 			</div>
 		</div>
 
@@ -127,8 +139,8 @@
 				<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
 					<span>{@html m['footer.copyright']()}</span>
 					<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
-					<a href="#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
-					<a href="#cookie-policy" class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</a>
+				<a href={`${resolve("/")}#terms`} class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
+				<a href={`${resolve("/")}#cookie-policy`} class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</a>
 					<span>{m['footer.designBy']()}</span>
 				</div>
 
@@ -161,7 +173,7 @@
 	.footer-section {
 		position: relative;
 	}
-	
+
 	.footer-section::before {
 		content: '';
 		position: absolute;
@@ -169,7 +181,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: url('/images/bg-footer.png');
+		background-image: var(--bg-footer-image);
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -177,7 +189,7 @@
 		pointer-events: none;
 		z-index: 0;
 	}
-	
+
 	.footer-section > div {
 		position: relative;
 		z-index: 1;

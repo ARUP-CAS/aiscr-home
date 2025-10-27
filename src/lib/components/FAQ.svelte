@@ -3,6 +3,9 @@
 	import { BadgeHelp, ChevronDown, MessageSquarePlus } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	
+	// Import background image
+	import bgFaq from '/images/bg-faq.png';
+	
 	let expandedItems = $state(new Set());
 	
 	const faqItems = [
@@ -28,7 +31,7 @@
 	}
 </script>
 
-<section id="faq" class="faq-section" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF; padding-top: 128px; padding-bottom: 80px;">
+<section id="faq" class="faq-section" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF; background-image: url({bgFaq}); padding-top: 128px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -96,7 +99,6 @@
 
 <style>
 	.faq-section {
-		background-image: url('/images/bg-faq.png');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
