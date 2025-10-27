@@ -6,7 +6,7 @@
 
 <div class="about-section">
 <!-- Main About section -->
-<section class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
+<section id="about" class="py-20 bg-gray-200" style="font-family: 'Roboto', sans-serif;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -500,6 +500,50 @@
 					<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={ariadneLogo} alt="ARIADNE" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={lindatLogo} alt="LINDAT" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={npuLogo} alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={carareLogo} alt="CARARE" style="max-height: 80px; width: auto;" />
+			</div>
+		</div>
+
+		<!-- Second row of partner logos -->
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
+			<div class="flex items-center justify-center">
+				<img src={ntkLogo} alt="NTK" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={botanickyUstavLogo} alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={itamLogo} alt="ITAM" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={prahaLogo} alt="Praha" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={pernikariLogo} alt="Pernikáři" style="max-height: 80px; width: auto;" />
+			</div>
+
+			<div class="flex items-center justify-center">
+				<img src={axiellLogo} alt="Axiell" style="max-height: 80px; width: auto;" />
+			</div>
+		</div>
 		</div>
 	</div>
 </section>
