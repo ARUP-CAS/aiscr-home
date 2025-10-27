@@ -3,46 +3,53 @@
 	import { resolve } from '$app/paths';
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
+	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
-	const blogPosts = [
-		{
-			title: "Nové objevy z doby bronzové",
-			excerpt: "Během letošního archeologického výzkumu na Moravě došlo k několika významným objevům z období pozdní doby bronzové. Tyto nálezy přinášejí nové poznatky o životě našich předků...",
-			date: "2024-03-15",
-			slug: "nove-objevy-doba-bronzova",
-			category: "Objevy",
-			categoryColor: "bg-purple-600",
-			author: "Tom Pavlůn",
-			readTime: "5 minut",
-			image: "/images/blog/bronze-age.jpg"
-		},
-		{
-			title: "Digitalizace archeologických sbírek",
-			excerpt: "V rámci modernizace archeologických informačních systémů byl zahájen ambiciózní projekt digitalizace sbírek. Cílem je zpřístupnit široké veřejnosti i odborníkům tisíce archeologických nálezů...",
-			date: "2024-03-10",
-			slug: "digitalizace-sbirek",
-			category: "Technologie",
-			categoryColor: "bg-blue-600",
-			author: "Olga Lečbychová",
-			readTime: "4 minuty",
-			image: "/images/blog/digitalization.jpg"
-		},
-		{
-			title: "Středověké hradiště u Prahy",
-			excerpt: "Archeologický výzkum středověkého hradiště v blízkosti Prahy přinesl řadu zajímavých objevů, které osvětlují život v raném středověku...",
-			date: "2024-03-05",
-			slug: "stredoveke-hradiste",
-			category: "Výzkum",
-			categoryColor: "bg-green-600",
-			author: "David Novák",
-			readTime: "6 minut",
-			image: "/images/blog/medieval.jpg"
+	// Import background image
+	import bgBlog from '/images/bg-blog.png';
+	
+	let blogPosts = $state<any[]>([]);
+	
+	onMount(async () => {
+		try {
+			const locale = getLocale();
+			const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+			
+			const posts = Object.entries(allModules)
+				.map(([path, module]) => {
+					const { metadata } = module as any;
+					const fileName = path.split('/').pop() || '';
+					const slug = fileName.replace(/\.(cs|en)\.md$/, '').replace(/\.md$/, '');
+					
+					return {
+						slug,
+						title: metadata.title || 'Bez názvu',
+						excerpt: metadata.excerpt || '',
+						date: metadata.date || new Date().toISOString().split('T')[0],
+						category: metadata.category || '',
+						published: metadata.published !== false,
+						locale: metadata.locale || 'cs',
+						categoryColor: metadata.category === 'Objevy' || metadata.category === 'Discoveries' ? 'bg-purple-600' : 
+									   metadata.category === 'Technologie' || metadata.category === 'Technology' ? 'bg-blue-600' : 'bg-green-600',
+						author: 'AIS CR Team',
+						readTime: locale === 'cs' ? '5 minut' : '5 minutes'
+					};
+				})
+				.filter(post => post.published && post.locale === locale)
+				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+				.slice(0, 3);
+			
+			blogPosts = posts;
+		} catch (err) {
+			console.error('Error loading blog posts:', err);
 		}
-	];
+	});
 
 	function formatDate(dateString: string) {
+		const locale = getLocale();
 		const date = new Date(dateString);
-		return date.toLocaleDateString('cs-CZ', {
+		return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'en-US', {
 			day: 'numeric',
 			month: 'long',
 			year: 'numeric'
@@ -107,7 +114,7 @@
 	}
 </script>
 
-<section style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
+<section class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; background-image: url({bgBlog}); padding-top: 112px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -116,13 +123,13 @@
 				<Shovel size="63" color="#721C17" />
 			</div>
 			<h2 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #721C17; font-size: 48px;">
-				Blog AIS CR
+				{m['blog.title']()}
 			</h2>
 			<p class="text-lg mb-2" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-				Archeodata po lopatě – příspěvky o archeologii, datech a světě AIS CR.
+				{m['blog.subtitle']()}
 			</p>
 			<p class="text-base text-gray-700 max-w-4xl mx-auto leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-				Blog AIS CR nabízí srozumitelný pohled na archeologická data, nástroje i dění v zákulisí. Pomáhá se zorientovat v zákoutích digitální archeologie, ukazuje tipy z praxe a odpovídá šířeji na otázky, na které jste se chtěli zeptat.
+				{m['blog.description']()}
 			</p>
 		</div>
 
@@ -170,7 +177,7 @@
 									<div class="text-gray-500 flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
 										<span>•</span>
-										<span>čas čtení {post.readTime}</span>
+										<span>{m['blog.readTime']({ time: post.readTime })}</span>
 									</div>
 								</div>
 							</div>
@@ -203,6 +210,12 @@
 </section>
 
 <style>
+	.blog-section {
+		background-size: 1312px;
+		background-position: center top;
+		background-repeat: no-repeat;
+	}
+	
 	.scrollbar-hide {
 		-ms-overflow-style: none;
 		scrollbar-width: none;

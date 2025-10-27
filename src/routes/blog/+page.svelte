@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
+	import { m } from '$lib/paraglide/messages.js';
 	
 	let { data }: { data: PageData } = $props();
 
@@ -15,16 +16,16 @@
 </script>
 
 <svelte:head>
-	<title>Blog - AISCR</title>
-	<meta name="description" content="Nejnovější články a objevy z oblasti archeologie v České republice" />
+	<title>{m['blog.pageTitle']()} - AISCR</title>
+	<meta name="description" content={m['blog.pageDescription']()} />
 </svelte:head>
 
 <div class="mb-12">
 	<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-		Blog
+		{m['blog.pageTitle']()}
 	</h1>
 	<p class="text-xl text-gray-600">
-		Nejnovější články, objevy a novinky z oblasti archeologie v České republice
+		{m['blog.pageDescription']()}
 	</p>
 </div>
 
@@ -41,18 +42,18 @@
 					{/if}
 				</div>
 				
-			<h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
-				<a href={resolve(`/blog/${post.slug}`)}>{post.title}</a>
-			</h2>
-			
-			{#if post.excerpt}
-				<p class="text-gray-600 leading-relaxed mb-6">
-					{post.excerpt}
-				</p>
-			{/if}
-			
-			<a href={resolve(`/blog/${post.slug}`)} class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
-					Číst celý článek
+				<h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
+					<a href="/blog/{post.slug}">{post.title}</a>
+				</h2>
+				
+				{#if post.excerpt}
+					<p class="text-gray-600 leading-relaxed mb-6">
+						{post.excerpt}
+					</p>
+				{/if}
+				
+				<a href="/blog/{post.slug}" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+					{m['blog.readMore']()}
 					<svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 					</svg>
@@ -64,6 +65,6 @@
 
 {#if data.posts.length === 0}
 	<div class="text-center py-12">
-		<p class="text-gray-500 text-lg">Zatím nejsou k dispozici žádné články.</p>
+		<p class="text-gray-500 text-lg">{m['blog.noArticles']()}</p>
 	</div>
 {/if}

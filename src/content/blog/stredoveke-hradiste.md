@@ -4,6 +4,13 @@ excerpt: "Výzkum středověkého hradiště odhalil zajímavé informace o živ
 date: "2024-03-05"
 category: "Výzkum"
 published: true
+locale: "cs"
+slug: "stredoveke-hradiste"
+readingTime: "7 minut"
+author: "David Novák"
+authorRole: "Předseda představenstva"
+authorImage: "/images/people/novak.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Středověké hradiště u Prahy

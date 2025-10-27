@@ -4,6 +4,13 @@ excerpt: "Nový projekt digitalizace přináší online přístup k tisícům ar
 date: "2024-03-10"
 category: "Technologie"
 published: true
+locale: "cs"
+slug: "digitalizace-sbirek"
+readingTime: "5 minut"
+author: "Tom Pavloň"
+authorRole: "Největší bedna, ARÚB"
+authorImage: "/images/people/ais-staff.png"
+image: "/images/blog/placeholder.png"
 ---
 
 # Digitalizace archeologických sbírek
