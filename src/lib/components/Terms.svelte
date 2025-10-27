@@ -2,9 +2,16 @@
 	// Podmínky využití AIS CR
 	import { ShieldCheck, ClipboardPenLine, ListTodo, BellDot, CreativeCommons, UserLock } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import image
 	import bgTerms from '/images/bg-terms.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 </script>
 
 <section id="terms" class="py-20 bg-gray-100" style="font-family: 'Roboto', sans-serif;">

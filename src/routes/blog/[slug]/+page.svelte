@@ -6,9 +6,15 @@
 	import { ChevronLeft, Facebook, Linkedin, Link, Twitter } from '@lucide/svelte';
 	
 	let { data }: { data: PageData } = $props();
+	let currentLocale = $state(getLocale());
+	
+	// Aktualizovat locale při změně
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 
 	function formatDate(dateString: string) {
-		const locale = getLocale();
+		const locale = currentLocale;
 		const date = new Date(dateString);
 		return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'en-US', {
 			year: 'numeric',

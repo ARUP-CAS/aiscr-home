@@ -2,9 +2,16 @@
 	// FAQ sekce - Časté dotazy
 	import { BadgeHelp, ChevronDown, MessageSquarePlus } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import background image
 	import bgFaq from '/images/bg-faq.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 	
 	let expandedItems = $state(new Set());
 	

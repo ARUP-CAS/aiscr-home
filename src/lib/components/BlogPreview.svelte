@@ -10,10 +10,17 @@
 	import bgBlog from '/images/bg-blog.png';
 	
 	let blogPosts = $state<any[]>([]);
+	let currentLocale = $state(getLocale());
 	
-	onMount(async () => {
+	// Reaktivní načítání blogů při změně jazyka
+	$effect(() => {
+		currentLocale = getLocale();
+		loadBlogPosts();
+	});
+	
+	async function loadBlogPosts() {
 		try {
-			const locale = getLocale();
+			const locale = currentLocale;
 			const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
 			
 			const posts = Object.entries(allModules)
@@ -44,10 +51,10 @@
 		} catch (err) {
 			console.error('Error loading blog posts:', err);
 		}
-	});
+	}
 
 	function formatDate(dateString: string) {
-		const locale = getLocale();
+		const locale = currentLocale;
 		const date = new Date(dateString);
 		return date.toLocaleDateString(locale === 'cs' ? 'cs-CZ' : 'en-US', {
 			day: 'numeric',

@@ -2,6 +2,7 @@
 	// Služby AIS CR - bento grid layout
 	import { Flag, Church, Atom, BookOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import logo
 	import amcrPin from '/images/logos/amcr-pin.svg';
@@ -12,6 +13,12 @@
 	import bgServicePrague from '/images/bg-service-prague.png';
 	import bgServiceC14 from '/images/bg-service-c14.png';
 	import bgServiceTeater from '/images/bg-service-teater.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 </script>
 
 <section id="services" class="bg-gray-100" style="font-family: 'Roboto', sans-serif; padding: 128px 0 80px 0;">

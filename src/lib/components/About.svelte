@@ -3,6 +3,13 @@
 	import { resolve } from '$app/paths';
 	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 	
 	// Import images
 	import bgAbout from '/images/bg-about.png';

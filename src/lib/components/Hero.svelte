@@ -3,10 +3,17 @@
 	import { resolve } from '$app/paths';
 	import { ChevronRight } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import background images
 	import bgHero from '/images/bg-hero.jpg';
 	import bgHeroRight from '/images/bg-hero-right.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 </script>
 
 <section class="hero-section flex items-center" style="font-family: 'Roboto', sans-serif; min-height: 780px; background-image: url({bgHero}); --bg-hero-right-image: url({bgHeroRight});">
@@ -14,18 +21,18 @@
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto; position: relative; z-index: 10;">
 		<!-- Blok omezený na 800px zarovnaný doleva -->
 		<div style="max-width: 800px;">
-			<h1 class="mb-6" style="font-family: 'Roboto Slab', serif; font-size: 56px; color: #C6362E; font-weight: 700; line-height: 1.2;">
-				{@html m['hero.title']()}
-			</h1>
-			
-			<p style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #000000; line-height: 1.4; font-weight: bold; margin-bottom: 96px;">
-				{m['hero.subtitle']()}
-			</p>
-			
-		<a href={`${resolve("/")}#services`} class="inline-flex items-center bg-white text-black px-6 py-3 hover:bg-gray-100 transition-colors" style="font-family: 'Roboto', sans-serif; font-size: 16px; border: 1px solid #000000;">
-			<span class="mr-3">{m['hero.cta']()}</span>
-			<ChevronRight size="16" color="#000000" />
-		</a>
+		<h1 class="mb-6" style="font-family: 'Roboto Slab', serif; font-size: 56px; color: #C6362E; font-weight: 700; line-height: 1.2;">
+			{#key currentLocale}{@html m['hero.title']()}{/key}
+		</h1>
+		
+		<p style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #000000; line-height: 1.4; font-weight: bold; margin-bottom: 96px;">
+			{#key currentLocale}{m['hero.subtitle']()}{/key}
+		</p>
+		
+	<a href={`${resolve("/")}#services`} class="inline-flex items-center bg-white text-black px-6 py-3 hover:bg-gray-100 transition-colors" style="font-family: 'Roboto', sans-serif; font-size: 16px; border: 1px solid #000000;">
+		<span class="mr-3">{#key currentLocale}{m['hero.cta']()}{/key}</span>
+		<ChevronRight size="16" color="#000000" />
+	</a>
 		</div>
 	</div>
 </section>
