@@ -29,12 +29,12 @@
 			<div class="hidden lg:flex items-center">
 			<!-- Navigační menu -->
 			<nav class="flex items-center" style="gap: 32px;">
-				<a href={`${resolve("/")}#services`} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
-				<a href={resolve("/blog")} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
-				<a href={`${resolve("/")}#faq`} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
-				<a href={`${resolve("/")}#terms`} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
-				<a href={`${resolve("/")}#about`} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
-				<a href={`${resolve("/")}#contact`} class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
+				<a href="/#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
+				<a href="/blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
+				<a href="/#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
+				<a href="/#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
+				<a href="/#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
+				<a href="/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
 			</nav>
 
 				<!-- Language switcher -->

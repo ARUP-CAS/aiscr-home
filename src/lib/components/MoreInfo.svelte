@@ -2,9 +2,16 @@
 	// Rozbalovací sekce "Chcete vědět víc?"
 	import { ChevronDown } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import background image
 	import bgMoreInfo from '/images/bg-more-info.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
@@ -35,15 +42,15 @@
 <section class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; background-image: url({bgMoreInfo}); padding-top: 34px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
-		<!-- Header -->
-		<div class="mb-12">
-			<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
-				{m['moreInfo.title']()}
-			</h2>
-			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
-				{m['moreInfo.subtitle']()}
-			</p>
-		</div>
+	<!-- Header -->
+	<div class="mb-12">
+		<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
+			{#key currentLocale}{m['moreInfo.title']()}{/key}
+		</h2>
+		<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
+			{#key currentLocale}{m['moreInfo.subtitle']()}{/key}
+		</p>
+	</div>
 
 		<!-- Accordion Items -->
 		<div class="space-y-0">

@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	// Import logos
 	import rorLogo from '/images/logos/ror-logo_BW.png';
@@ -14,6 +15,12 @@
 	
 	// Import background image
 	import bgFooter from '/images/bg-footer.png';
+	
+	// Sledovat změnu jazyka pro reaktivní aktualizaci
+	let currentLocale = $state(getLocale());
+	$effect(() => {
+		currentLocale = getLocale();
+	});
 </script>
 
 <footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb; --bg-footer-image: url({bgFooter});">
