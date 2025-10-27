@@ -65,7 +65,7 @@
 					{#if expandedItems.has(item.id)}
 					<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
 						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-							{(m as any)[`faq.${item.answerKey}`]()}
+							{@html (m as any)[`faq.${item.answerKey}`]()}
 						</p>
 					</div>
 					{/if}

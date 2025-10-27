@@ -46,12 +46,12 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<ClipboardPenLine size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-							<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
-								{m['terms.obligation1Title']()}
-							</h4>
-							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
-								{m['terms.obligation1Text']()}
-							</p>
+						<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+							{m['terms.obligation1Title']()}
+						</h4>
+						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							{@html m['terms.obligation1Text']()}
+						</p>
 						</div>
 					</div>
 
@@ -72,12 +72,12 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<BellDot size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-							<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
-								{m['terms.obligation3Title']()}
-							</h4>
-							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
-								{m['terms.obligation3Text']()}
-							</p>
+						<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+							{m['terms.obligation3Title']()}
+						</h4>
+						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							{@html m['terms.obligation3Text']()}
+						</p>
 						</div>
 					</div>
 				</div>
@@ -89,9 +89,9 @@
 					{m['terms.openAccessTitle']()}
 				</h3>
 				
-				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
-					{m['terms.openAccessIntro']()}
-				</p>
+			<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
+				{@html m['terms.openAccessIntro']()}
+			</p>
 				
 				<div class="space-y-12">
 					<!-- Licence -->
@@ -107,17 +107,17 @@
 							<p class="text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
 								{m['terms.licenseConditions']()}
 							</p>
-							<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
-								<li>• {m['terms.licenseCondition1']()}</li>
-								<li>• {m['terms.licenseCondition2']()}</li>
-							</ul>
+						<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
+							<li>• {@html m['terms.licenseCondition1']()}</li>
+							<li>• {@html m['terms.licenseCondition2']()}</li>
+						</ul>
 							<p class="text-sm text-gray-600 mt-4" style="font-family: 'Roboto', sans-serif;">
 								{m['terms.licenseExceptions']()}
 							</p>
-							<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
-								<li>• {m['terms.licenseException1']()}</li>
-								<li>• {m['terms.licenseException2']()}</li>
-							</ul>
+						<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
+							<li>• {@html m['terms.licenseException1']()}</li>
+							<li>• {@html m['terms.licenseException2']()}</li>
+						</ul>
 						</div>
 					</div>
 

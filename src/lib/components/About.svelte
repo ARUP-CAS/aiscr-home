@@ -21,9 +21,9 @@
 					</h2>
 				</div>
 				
-				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
-					{m['about.intro']()}
-				</p>
+			<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
+				{@html m['about.intro']()}
+			</p>
 				
 				<div style="margin-bottom: 24px;">
 					<img src="/images/bg-about-info.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
@@ -189,10 +189,10 @@
 				</div>
 
 				<!-- Right column - Team description -->
-				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
-						{m['about.whoExplanation']()}
-					</p>
+			<div>
+				<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
+					{@html m['about.whoExplanation']()}
+				</p>
 					
 				<div class="flex gap-8 items-center">
 					<img src="/images/logos/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
@@ -500,50 +500,6 @@
 					<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
 				</div>
 			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={ariadneLogo} alt="ARIADNE" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={lindatLogo} alt="LINDAT" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={npuLogo} alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={carareLogo} alt="CARARE" style="max-height: 80px; width: auto;" />
-			</div>
-		</div>
-
-		<!-- Second row of partner logos -->
-		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
-			<div class="flex items-center justify-center">
-				<img src={ntkLogo} alt="NTK" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={botanickyUstavLogo} alt="Botanický ústav" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={itamLogo} alt="ITAM" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={prahaLogo} alt="Praha" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={pernikariLogo} alt="Pernikáři" style="max-height: 80px; width: auto;" />
-			</div>
-
-			<div class="flex items-center justify-center">
-				<img src={axiellLogo} alt="Axiell" style="max-height: 80px; width: auto;" />
-			</div>
-		</div>
 		</div>
 	</div>
 </section>

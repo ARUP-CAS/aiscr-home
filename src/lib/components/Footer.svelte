@@ -128,7 +128,7 @@
 					<span>{@html m['footer.copyright']()}</span>
 					<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
 					<a href="#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
-					<a href="#" class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</a>
+					<a href="#cookie-policy" class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</a>
 					<span>{m['footer.designBy']()}</span>
 				</div>
 
