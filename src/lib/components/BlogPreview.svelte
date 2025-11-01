@@ -29,8 +29,11 @@
 						locale: metadata.locale || 'cs',
 						categoryColor: metadata.category === 'Objevy' || metadata.category === 'Discoveries' ? 'bg-purple-600' : 
 									   metadata.category === 'Technologie' || metadata.category === 'Technology' ? 'bg-blue-600' : 'bg-green-600',
-						author: 'AIS CR Team',
-						readTime: locale === 'cs' ? '5 minut' : '5 minutes'
+						author: metadata.author || 'AIS CR Team',
+						authorRole: metadata.authorRole || '',
+						authorImage: metadata.authorImage || '',
+						image: metadata.image || '/images/blog/placeholder.png',
+						readTime: metadata.readingTime || (locale === 'cs' ? '5 minut' : '5 minutes')
 					};
 				})
 				.filter(post => post.published && post.locale === locale)
@@ -111,7 +114,7 @@
 	}
 </script>
 
-<section class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
+<section id="blog" class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -141,9 +144,9 @@
 			>
 				{#each blogPosts as post}
 					<article class="flex-none bg-white shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col" style="scroll-snap-align: start; width: 390px; height: 629px; padding: 24px;">
-						<!-- Image placeholder -->
-						<div class="bg-gray-300 flex items-center justify-center" style="height: 300px; width: 100%;">
-							<div class="w-16 h-16 bg-gray-400 rounded"></div>
+						<!-- Image -->
+						<div class="overflow-hidden" style="height: 300px; width: 100%;">
+							<img src={post.image} alt={post.title} class="w-full h-full object-cover" />
 						</div>
 						
 						<div class="flex flex-col flex-1" style="margin-top: 24px;">
@@ -168,13 +171,17 @@
 							
 							<!-- Author and meta info - always at bottom -->
 							<div class="flex items-start space-x-3 mt-auto" style="font-family: 'Roboto', sans-serif;">
-								<div class="bg-gray-400 rounded-full flex-shrink-0" style="width: 48px; height: 48px;"></div>
+								{#if post.authorImage}
+									<img src={post.authorImage} alt={post.author} class="rounded-full flex-shrink-0 object-cover" style="width: 48px; height: 48px;" />
+								{:else}
+									<div class="bg-gray-400 rounded-full flex-shrink-0" style="width: 48px; height: 48px;"></div>
+								{/if}
 								<div class="flex-1 flex flex-col justify-between" style="height: 48px;">
 									<div class="font-bold text-gray-900" style="font-size: 14px;">{post.author}</div>
 									<div class="text-gray-500 flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
 										<span>•</span>
-										<span>{m['blog.readTime']({ time: post.readTime })}</span>
+										<span>{post.readTime}</span>
 									</div>
 								</div>
 							</div>
@@ -212,6 +219,13 @@
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
+	}
+	
+	/* Schovat pozadí na mobilech */
+	@media (max-width: 768px) {
+		.blog-section {
+			background-image: none;
+		}
 	}
 	
 	.scrollbar-hide {

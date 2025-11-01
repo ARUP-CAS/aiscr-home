@@ -194,7 +194,7 @@
 					{@html m['about.whoExplanation']()}
 				</p>
 					
-				<div class="flex gap-8 items-center">
+				<div class="flex flex-col sm:flex-row gap-8 items-center sm:items-center">
 					<img src="/images/logos/logo-arub.png" alt="ARÚB" style="max-height: 60px; width: auto;" />
 					<img src="/images/logos/logo-aru.png" alt="ARÚ" style="max-height: 60px; width: auto;" />
 				</div>
@@ -226,17 +226,21 @@
 				<!-- Right column - Description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						{m['about.executiveDescription']()}
+						{@html m['about.executiveDescription']()}
 					</p>
 				</div>
 			</div>
 
 			<!-- Executive Board Team members -->
-			<div class="flex justify-end" style="gap: 128px; padding-right: 64px;">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 lg:gap-32 justify-items-center">
 			<div class="text-center">
-				<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Olga Lečbychová
+					<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Olga Lečbychová
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					ARUB
@@ -244,9 +248,13 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					David Novák
+					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						David Novák
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					ARÚ
@@ -254,9 +262,13 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Petr Pajdla
+					<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Petr Pajdla
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					ARUB
@@ -264,9 +276,13 @@
 			</div>
 
 			<div class="text-center">
-				<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover" style="width: 80px; height: 80px;" />
+				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Ondřej Švejcar
+					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Ondřej Švejcar
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					ARÚ
@@ -295,67 +311,91 @@
 				<!-- Right column - Description -->
 				<div>
 					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-						{m['about.advisoryDescription']()}
+						{@html m['about.advisoryDescription']()}
 					</p>
 				</div>
 			</div>
 
 			<!-- Scientific Advisory Board members -->
-			<div class="flex justify-between gap-4">
-			<div class="text-center flex-1">
-				<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4">
+			<div class="text-center">
+				<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Stefan Eichert
+					<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Stefan Eichert
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Naturhistorisches Museum Wien, {m['about.advisoryChairman']()}
 				</p>
 			</div>
 
-			<div class="text-center flex-1">
-				<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Cynthia Dunning Thierstein
+					<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Cynthia Dunning Thierstein
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Archaeoconcept
 				</p>
 			</div>
 
-			<div class="text-center flex-1">
-				<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Johanna Hilpert
+					<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Johanna Hilpert
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Universität zu Köln, Philosophische Fakultät, Institut für Ur- und Frühgeschichte
 				</p>
 			</div>
 
-			<div class="text-center flex-1">
-				<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Axel G. Posluschny
+					<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Axel G. Posluschny
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Keltenwell am Glauberg
 				</p>
 			</div>
 
-			<div class="text-center flex-1">
-				<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Pavel Straňák
+					<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Pavel Straňák
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
 				</p>
 			</div>
 
-			<div class="text-center flex-1">
-				<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto" style="width: 80px; height: 80px;" />
+			<div class="text-center">
+				<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer">
+					<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				</a>
 				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
-					Benjamin Štular
+					<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+						Benjamin Štular
+					</a>
 				</h4>
 				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
 					Institute of Archaeology of the Slovenian Academy of Sciences and Arts

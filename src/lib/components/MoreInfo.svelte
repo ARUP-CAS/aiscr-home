@@ -72,7 +72,7 @@
 										{m['moreInfo.amcrSectionTitle']()}
 									</h3>
 									<p class="text-sm" style="font-family: 'Roboto', sans-serif; color: #721C17;">
-										{m['moreInfo.amcrSectionSubtitle']()}
+										{@html m['moreInfo.amcrSectionSubtitle']()}
 									</p>
 								</div>
 							</div>
@@ -98,30 +98,9 @@
 					<!-- Collapsible content -->
 					{#if expandedItems.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<div class="space-y-4">
-								{#each (m as any)[`moreInfo.items.${itemId}.content`]().split('\n\n') as paragraph}
-									{#if paragraph.includes('•')}
-										<ul class="list-none space-y-2">
-											{#each paragraph.split('\n').filter((line: string) => line.includes('•')) as listItem}
-												<li class="flex items-start">
-													<span class="text-red-600 mr-2">•</span>
-													<span class="text-gray-700" style="font-family: 'Roboto', sans-serif;">
-														{listItem.replace('•', '').trim()}
-													</span>
-												</li>
-											{/each}
-										</ul>
-									{:else if paragraph.trim() && !paragraph.includes(':')}
-										<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-											{paragraph.trim()}
-										</p>
-									{:else if paragraph.includes(':')}
-										<h4 class="font-semibold text-gray-900 mt-4 mb-2" style="font-family: 'Roboto', sans-serif;">
-											{paragraph.trim()}
-										</h4>
-									{/if}
-								{/each}
-							</div>
+							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
+							</p>
 						</div>
 					{/if}
 				</div>
@@ -181,30 +160,9 @@
 					<!-- Collapsible content -->
 					{#if expandedItems2.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<div class="space-y-4">
-								{#each (m as any)[`moreInfo.items.${itemId}.content`]().split('\n\n') as paragraph}
-									{#if paragraph.includes('•')}
-										<ul class="list-none space-y-2">
-											{#each paragraph.split('\n').filter((line: string) => line.includes('•')) as listItem}
-												<li class="flex items-start">
-													<span class="text-red-600 mr-2">•</span>
-													<span class="text-gray-700" style="font-family: 'Roboto', sans-serif;">
-														{listItem.replace('•', '').trim()}
-													</span>
-												</li>
-											{/each}
-										</ul>
-									{:else if paragraph.trim() && !paragraph.includes(':')}
-										<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
-											{paragraph.trim()}
-										</p>
-									{:else if paragraph.includes(':')}
-										<h4 class="font-semibold text-gray-900 mt-4 mb-2" style="font-family: 'Roboto', sans-serif;">
-											{paragraph.trim()}
-										</h4>
-									{/if}
-								{/each}
-							</div>
+							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
+							</p>
 						</div>
 					{/if}
 				</div>
@@ -219,5 +177,12 @@
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
+	}
+	
+	/* Schovat pozadí na mobilech */
+	@media (max-width: 768px) {
+		.more-info-section {
+			background-image: none;
+		}
 	}
 </style>

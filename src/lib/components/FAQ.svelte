@@ -48,7 +48,7 @@
 					<!-- Collapsible header -->
 					<button 
 						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
+						style="padding: 24px; background-color: rgba(255, 255, 255, 0.9); cursor: pointer;"
 						onclick={() => toggleItem(item.id)}
 					>
 					<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
@@ -63,7 +63,7 @@
 					
 					<!-- Collapsible content -->
 					{#if expandedItems.has(item.id)}
-					<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
+					<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.9);">
 						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html (m as any)[`faq.${item.answerKey}`]()}
 						</p>
@@ -100,5 +100,12 @@
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
+	}
+	
+	/* Schovat pozadí na mobilech */
+	@media (max-width: 768px) {
+		.faq-section {
+			background-image: none;
+		}
 	}
 </style>

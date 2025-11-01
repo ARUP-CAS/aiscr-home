@@ -14,7 +14,7 @@
 				<div class="flex items-start mb-6">
 					<ShieldCheck size="63" color="#D97706" class="mr-4 mt-1" />
 					<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #D97706; font-size: 48px;">
-						{m['terms.title']()}
+						{@html m['terms.title']()}
 					</h2>
 				</div>
 				<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif;">
@@ -38,7 +38,7 @@
 				</h3>
 				
 				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
-					{m['terms.usageImportance']()}
+					{@html m['terms.usageImportance']()}
 				</p>
 				
 				<div class="space-y-12">
@@ -104,17 +104,17 @@
 							<p class="text-gray-700 leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{@html m['terms.licenseText']()}
 							</p>
-							<p class="text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
+							<p class="text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{m['terms.licenseConditions']()}
 							</p>
-						<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
+						<ul class="mt-2 space-y-1 text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							<li>• {@html m['terms.licenseCondition1']()}</li>
 							<li>• {@html m['terms.licenseCondition2']()}</li>
 						</ul>
-							<p class="text-sm text-gray-600 mt-4" style="font-family: 'Roboto', sans-serif;">
+							<p class="text-gray-700 mt-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{m['terms.licenseExceptions']()}
 							</p>
-						<ul class="mt-2 space-y-1 text-sm text-gray-600" style="font-family: 'Roboto', sans-serif;">
+						<ul class="mt-2 space-y-1 text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							<li>• {@html m['terms.licenseException1']()}</li>
 							<li>• {@html m['terms.licenseException2']()}</li>
 						</ul>
