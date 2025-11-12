@@ -1,38 +1,152 @@
-# sv
+# AIS CR - Archeologický informační systém České republiky
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Oficiální webová prezentace Archeologického informačního systému České republiky.
 
-## Creating a project
+## 📚 Dokumentace
 
-If you're seeing this, you've probably already done this step. Congrats!
+**Pro detailní informace o architektuře a principech vývoje viz [ARCHITECTURE.md](./ARCHITECTURE.md)**
 
-```sh
-# create a new project in the current directory
-npx sv create
+Dokumentace obsahuje:
+- Technologický stack a architektura
+- Svelte 5 runes a best practices
+- Styling s Tailwind CSS 4.0
+- Internacionalizace (i18n)
+- Struktura projektu a konvence
 
-# create a new project in my-app
-npx sv create my-app
-```
+## 🚀 Quick Start
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+### Instalace závislostí
 
 ```sh
-npm run build
+pnpm install
 ```
 
-You can preview the production build with `npm run preview`.
+### Vývoj
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Spuštění vývojového serveru:
+
+```sh
+pnpm dev
+
+# nebo otevřít v prohlížeči
+pnpm dev -- --open
+```
+
+Aplikace běží na `http://localhost:5173`
+
+### Build
+
+Vytvoření production verze:
+
+```sh
+pnpm build
+```
+
+Náhled production buildu:
+
+```sh
+pnpm preview
+```
+
+### Type-checking
+
+```sh
+pnpm check
+
+# nebo s watch mode
+pnpm check:watch
+```
+
+### Linting a formátování
+
+```sh
+pnpm lint      # Zkontrolovat code style
+pnpm format    # Formátovat všechny soubory
+```
+
+## 🛠️ Technologie
+
+- **SvelteKit 2.x** - Full-stack framework
+- **Svelte 5** - UI framework s runes API
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS 4.0** - Utility-first CSS
+- **Paraglide JS** - i18n (cs/en)
+- **MDSvex** - Markdown support
+- **Vite 7** - Build tool
+
+## 📁 Struktura projektu
+
+```
+src/
+├── lib/
+│   └── components/    # Svelte komponenty
+├── routes/            # SvelteKit routing
+├── content/           # Markdown obsah
+└── app.css            # Globální styly
+
+static/
+└── images/            # Statické obrázky
+
+messages/
+├── cs.json            # České překlady
+└── en.json            # Anglické překlady
+```
+
+## 🌍 Vícejazyčnost
+
+Aplikace podporuje češtinu (cs) a angličtinu (en).
+
+Překlady jsou spravovány pomocí [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs) a uloženy v `messages/`.
+
+## 📝 Přidání blog článku
+
+1. Vytvořte markdown soubor v `src/content/blog/`:
+   - `nazev-clanku.md` (česká verze)
+   - `nazev-clanku.en.md` (anglická verze)
+
+2. Přidejte frontmatter metadata:
+
+```markdown
+---
+slug: nazev-clanku
+title: Název článku
+excerpt: Krátký popis...
+date: 2024-01-15
+category: Technologie
+published: true
+locale: cs
+author: Jméno Autora
+authorRole: Pozice
+authorImage: /images/people/autor.png
+image: /images/blog/obrazek.png
+readingTime: 5 minut
+---
+
+# Obsah článku
+```
+
+3. Článek se automaticky objeví na webu po rebuildu.
+
+## 🚢 Deployment
+
+Aplikace je postavena jako statický web a může být nasazena na:
+- Netlify
+- Vercel
+- GitHub Pages
+- Cloudflare Pages
+- AWS S3 + CloudFront
+- Jakýkoliv statický hosting
+
+Build vytvoří statické soubory ve složce `build/`.
+
+## 📄 Licence
+
+Viz [LICENSE](./LICENSE) soubor.
+
+## 👥 Autoři
+
+Archeologický ústav AV ČR, Praha a Brno
+
+---
+
+**Pro více informací o vývoji viz [ARCHITECTURE.md](./ARCHITECTURE.md)**
