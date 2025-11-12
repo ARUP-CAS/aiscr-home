@@ -2,6 +2,7 @@
 	// FAQ sekce - Časté dotazy
 	import { BadgeHelp, ChevronDown, MessageSquarePlus } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	let expandedItems = $state(new Set());
 	
@@ -34,8 +35,8 @@
 		<!-- Header with icon -->
 		<div class="mb-12">
 			<div class="flex items-center mb-4">
-				<BadgeHelp size="63" color="#808E98" class="mr-3" />
-				<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #808E98; font-size: 40px;">
+				<BadgeHelp size="63" color="#5A6673" class="mr-3" />
+				<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #5A6673; font-size: 40px;">
 					{m['faq.title']()}
 				</h2>
 			</div>
@@ -45,21 +46,23 @@
 		<div class="space-y-0">
 			{#each faqItems as item}
 				<div style="border-bottom: 1px solid #000000;">
-					<!-- Collapsible header -->
-				<button 
-					class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-					style="padding: 24px; background-color: rgba(255, 255, 255, 0.9); cursor: pointer;"
-					onclick={() => toggleItem(item.id)}
-				>
-				<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
-					{(m as any)[`faq.${item.questionKey}`]()}
-				</h3>
-						<ChevronDown 
-							size="20" 
-							color="#666" 
-							class="transform transition-transform flex-shrink-0 {expandedItems.has(item.id) ? 'rotate-180' : ''}"
-						/>
-					</button>
+				<!-- Collapsible header -->
+			<button 
+				class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6362E] focus-visible:ring-inset"
+				style="padding: 24px; background-color: rgba(255, 255, 255, 0.9); cursor: pointer;"
+				onclick={() => toggleItem(item.id)}
+				aria-expanded={expandedItems.has(item.id)}
+				aria-label={(m as any)[`faq.${item.questionKey}`]() + (expandedItems.has(item.id) ? ' - ' + (getLocale() === 'cs' ? 'klikněte pro zavření' : 'click to close') : ' - ' + (getLocale() === 'cs' ? 'klikněte pro otevření' : 'click to open'))}
+			>
+			<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
+				{(m as any)[`faq.${item.questionKey}`]()}
+			</h3>
+					<ChevronDown 
+						size="20" 
+						color="#666" 
+						class="transform transition-transform flex-shrink-0 {expandedItems.has(item.id) ? 'rotate-180' : ''}"
+					/>
+				</button>
 					
 					<!-- Collapsible content -->
 				{#if expandedItems.has(item.id)}
@@ -76,8 +79,8 @@
 		<!-- Contact section -->
 		<div class="mt-16">
 			<div>
-				<MessageSquarePlus size="48" color="#808E98" style="margin-bottom: 16px;" />
-				<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #808E98; font-size: 32px; margin-bottom: 16px;">
+				<MessageSquarePlus size="48" color="#5A6673" style="margin-bottom: 16px;" />
+				<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #5A6673; font-size: 32px; margin-bottom: 16px;">
 					{m['faq.moreQuestionsTitle']()}
 				</h3>
 				<p class="font-bold" style="font-family: 'Roboto', sans-serif; color: #000000; font-size: 18px; margin-bottom: 16px;">

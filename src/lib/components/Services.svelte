@@ -80,9 +80,9 @@
 				</div>
 			</div>
 
-			<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
-			<div class="lg:col-span-1 overflow-hidden" style="background-image: url('/images/bg-service-c14.png'); background-size: cover; background-position: center; padding: 24px;">
-				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 142, 152, 0.8); padding: 16px;">
+		<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
+		<div class="lg:col-span-1 overflow-hidden" style="background-image: url('/images/bg-service-c14.png'); background-size: cover; background-position: center; padding: 24px;">
+			<div class="text-white rounded-xl h-full" style="background-color: rgba(90, 102, 115, 0.9); padding: 16px;">
 					<Atom size={48} color="white" class="mb-4" />
 					<h3 class="font-bold mb-3" style="font-family: 'Roboto Slab', serif; font-size: 24px;">
 						{m['services.c14.title']()}

@@ -191,24 +191,26 @@
 			</div>
 		</div>
 
-		<!-- Navigation buttons moved below -->
-		<div class="flex justify-end space-x-3">
-			<button 
-				onclick={scrollLeft}
-				class="bg-white rounded-full p-3 shadow-md transition-shadow {canScrollLeft ? 'hover:shadow-lg' : 'opacity-50 cursor-not-allowed'}"
-				disabled={!canScrollLeft}
-			>
-				<ArrowLeft size="20" color={canScrollLeft ? "#666" : "#ccc"} />
-			</button>
-			
-			<button 
-				onclick={scrollRight}
-				class="bg-white rounded-full p-3 shadow-md transition-shadow {canScrollRight ? 'hover:shadow-lg' : 'opacity-50 cursor-not-allowed'}"
-				disabled={!canScrollRight}
-			>
-				<ArrowRight size="20" color={canScrollRight ? "#666" : "#ccc"} />
-			</button>
-		</div>
+	<!-- Navigation buttons moved below -->
+	<div class="flex justify-end space-x-3">
+		<button 
+			onclick={scrollLeft}
+			class="bg-white rounded-full p-3 shadow-md transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6362E] focus-visible:ring-offset-2 {canScrollLeft ? 'hover:shadow-lg' : 'opacity-50 cursor-not-allowed'}"
+			disabled={!canScrollLeft}
+			aria-label={getLocale() === 'cs' ? 'Posunout doleva' : 'Scroll left'}
+		>
+			<ArrowLeft size="20" color={canScrollLeft ? "#666" : "#ccc"} />
+		</button>
+		
+		<button 
+			onclick={scrollRight}
+			class="bg-white rounded-full p-3 shadow-md transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6362E] focus-visible:ring-offset-2 {canScrollRight ? 'hover:shadow-lg' : 'opacity-50 cursor-not-allowed'}"
+			disabled={!canScrollRight}
+			aria-label={getLocale() === 'cs' ? 'Posunout doprava' : 'Scroll right'}
+		>
+			<ArrowRight size="20" color={canScrollRight ? "#666" : "#ccc"} />
+		</button>
+	</div>
 
 	</div>
 </section>

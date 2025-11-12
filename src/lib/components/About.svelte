@@ -144,14 +144,14 @@
 				<!-- Left column - Question and quote -->
 				<div>
 					<div class="flex items-center space-x-4 mb-6">
-						<Star size="36" color="#1B998B" class="flex-shrink-0" />
-						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #1B998B; font-size: 24px;">
+						<Star size="36" color="#157768" class="flex-shrink-0" />
+						<h3 class="font-bold" style="font-family: 'Roboto', sans-serif; color: #157768; font-size: 24px;">
 							{m['about.whyTitle']()}
 						</h3>
 					</div>
 					
-					<div class="border-l-4 p-4" style="border-color: #1B998B;">
-						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #1B998B;">
+					<div class="border-l-4 p-4" style="border-color: #157768;">
+						<blockquote class="italic leading-relaxed" style="font-family: 'Roboto', sans-serif; color: #157768;">
 							"{m['about.whyQuote']()}"
 						</blockquote>
 					</div>

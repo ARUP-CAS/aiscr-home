@@ -6,3 +6,17 @@
 body {
 	font-family: 'Roboto', sans-serif;
 }
+
+/* WCAG 2.1 AA - Focus indikátory pro přístupnost */
+a:focus-visible,
+button:focus-visible {
+	outline: 3px solid #C6362E;
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* Focus pro odkazy na tmavém pozadí (např. header) */
+[style*="background-color: #C6362E"] a:focus-visible,
+[style*="background-color:#C6362E"] a:focus-visible {
+	outline-color: #FFFFFF;
+}

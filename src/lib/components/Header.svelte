@@ -48,15 +48,16 @@
 					<a href="/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
 				</nav>
 
-				<!-- Language switcher -->
-				<button 
-					onclick={toggleLocale}
-					class="flex items-center ml-8 mr-4 px-3 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded"
-					style="gap: 6px;"
-				>
-					<Globe size="16" />
-					<span class="text-sm font-medium uppercase">{currentLocale}</span>
-				</button>
+			<!-- Language switcher -->
+			<button 
+				onclick={toggleLocale}
+				class="flex items-center ml-8 mr-4 px-3 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#C6362E]"
+				style="gap: 6px;"
+				aria-label={currentLocale === 'cs' ? 'Přepnout na angličtinu' : 'Switch to Czech'}
+			>
+				<Globe size="16" />
+				<span class="text-sm font-medium uppercase">{currentLocale}</span>
+			</button>
 				
 				<!-- Sociální ikony -->
 				<div class="flex items-center" style="gap: 12px;">
@@ -81,24 +82,25 @@
 			</div>
 
 			<!-- Mobile menu button and language switcher -->
-			<div class="lg:hidden flex items-center" style="gap: 12px;">
-				<button 
-					onclick={toggleLocale}
-					class="flex items-center px-2 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded"
-					style="gap: 4px;"
-				>
-					<Globe size="16" />
-					<span class="text-xs font-medium uppercase">{currentLocale}</span>
-				</button>
+		<div class="lg:hidden flex items-center" style="gap: 12px;">
+			<button 
+				onclick={toggleLocale}
+				class="flex items-center px-2 py-1 text-white hover:text-gray-300 transition-colors border border-white/30 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#C6362E]"
+				style="gap: 4px;"
+				aria-label={currentLocale === 'cs' ? 'Přepnout na angličtinu' : 'Switch to Czech'}
+			>
+				<Globe size="16" />
+				<span class="text-xs font-medium uppercase">{currentLocale}</span>
+			</button>
 				
-				<button
-					type="button"
-					class="text-white hover:text-gray-300 transition-colors"
-					aria-label={m['nav.openMenu']()}
-					onclick={() => mobileMenuOpen = !mobileMenuOpen}
-				>
-					<Menu size="24" />
-				</button>
+			<button
+				type="button"
+				class="text-white hover:text-gray-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#C6362E] rounded"
+				aria-label={m['nav.openMenu']()}
+				onclick={() => mobileMenuOpen = !mobileMenuOpen}
+			>
+				<Menu size="24" />
+			</button>
 			</div>
 		</div>
 

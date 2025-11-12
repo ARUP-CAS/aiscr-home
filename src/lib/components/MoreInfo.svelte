@@ -2,6 +2,7 @@
 	// Rozbalovací sekce "Chcete vědět víc?"
 	import { ChevronDown } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
 	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
@@ -79,21 +80,23 @@
 						</div>
 					{/if}
 					
-					<!-- Collapsible header -->
-					<button 
-						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem(itemId)}
-					>
-						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
-							{(m as any)[`moreInfo.items.${itemId}.title`]()}
-						</h3>
-						<ChevronDown 
-							size="20" 
-							color="#666" 
-							class="transform transition-transform flex-shrink-0 {expandedItems.has(itemId) ? 'rotate-180' : ''}"
-						/>
-					</button>
+				<!-- Collapsible header -->
+				<button 
+					class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6362E] focus-visible:ring-inset"
+					style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
+					onclick={() => toggleItem(itemId)}
+					aria-expanded={expandedItems.has(itemId)}
+					aria-label={(m as any)[`moreInfo.items.${itemId}.title`]() + (expandedItems.has(itemId) ? ' - ' + (getLocale() === 'cs' ? 'klikněte pro zavření' : 'click to close') : ' - ' + (getLocale() === 'cs' ? 'klikněte pro otevření' : 'click to open'))}
+				>
+					<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
+						{(m as any)[`moreInfo.items.${itemId}.title`]()}
+					</h3>
+					<ChevronDown 
+						size="20" 
+						color="#666" 
+						class="transform transition-transform flex-shrink-0 {expandedItems.has(itemId) ? 'rotate-180' : ''}"
+					/>
+				</button>
 					
 					<!-- Collapsible content -->
 					{#if expandedItems.has(itemId)}
@@ -152,21 +155,23 @@
 						</div>
 					{/if}
 					
-					<!-- Collapsible header -->
-					<button 
-						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem2(itemId)}
-					>
-						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
-							{(m as any)[`moreInfo.items.${itemId}.title`]()}
-						</h3>
-						<ChevronDown 
-							size="20" 
-							color="#666" 
-							class="transform transition-transform flex-shrink-0 {expandedItems2.has(itemId) ? 'rotate-180' : ''}"
-						/>
-					</button>
+				<!-- Collapsible header -->
+				<button 
+					class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6362E] focus-visible:ring-inset"
+					style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
+					onclick={() => toggleItem2(itemId)}
+					aria-expanded={expandedItems2.has(itemId)}
+					aria-label={(m as any)[`moreInfo.items.${itemId}.title`]() + (expandedItems2.has(itemId) ? ' - ' + (getLocale() === 'cs' ? 'klikněte pro zavření' : 'click to close') : ' - ' + (getLocale() === 'cs' ? 'klikněte pro otevření' : 'click to open'))}
+				>
+					<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
+						{(m as any)[`moreInfo.items.${itemId}.title`]()}
+					</h3>
+					<ChevronDown 
+						size="20" 
+						color="#666" 
+						class="transform transition-transform flex-shrink-0 {expandedItems2.has(itemId) ? 'rotate-180' : ''}"
+					/>
+				</button>
 					
 					<!-- Collapsible content -->
 					{#if expandedItems2.has(itemId)}
