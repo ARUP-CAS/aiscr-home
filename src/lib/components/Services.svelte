@@ -9,11 +9,11 @@
 		
 		<!-- Header -->
 		<div class="text-center mb-16">
-			<p class="text-sm text-gray-600" style="font-family: 'Roboto', sans-serif; font-weight: bold; margin-bottom: 16px;">{m['services.sectionLabel']()}</p>
+			<p class="text-sm text-black" style="font-family: 'Roboto', sans-serif; font-weight: bold; margin-bottom: 16px;">{m['services.sectionLabel']()}</p>
 			<h2 class="text-4xl font-bold mb-4" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
 				{m['services.title']()}
 			</h2>
-			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; margin-top: 24px;">
+			<p class="text-lg text-black" style="font-family: 'Roboto', sans-serif; margin-top: 24px;">
 				{m['services.subtitle']()}
 			</p>
 		</div>

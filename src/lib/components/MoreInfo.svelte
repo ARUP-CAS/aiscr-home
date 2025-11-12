@@ -29,7 +29,7 @@
 	}
 </script>
 
-<section class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; padding-top: 34px; padding-bottom: 80px;">
+<section id="moreInfo" class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; padding-top: 34px; padding-bottom: 80px;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header -->
@@ -37,7 +37,7 @@
 			<h2 class="font-bold" style="font-family: 'Roboto Slab', serif; color: #C6362E; font-size: 40px;">
 				{m['moreInfo.title']()}
 			</h2>
-			<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
+			<p class="text-lg" style="font-family: 'Roboto', sans-serif; color: #C6362E;">
 				{m['moreInfo.subtitle']()}
 			</p>
 		</div>
@@ -85,7 +85,7 @@
 						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
 						onclick={() => toggleItem(itemId)}
 					>
-						<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
+						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
 							{(m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
 						<ChevronDown 
@@ -98,9 +98,20 @@
 					<!-- Collapsible content -->
 					{#if expandedItems.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
 								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
 							</p>
+							{#if (m as any)[`moreInfo.items.${itemId}.url`]}
+								<a 
+									href={(m as any)[`moreInfo.items.${itemId}.url`]()} 
+									target="_blank" 
+									rel="noopener noreferrer"
+									class="inline-block px-6 py-2 bg-white text-black border-2 border-black font-medium hover:bg-gray-100 transition-colors"
+									style="font-family: 'Roboto', sans-serif;"
+								>
+									{m['moreInfo.buttonText']()}
+								</a>
+							{/if}
 						</div>
 					{/if}
 				</div>
@@ -147,8 +158,8 @@
 						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
 						onclick={() => toggleItem2(itemId)}
 					>
-						<h3 class="text-base font-medium text-gray-900 pr-4" style="font-family: 'Roboto', sans-serif;">
-							{index === 0 ? m['moreInfo.otherSectionSubtitle']() : (m as any)[`moreInfo.items.${itemId}.title`]()}
+						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
+							{(m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
 						<ChevronDown 
 							size="20" 
@@ -160,9 +171,20 @@
 					<!-- Collapsible content -->
 					{#if expandedItems2.has(itemId)}
 						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
 								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
 							</p>
+							{#if (m as any)[`moreInfo.items.${itemId}.url`]}
+								<a 
+									href={(m as any)[`moreInfo.items.${itemId}.url`]()} 
+									target="_blank" 
+									rel="noopener noreferrer"
+									class="inline-block px-6 py-2 bg-white text-black border-2 border-black font-medium hover:bg-gray-100 transition-colors"
+									style="font-family: 'Roboto', sans-serif;"
+								>
+									{m['moreInfo.buttonText']()}
+								</a>
+							{/if}
 						</div>
 					{/if}
 				</div>

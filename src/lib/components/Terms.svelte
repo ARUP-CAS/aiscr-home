@@ -17,7 +17,7 @@
 						{@html m['terms.title']()}
 					</h2>
 				</div>
-				<p class="text-lg text-gray-700" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-lg text-black" style="font-family: 'Roboto', sans-serif;">
 					{@html m['terms.intro']()}
 				</p>
 			</div>
@@ -37,7 +37,7 @@
 					{m['terms.usageTitle']()}
 				</h3>
 				
-				<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
+				<p class="font-bold text-black" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
 					{@html m['terms.usageImportance']()}
 				</p>
 				
@@ -46,10 +46,10 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<ClipboardPenLine size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-						<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+						<h4 class="font-semibold text-black mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
 							{m['terms.obligation1Title']()}
 						</h4>
-						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							{@html m['terms.obligation1Text']()}
 						</p>
 						</div>
@@ -59,10 +59,10 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<ListTodo size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-							<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+							<h4 class="font-semibold text-black mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
 								{m['terms.obligation2Title']()}
 							</h4>
-							<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{@html m['terms.obligation2Text']()}
 							</p>
 						</div>
@@ -72,10 +72,10 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<BellDot size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-						<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+						<h4 class="font-semibold text-black mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
 							{m['terms.obligation3Title']()}
 						</h4>
-						<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							{@html m['terms.obligation3Text']()}
 						</p>
 						</div>
@@ -89,7 +89,7 @@
 					{m['terms.openAccessTitle']()}
 				</h3>
 				
-			<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
+			<p class="font-bold text-black" style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-bottom: 32px;">
 				{@html m['terms.openAccessIntro']()}
 			</p>
 				
@@ -98,23 +98,23 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<CreativeCommons size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-							<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+							<h4 class="font-semibold text-black mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
 								{m['terms.licenseTitle']()}
 							</h4>
-							<p class="text-gray-700 leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{@html m['terms.licenseText']()}
 							</p>
-							<p class="text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{m['terms.licenseConditions']()}
 							</p>
-						<ul class="mt-2 space-y-1 text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+						<ul class="mt-2 space-y-1 text-black" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							<li>• {@html m['terms.licenseCondition1']()}</li>
 							<li>• {@html m['terms.licenseCondition2']()}</li>
 						</ul>
-							<p class="text-gray-700 mt-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black mt-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{m['terms.licenseExceptions']()}
 							</p>
-						<ul class="mt-2 space-y-1 text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+						<ul class="mt-2 space-y-1 text-black" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 							<li>• {@html m['terms.licenseException1']()}</li>
 							<li>• {@html m['terms.licenseException2']()}</li>
 						</ul>
@@ -125,17 +125,17 @@
 					<div class="flex items-start" style="gap: 24px;">
 						<UserLock size="48" color="#D97706" class="flex-shrink-0" />
 						<div>
-							<h4 class="font-semibold text-gray-900 mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
+							<h4 class="font-semibold text-black mb-3" style="font-family: 'Roboto', sans-serif; font-size: 24px;">
 								{m['terms.accessControlTitle']()}
 							</h4>
-							<p class="text-gray-700 leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{m['terms.accessControlIntro']()}
 							</p>
-							<ul class="space-y-1 text-gray-700" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<ul class="space-y-1 text-black" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								<li>• {m['terms.accessControlLimit1']()}</li>
 								<li>• {m['terms.accessControlLimit2']()}</li>
 							</ul>
-							<p class="text-gray-700 leading-relaxed mt-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+							<p class="text-black leading-relaxed mt-4" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
 								{@html m['terms.accessControlText']()}
 							</p>
 						</div>

@@ -1,2 +1,2 @@
-export const prerender = true;
+// Prerender disabled - using SSR with Vercel adapter
 
