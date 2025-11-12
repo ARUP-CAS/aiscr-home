@@ -21,7 +21,7 @@
 					</h2>
 				</div>
 				
-			<p class="font-bold text-gray-900" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
+			<p class="font-bold text-black" style="font-family: 'Roboto', sans-serif; font-size: 18px; margin-bottom: 24px;">
 				{@html m['about.intro']()}
 			</p>
 				
@@ -45,7 +45,7 @@
 				<div class="flex items-start space-x-4">
 					<History size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature1']()}
 						</p>
 					</div>
@@ -54,7 +54,7 @@
 				<div class="flex items-start space-x-4">
 					<CloudCheck size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature2']()}
 						</p>
 					</div>
@@ -63,7 +63,7 @@
 				<div class="flex items-start space-x-4">
 					<FileText size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature3']()}
 						</p>
 					</div>
@@ -72,7 +72,7 @@
 				<div class="flex items-start space-x-4">
 					<GitPullRequestArrow size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature4']()}
 						</p>
 					</div>
@@ -81,7 +81,7 @@
 				<div class="flex items-start space-x-4">
 					<QrCode size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature5']()}
 						</p>
 					</div>
@@ -90,7 +90,7 @@
 				<div class="flex items-start space-x-4">
 					<ListTodo size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature6']()}
 						</p>
 					</div>
@@ -99,7 +99,7 @@
 				<div class="flex items-start space-x-4">
 					<Users size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature7']()}
 						</p>
 					</div>
@@ -108,7 +108,7 @@
 				<div class="flex items-start space-x-4">
 					<Link size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature8']()}
 						</p>
 					</div>
@@ -117,7 +117,7 @@
 				<div class="flex items-start space-x-4">
 					<HandHeart size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature9']()}
 						</p>
 					</div>
@@ -126,7 +126,7 @@
 				<div class="flex items-start space-x-4">
 					<Earth size="24" color="#802376" class="mt-1 flex-shrink-0" />
 					<div>
-						<p class="text-gray-900 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+						<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 							{@html m['about.feature10']()}
 						</p>
 					</div>
@@ -159,7 +159,7 @@
 
 				<!-- Right column - Explanation text -->
 				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{m['about.whyExplanation']()}
 					</p>
 				</div>
@@ -190,7 +190,7 @@
 
 				<!-- Right column - Team description -->
 			<div>
-				<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
+				<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif; margin-bottom: 24px;">
 					{@html m['about.whoExplanation']()}
 				</p>
 					
@@ -225,7 +225,7 @@
 
 				<!-- Right column - Description -->
 				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{@html m['about.executiveDescription']()}
 					</p>
 				</div>
@@ -237,13 +237,13 @@
 				<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Olga Lečbychová
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-					ARUB
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
+					ARÚB
 				</p>
 			</div>
 
@@ -251,12 +251,12 @@
 				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						David Novák
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					ARÚ
 				</p>
 			</div>
@@ -265,13 +265,13 @@
 				<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Petr Pajdla
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
-					ARUB
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
+					ARÚB
 				</p>
 			</div>
 
@@ -279,12 +279,12 @@
 				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Ondřej Švejcar
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					ARÚ
 				</p>
 			</div>
@@ -310,7 +310,7 @@
 
 				<!-- Right column - Description -->
 				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{@html m['about.advisoryDescription']()}
 					</p>
 				</div>
@@ -322,12 +322,12 @@
 				<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Stefan Eichert
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Naturhistorisches Museum Wien, {m['about.advisoryChairman']()}
 				</p>
 			</div>
@@ -336,12 +336,12 @@
 				<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Cynthia Dunning Thierstein
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Archaeoconcept
 				</p>
 			</div>
@@ -350,12 +350,12 @@
 				<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Johanna Hilpert
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Universität zu Köln, Philosophische Fakultät, Institut für Ur- und Frühgeschichte
 				</p>
 			</div>
@@ -364,12 +364,12 @@
 				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Axel G. Posluschny
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Keltenwell am Glauberg
 				</p>
 			</div>
@@ -378,12 +378,12 @@
 				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Pavel Straňák
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
 				</p>
 			</div>
@@ -392,12 +392,12 @@
 				<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-gray-900 text-sm" style="font-family: 'Roboto', sans-serif;">
+				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Benjamin Štular
 					</a>
 				</h4>
-				<p class="text-xs text-gray-600" style="font-family: 'Roboto', sans-serif;">
+				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
 					Institute of Archaeology of the Slovenian Academy of Sciences and Arts
 				</p>
 			</div>
@@ -425,15 +425,15 @@
 
 				<!-- Right column - Funding description -->
 				<div class="space-y-6">
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{@html m['about.fundingIntro']()}
 					</p>
 
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{m['about.fundingEu']()}
 					</p>
 
-					<ul class="space-y-2 text-gray-700" style="font-family: 'Roboto', sans-serif;">
+					<ul class="space-y-2 text-black" style="font-family: 'Roboto', sans-serif;">
 						<li class="flex items-start">
 							<span class="text-purple-600 mr-2">•</span>
 							<span>{@html m['about.fundingProject1']()}</span>
@@ -444,7 +444,7 @@
 						</li>
 					</ul>
 
-					<p class="text-gray-700 leading-relaxed mt-6" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed mt-6" style="font-family: 'Roboto', sans-serif;">
 						{@html m['about.fundingMore']()}
 					</p>
 					
@@ -474,7 +474,7 @@
 
 				<!-- Right column - Description -->
 				<div>
-					<p class="text-gray-700 leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+					<p class="text-black leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 						{@html m['about.partnersIntro']()}
 					</p>
 				</div>

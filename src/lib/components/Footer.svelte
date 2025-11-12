@@ -111,11 +111,21 @@
 		<!-- Partner logos -->
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
-				<img src="/images/logos/ais-cr-black.png" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/logo-arub.png" alt="ARUB" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/logo-aru.png" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/akademie-ved-black.png" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
-				<img src="/images/logos/infra-black.png" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+				<a href="/" class="hover:opacity-80 transition-opacity">
+					<img src="/images/logos/ais-cr-black.png" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+				</a>
+				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/logos/logo-arub.png" alt="ARUB" style="max-height: 48px; width: auto;" />
+				</a>
+				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/logos/logo-aru.png" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+				</a>
+				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/logos/akademie-ved-black.png" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+				</a>
+				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/logos/infra-black.png" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+				</a>
 			</div>
 		</div>
 

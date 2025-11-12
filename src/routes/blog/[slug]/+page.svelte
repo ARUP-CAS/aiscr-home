@@ -131,7 +131,7 @@
 			<!-- Right Column (2/3) - Article Content -->
 			<div class="lg:col-span-2 order-1 lg:order-2">
 				<article class="prose prose-sm sm:prose-base md:prose-lg max-w-none" style="font-family: 'Roboto', sans-serif;">
-					<div class="prose-headings:font-['Roboto_Slab'] prose-headings:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-p:text-gray-700 prose-p:leading-relaxed">
+					<div class="prose-headings:font-['Roboto_Slab'] prose-headings:text-black prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-p:text-black prose-p:leading-relaxed">
 						{@render data.post.content()}
 					</div>
 				</article>

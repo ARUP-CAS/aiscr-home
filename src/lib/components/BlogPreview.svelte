@@ -128,7 +128,7 @@
 			<p class="text-lg mb-2" style="font-family: 'Roboto', sans-serif; color: #721C17;">
 				{m['blog.subtitle']()}
 			</p>
-			<p class="text-base text-gray-700 max-w-4xl mx-auto leading-relaxed" style="font-family: 'Roboto', sans-serif;">
+			<p class="text-base text-black max-w-4xl mx-auto leading-relaxed" style="font-family: 'Roboto', sans-serif;">
 				{m['blog.description']()}
 			</p>
 		</div>
@@ -158,14 +158,14 @@
 							</div>
 							
 						<!-- Title -->
-						<h3 class="text-xl font-semibold text-gray-900 mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
+						<h3 class="text-xl font-semibold text-black mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
 							<a href={resolve(`/blog/${post.slug}`)} class="hover:text-red-600 transition-colors">
 								{post.title}
 							</a>
 						</h3>
 							
 							<!-- Excerpt -->
-							<p class="text-gray-600 leading-relaxed mb-6 text-sm flex-1" style="font-family: 'Roboto', sans-serif;">
+							<p class="text-black leading-relaxed mb-6 text-sm flex-1" style="font-family: 'Roboto', sans-serif;">
 								{post.excerpt}
 							</p>
 							
@@ -177,8 +177,8 @@
 									<div class="bg-gray-400 rounded-full flex-shrink-0" style="width: 48px; height: 48px;"></div>
 								{/if}
 								<div class="flex-1 flex flex-col justify-between" style="height: 48px;">
-									<div class="font-bold text-gray-900" style="font-size: 14px;">{post.author}</div>
-									<div class="text-gray-500 flex items-center space-x-2" style="font-size: 14px;">
+									<div class="font-bold text-black" style="font-size: 14px;">{post.author}</div>
+									<div class="text-black flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
 										<span>•</span>
 										<span>{post.readTime}</span>

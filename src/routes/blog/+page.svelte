@@ -21,10 +21,10 @@
 </svelte:head>
 
 <div class="mb-12">
-	<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+	<h1 class="text-4xl lg:text-5xl font-bold text-black mb-4">
 		{m['blog.pageTitle']()}
 	</h1>
-	<p class="text-xl text-gray-600">
+	<p class="text-xl text-black">
 		{m['blog.pageDescription']()}
 	</p>
 </div>
@@ -33,7 +33,7 @@
 	{#each data.posts as post}
 		<article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
 			<div class="p-8">
-				<div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+				<div class="flex items-center gap-4 text-sm text-black mb-4">
 					<time datetime={post.date}>{formatDate(post.date)}</time>
 					{#if post.category}
 						<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
@@ -42,12 +42,12 @@
 					{/if}
 				</div>
 				
-				<h2 class="text-2xl font-bold text-gray-900 mb-4 hover:text-blue-600">
+				<h2 class="text-2xl font-bold text-black mb-4 hover:text-blue-600">
 					<a href="/blog/{post.slug}">{post.title}</a>
 				</h2>
 				
 				{#if post.excerpt}
-					<p class="text-gray-600 leading-relaxed mb-6">
+					<p class="text-black leading-relaxed mb-6">
 						{post.excerpt}
 					</p>
 				{/if}
@@ -65,6 +65,6 @@
 
 {#if data.posts.length === 0}
 	<div class="text-center py-12">
-		<p class="text-gray-500 text-lg">{m['blog.noArticles']()}</p>
+		<p class="text-black text-lg">{m['blog.noArticles']()}</p>
 	</div>
 {/if}
