@@ -2,6 +2,13 @@
 	// Footer komponenta
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
+	
+	// Props pro callback na otevření cookie banneru
+	let { onOpenCookies } = $props<{ onOpenCookies: () => void }>();
+	
+	const locale = getLocale();
+	const isEnglish = locale === 'en';
 </script>
 
 <footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb;">
@@ -112,19 +119,19 @@
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
 				<a href="/" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/ais-cr-black.png" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+					<img src="/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
 				</a>
 				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/logo-arub.png" alt="ARUB" style="max-height: 48px; width: auto;" />
+					<img src="/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="max-height: 48px; width: auto;" />
 				</a>
 				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/logo-aru.png" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+					<img src="/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
 				</a>
 				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/akademie-ved-black.png" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+					<img src="/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
 				</a>
 				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/infra-black.png" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+					<img src="/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
 				</a>
 			</div>
 		</div>
@@ -133,14 +140,14 @@
 		<div class="border-t border-gray-400 pt-8">
 			<div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
 				
-				<!-- Copyright and links -->
-				<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
-					<span>{@html m['footer.copyright']()}</span>
-					<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
-					<a href="/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
-					<a href="#cookie-policy" class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</a>
-					<span>{m['footer.designBy']()}</span>
-				</div>
+			<!-- Copyright and links -->
+			<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
+				<span>{@html m['footer.copyright']()}</span>
+				<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
+				<a href="/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
+				<button onclick={onOpenCookies} class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</button>
+				<span>{m['footer.designBy']()}</span>
+			</div>
 
 				<!-- Social icons -->
 				<div class="flex items-center space-x-4">

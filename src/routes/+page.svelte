@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>AISCR - Archeologické informační systémy České republiky</title>
+	<title>AIS CR - Archeologický informační systém České republiky</title>
 </svelte:head>
 
 <Hero />

@@ -2,6 +2,10 @@
 	// O nás sekce
 	import { Info, History, CloudCheck, FileText, GitPullRequestArrow, QrCode, ListTodo, Users, Link, HandHeart, Earth, Star, Building, UserCheck, GraduationCap, DollarSign, Handshake, Landmark, CircleUser, Brain, PiggyBank } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { getLocale } from '$lib/paraglide/runtime';
+	
+	const locale = getLocale();
+	const isEnglish = locale === 'en';
 </script>
 
 <div class="about-section">
@@ -231,12 +235,12 @@
 				</div>
 			</div>
 
-			<!-- Executive Board Team members -->
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 lg:gap-32 justify-items-center">
-			<div class="text-center">
-				<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
-				</a>
+		<!-- Executive Board Team members -->
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 lg:gap-32 justify-items-center">
+		<div class="text-center">
+			<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
+				<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Olga Lečbychová
@@ -247,10 +251,10 @@
 				</p>
 			</div>
 
-			<div class="text-center">
-				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
-				</a>
+		<div class="text-center">
+			<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
+				<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						David Novák
@@ -261,10 +265,10 @@
 				</p>
 			</div>
 
-			<div class="text-center">
-				<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
-				</a>
+		<div class="text-center">
+			<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
+				<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
 						Petr Pajdla
@@ -364,28 +368,28 @@
 				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
-					<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
-						Axel G. Posluschny
-					</a>
-				</h4>
-				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
-					Keltenwell am Glauberg
-				</p>
+			<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
+				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+					Axel G. Posluschny
+				</a>
+			</h4>
+			<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
+				Keltenwelt am Glauberg
+			</p>
 			</div>
 
 			<div class="text-center">
 				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer">
 					<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
-				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
-					<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
-						Pavel Straňák
-					</a>
-				</h4>
-				<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
-					Karlova universita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
-				</p>
+			<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
+				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
+					Pavel Straňák
+				</a>
+			</h4>
+			<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">
+				Karlova univerzita, Matematicko-fyzikální fakulta, Ústav formální a aplikované lingvistiky
+			</p>
 			</div>
 
 			<div class="text-center">
@@ -487,59 +491,83 @@
 				</p>
 			</div>
 
-			<!-- Partner logos grid -->
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-				<div class="flex items-center justify-center">
+		<!-- Partner logos grid -->
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+			<div class="flex items-center justify-center">
+				<a href="https://www.mk.gov.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="/images/partners/ministerstvo-kultury.png" alt="Ministerstvo kultury" style="max-height: 80px; width: auto;" />
-				</div>
+				</a>
+			</div>
 
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/av.png" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
-				</div>
+		<div class="flex items-center justify-center">
+			<a href="https://www.avcr.cz/cs/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+				<img src="/images/partners/{isEnglish ? 'av-en.png' : 'av.png'}" alt="Akademie věd ČR" style="max-height: 80px; width: auto;" />
+			</a>
+		</div>
 
-				<div class="flex items-center justify-center">
+			<div class="flex items-center justify-center">
+				<a href="https://www.ariadne-research-infrastructure.eu/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="/images/partners/ariadne.png" alt="ARIADNE" style="max-height: 80px; width: auto;" />
-				</div>
+				</a>
+			</div>
 
-				<div class="flex items-center justify-center">
+			<div class="flex items-center justify-center">
+				<a href="https://lindat.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="/images/partners/lindat.png" alt="LINDAT" style="max-height: 80px; width: auto;" />
-				</div>
+				</a>
+			</div>
 
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/npu.png" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
-				</div>
+		<div class="flex items-center justify-center">
+			<a href="https://www.npu.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+				<img src="/images/partners/{isEnglish ? 'npu-en.jpg' : 'npu.png'}" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+			</a>
+		</div>
 
-				<div class="flex items-center justify-center">
+			<div class="flex items-center justify-center">
+				<a href="https://www.carare.eu/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="/images/partners/carare.png" alt="CARARE" style="max-height: 80px; width: auto;" />
-				</div>
+				</a>
 			</div>
+		</div>
 
-			<!-- Second row of partner logos -->
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
-				<div class="flex items-center justify-center">
+		<!-- Second row of partner logos -->
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
+			<div class="flex items-center justify-center">
+				<a href="https://www.techlib.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="/images/partners/narodni-technicka-knihovna.png" alt="NTK" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/botanicky-ustav.png" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/ustav-teoreticke-aplikovane-mechaniky.png" alt="ITAM" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/magistrat-prahy.png" alt="Praha" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/pardubicky-kraj.png" alt="Pardubický kraj" style="max-height: 80px; width: auto;" />
-				</div>
-
-				<div class="flex items-center justify-center">
-					<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
-				</div>
+				</a>
 			</div>
+
+		<div class="flex items-center justify-center">
+			<a href="https://www.ibot.cas.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+				<img src="/images/partners/{isEnglish ? 'botanicky-ustav-en.png' : 'botanicky-ustav.png'}" alt="Botanický ústav" style="max-height: 80px; width: auto;" />
+			</a>
+		</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://itam.cas.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/partners/ustav-teoreticke-aplikovane-mechaniky.png" alt="ITAM" style="max-height: 80px; width: auto;" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://praha.eu/magistrat" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="/images/partners/magistrat-prahy.png" alt="Praha" style="max-height: 80px; width: auto;" />
+				</a>
+			</div>
+
+		<div class="flex items-center justify-center">
+			<a href="https://www.pardubickykraj.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+				<img src="/images/partners/pardubicky-kraj.png" alt="Pardubický kraj" style="max-height: 80px; width: auto;" />
+			</a>
+		</div>
+
+		<div class="flex items-center justify-center">
+			<a href="https://www.axiell.com/cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+				<img src="/images/partners/axiell.png" alt="Axiell" style="max-height: 80px; width: auto;" />
+			</a>
+		</div>
+	</div>
 		</div>
 	</div>
 </section>

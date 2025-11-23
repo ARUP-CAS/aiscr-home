@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>{m['blog.pageTitle']()} - AISCR</title>
+	<title>{m['blog.pageTitle']()} - AIS CR</title>
 	<meta name="description" content={m['blog.pageDescription']()} />
 </svelte:head>
 
