@@ -86,7 +86,7 @@
 	"faq.q6": "Plánuji stavbu a hledám instituci, která může provést archeologický výzkum. Jak mám postupovat?",
 	"faq.a6": "Organizace s oprávněním provádět archeologický výzkum jsou zaznamenané v <a href=\"https://oao.aiscr.cz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Mapě archeologických organizací</a>. Kliknutím do mapy si určíte místo vašeho zájmu a hned se dozvíte, které organizace zde působí. Na jejich stránkách již pak jednoduše dohledáte archeologa nebo archeoložku, které můžete kontaktovat. Pro podání oznámení o stavebním či jiném záměru využijte vždy <a href=\"https://archeologickamapa.cz/oznameni\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">online formulář</a>, který vám zaručí splnění oznamovací povinnosti vyplývající ze zákona. Oznámení oprávněné organizaci místo Archeologickému ústavu není z pohledu zákona dostatečné, pokud za vás oznámení organizace neučiní zprostředkovaně. S vybranou organizací sjednáte až samotné podmínky a způsob provedení výzkumu.",
 	"faq.q7": "Mohu si prohlédnout archeologické nálezy z výzkumů online?",
-	"faq.a7": "V <a href=\"https://digiarchiv.aiscr.cz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Digitálním archivu AMČR</a> lze nahlížet do nálezových zpráv z archeologických výzkumů, jejichž přílohami bývá fotodokumentace vybraných nálezů. Nálezy, které pochází ze spolupráce profesionálních archeologů a archeoložek s těmi amatérskými, si můžete prohlížet také v Digitálním archivu, v záložce <a href=\"https://digiarchiv.aiscr.cz/results?entity=samostatny_nalez\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Samostatné nálezy</a>. Vybrané nálezy jsou naskanovány i ve 3D, tyto modely si můžete prohlížet v <a href=\"https://digiarchiv.aiscr.cz/results?entity=knihovna_3d\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Knihovně 3D</a>.",
+	"faq.a7": "V <a href=\"https://digiarchiv.aiscr.cz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Digitálním archivu AMČR</a> lze nahlížet do nálezových zpráv z archeologických výzkumů, jejichž přílohami bývá fotodokumentace vybraných nálezů. Nálezy, které pochází ze spolupráce profesionálních archeologů a archeoložek s těmi amatérskými, si můžete prohlížet také v Digitálním archivu, v záložce <a href=\"https://digiarchiv.aiscr.cz/results?entity=samostatny_nalez\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Samostatné nálezy</a>. Vybrané nálezy jsou naskenovány i ve 3D, tyto modely si můžete prohlížet v <a href=\"https://amcr.aiscr.cz/dokument/model/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Knihovně 3D</a>.",
 	"faq.q8": "Musím někde uvádět, že jsem při práci využil(a) AIS CR?",
 	"faq.a8": "Ano, pokud využijete nástroje nebo data AIS CR, je třeba to uvést ve vašich výstupech. Uveďte vždy odkaz na konkrétní použitý nástroj nebo citaci datasetu. Pokud vykazujete své výstupy v <a href=\"https://www.isvavai.cz/riv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Rejstříku informací o výsledcích (RIV)</a>, vyberte v poli <em>VVI</em> (Velké výzkumné infrastruktury) příslušný projekt AIS CR – vždy ten s nejvyšším pořadovým číslem. Díky tomu můžeme poskytovateli financí řádně doložit a vykázat dosažené výsledky. Podrobné znění podmínek najdete v sekci <a href=\"#terms\" class=\"underline\">Podmínky využití AIS CR</a>.",
 	"faq.q9": "Dají se archeologické lokality navštívit? A existuje nějaký výběr nebo mapa těch doporučených?",
@@ -186,7 +186,7 @@
 	"moreInfo.items.digitalArchive.url": "https://digiarchiv.aiscr.cz/",
 	"moreInfo.items.oaoMap.url": "https://oao.aiscr.cz/",
 	"moreInfo.items.amcrPas.url": "https://amcr-info.aiscr.cz/pas",
-	"moreInfo.items.library3d.url": "https://digiarchiv.aiscr.cz/results?entity=knihovna_3d",
+	"moreInfo.items.library3d.url": "https://amcr.aiscr.cz/dokument/model/",
 	"moreInfo.items.amcrApi.url": "https://api.aiscr.cz/",
 	"moreInfo.items.documentation.url": "https://amcr-help.aiscr.cz/",
 	"moreInfo.items.atlas.url": "https://www.archeologickyatlas.cz/",
@@ -196,5 +196,9 @@
 	"moreInfo.items.archeologieOnline.url": "https://aonline.aiscr.cz/",
 	"moreInfo.items.thanados.url": "http://thanados.net/",
 	"moreInfo.items.github.url": "https://github.com/ARUP-CAS",
-	"moreInfo.items.zenodo.url": "https://zenodo.org/communities/aiscr"
+	"moreInfo.items.zenodo.url": "https://zenodo.org/communities/aiscr",
+	"cookies.title": "Nastavení cookies",
+	"cookies.description": "Tato stránka využívá analytická cookies od Google Analytics pro sledování návštěvnosti webových stránek. Sbíraná data nám pomáhají pochopit, jak interagujete s webem, umožňují zlepšovat jeho fungování a zajišťují, aby byl pro uživatele co nejpříjemnější a nejužitečnější. Jsou též důležitá pro vykazování využití infrastruktury AIS CR vůči poskytovatelům financí.<br><br>Prosíme o laskavé svolení tato důležitá data sbírat.",
+	"cookies.accept": "Potvrdit",
+	"cookies.reject": "Zamítnout"
 }

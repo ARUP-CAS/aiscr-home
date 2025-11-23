@@ -102,17 +102,17 @@
 			</div>
 		</div>
 
-		<!-- Mobile menu -->
-		{#if mobileMenuOpen}
-			<div class="lg:hidden border-t border-gray-800 bg-black">
-				<div class="px-2 pt-2 pb-3 space-y-1">
-					<a href="/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.services']()}</a>
-					<a href="/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.blog']()}</a>
-					<a href="/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.faq']()}</a>
-					<a href="/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.terms']()}</a>
-					<a href="/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.about']()}</a>
-					<a href="/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;">{m['nav.contact']()}</a>
-				</div>
+	<!-- Mobile menu -->
+	{#if mobileMenuOpen}
+		<div class="lg:hidden border-t border-gray-800 bg-black">
+			<div class="px-2 pt-2 pb-3 space-y-1">
+				<a href="/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.services']()}</a>
+				<a href="/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.blog']()}</a>
+				<a href="/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.faq']()}</a>
+				<a href="/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.terms']()}</a>
+				<a href="/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.about']()}</a>
+				<a href="/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.contact']()}</a>
+			</div>
 				<!-- Mobile social icons -->
 				<div class="px-5 py-3 border-t border-gray-800">
 					<div class="flex items-center" style="gap: 12px;">
