@@ -1,41 +1,27 @@
-name: Build and Release
+name: Attach Build to Release
 
 on:
   release:
-    types: [published]  # Spustí se když publikuješ release na GitHubu
+    types: [created]  # Spustí se když vytvoříš release (i draft)
 
 jobs:
-  build-and-upload:
+  attach-build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Potřebné pro vytvoření release
+      contents: write
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Download latest build artifact
+        uses: dawidd6/action-download-artifact@v6
         with:
-          version: 10
+          workflow: build.yml
+          branch: main
+          name: build-artifact
+          path: .
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build project
-        run: pnpm build
-
-      - name: Create ZIP archive
+      - name: Rename artifact for release
         run: |
-          cd build
-          zip -r ../aiscr-home-${{ github.event.release.tag_name }}.zip .
-          cd ..
+          mv aiscr-home-latest.zip aiscr-home-${{ github.event.release.tag_name }}.zip
 
       - name: Upload ZIP to Release
         uses: softprops/action-gh-release@v2
