@@ -1,12 +1,15 @@
 name: Build and Release
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'  # Spustí se při push tagu začínajícího na 'v' (např. v1.0.0)
 
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Potřebné pro vytvoření release
     
     steps:
       - name: Checkout repository
@@ -32,13 +35,15 @@ jobs:
       - name: Create ZIP archive
         run: |
           cd build
-          zip -r ../aiscr-home-${{ github.event.release.tag_name }}.zip .
+          zip -r ../aiscr-home-${{ github.ref_name }}.zip .
           cd ..
 
-      - name: Upload release asset
+      - name: Create Release with assets
         uses: softprops/action-gh-release@v2
         with:
-          files: aiscr-home-${{ github.event.release.tag_name }}.zip
+          files: aiscr-home-${{ github.ref_name }}.zip
+          generate_release_notes: true
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
