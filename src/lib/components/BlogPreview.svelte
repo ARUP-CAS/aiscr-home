@@ -6,45 +6,37 @@
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
 	
-	let blogPosts = $state<any[]>([]);
+	function getBlogUrl(slug: string) {
+		const locale = getLocale();
+		return locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`;
+	}
 	
-	onMount(async () => {
-		try {
-			const locale = getLocale();
-			const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+	// Synchronní načtení blog postů při SSR i CSR
+	const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+	
+	const blogPosts = Object.entries(allModules)
+		.map(([_path, module]) => {
+			const { metadata } = module as any;
 			
-			const posts = Object.entries(allModules)
-				.map(([path, module]) => {
-					const { metadata } = module as any;
-					const fileName = path.split('/').pop() || '';
-					const slug = fileName.replace(/\.(cs|en)\.md$/, '').replace(/\.md$/, '');
-					
-					return {
-						slug,
-						title: metadata.title || 'Bez názvu',
-						excerpt: metadata.excerpt || '',
-						date: metadata.date || new Date().toISOString().split('T')[0],
-						category: metadata.category || '',
-						published: metadata.published !== false,
-						locale: metadata.locale || 'cs',
-						categoryColor: metadata.category === 'Objevy' || metadata.category === 'Discoveries' ? 'bg-purple-600' : 
-									   metadata.category === 'Technologie' || metadata.category === 'Technology' ? 'bg-blue-600' : 'bg-green-600',
-						author: metadata.author || 'AIS CR Team',
-						authorRole: metadata.authorRole || '',
-						authorImage: metadata.authorImage || '',
-						image: metadata.image || '/images/blog/placeholder.png',
-						readTime: metadata.readingTime || (locale === 'cs' ? '5 minut' : '5 minutes')
-					};
-				})
-				.filter(post => post.published && post.locale === locale)
-				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-				.slice(0, 3);
-			
-			blogPosts = posts;
-		} catch (err) {
-			console.error('Error loading blog posts:', err);
-		}
-	});
+			return {
+				slug: metadata.slug,
+				title: metadata.title || 'Bez názvu',
+				excerpt: metadata.excerpt || '',
+				date: metadata.date || new Date().toISOString().split('T')[0],
+				category: metadata.category || '',
+				published: metadata.published !== false,
+				categoryColor: metadata.category === 'Objevy' ? 'bg-purple-600' : 
+							   metadata.category === 'Technologie' ? 'bg-blue-600' : 'bg-green-600',
+				author: metadata.author || 'AIS CR Team',
+				authorRole: metadata.authorRole || '',
+				authorImage: metadata.authorImage || '',
+				image: metadata.image || '/images/blog/placeholder.png',
+				readTime: metadata.readingTime || '5 minut'
+			};
+		})
+		.filter(post => post.published)
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.slice(0, 3);
 
 	function formatDate(dateString: string) {
 		const locale = getLocale();
@@ -157,12 +149,12 @@
 								</span>
 							</div>
 							
-						<!-- Title -->
-						<h3 class="text-xl font-semibold text-black mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
-							<a href={resolve(`/blog/${post.slug}`)} class="hover:text-red-600 transition-colors">
-								{post.title}
-							</a>
-						</h3>
+					<!-- Title -->
+					<h3 class="text-xl font-semibold text-black mb-3 leading-tight" style="font-family: 'Roboto', sans-serif;">
+						<a href={getBlogUrl(post.slug)} class="hover:text-red-600 transition-colors">
+							{post.title}
+						</a>
+					</h3>
 							
 							<!-- Excerpt -->
 							<p class="text-black leading-relaxed mb-6 text-sm flex-1" style="font-family: 'Roboto', sans-serif;">

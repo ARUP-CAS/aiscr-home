@@ -110,28 +110,30 @@
 		<!-- ROR registration -->
 		<div class="mb-12">
 			<div class="text-sm text-black border-t border-dashed border-gray-400 pt-8 flex items-center" style="font-family: 'Roboto', sans-serif;">
-				<span>{m['footer.rorRegistered']()} <a href="https://ror.org/01a7rqj69" class="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">https://ror.org/01a7rqj69</a></span>
-				<img src="/images/logos/ror-logo_BW.png" alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
+				<span>{m['footer.rorRegistered']()}</span>
+				<a href="https://ror.org/01a7rqj69" target="_blank" rel="noopener noreferrer" class="ml-2 hover:opacity-80 transition-opacity">
+					<img src="/images/logos/ror-logo_BW.png" alt="ROR - Research Organization Registry" style="max-height: 24px; width: auto;" />
+				</a>
 			</div>
 		</div>
 
 		<!-- Partner logos -->
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
-				<a href="/" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+				<a href="/" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="max-height: 48px; width: auto;" />
+				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
 			</div>
 		</div>

@@ -205,10 +205,10 @@
 				</div>
 			</div>
 			
-			<!-- Team photo -->
-		<div style="margin-top: 48px;">
-			<img src="/images/people/ais-staff.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
-		</div>
+		<!-- Team photo -->
+	<div style="margin-top: 48px; position: relative; z-index: 10;">
+		<img src="/images/people/ais-staff.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
+	</div>
 	</div>
 </section>
 

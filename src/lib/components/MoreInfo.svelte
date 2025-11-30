@@ -47,12 +47,12 @@
 			{#each infoItemIds as itemId, index}
 				<div style="border-bottom: 1px solid #000000;">
 					
-					<!-- Header with icon and title for first item -->
-					{#if index === 0}
-						<div style="background-color: #FFFFFF; padding: 24px; border-bottom: 1px solid #000000;">
-							<div class="flex items-start space-x-4">
-								<div class="flex items-start justify-center flex-shrink-0">
-									<svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<!-- Header with icon and title for first item -->
+				{#if index === 0}
+					<div style="background-color: rgba(255, 255, 255, 0.85); padding: 24px; border-bottom: 1px solid #000000;">
+						<div class="flex items-start space-x-4">
+							<div class="flex items-start justify-center flex-shrink-0">
+								<svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_10204_8849)">
 											<path d="M43.3597 17.3L33.2797 20.2C32.9797 22.84 31.5597 25.18 29.3597 26.64L32.5997 30.12L28.6797 34.1L33.0197 38.14C34.8997 36.24 36.8397 34.08 39.0197 31.4L39.2797 31.08L39.3197 31.02C42.0197 27.62 43.4397 23.52 43.4397 19.18C43.4397 18.54 43.3997 17.92 43.3397 17.28" fill="#721C17"/>
 											<path d="M31.5998 6.40012L29.1998 11.5401C31.5398 12.9601 33.1198 15.4001 33.4598 18.1001V18.1601L43.2598 15.3401V15.2801C41.4398 6.52012 33.8598 0.240117 24.8398 0.120117L25.4398 3.66012L31.5998 6.40012Z" fill="#721C17"/>
@@ -79,12 +79,12 @@
 						</div>
 					{/if}
 					
-					<!-- Collapsible header -->
-					<button 
-						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem(itemId)}
-					>
+				<!-- Collapsible header -->
+				<button 
+					class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+					style="padding: 24px; background-color: rgba(255, 255, 255, 0.85); cursor: pointer;"
+					onclick={() => toggleItem(itemId)}
+				>
 						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
 							{(m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
@@ -95,12 +95,12 @@
 						/>
 					</button>
 					
-					<!-- Collapsible content -->
-					{#if expandedItems.has(itemId)}
-						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
-								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
-							</p>
+				<!-- Collapsible content -->
+				{#if expandedItems.has(itemId)}
+					<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.85);">
+						<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
+							{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
+						</p>
 							{#if (m as any)[`moreInfo.items.${itemId}.url`]}
 								<a 
 									href={(m as any)[`moreInfo.items.${itemId}.url`]()} 
@@ -123,12 +123,12 @@
 			{#each otherComponentIds as itemId, index}
 				<div style="border-bottom: 1px solid #000000;">
 					
-					<!-- Header with icon and title for first item -->
-					{#if index === 0}
-						<div style="background-color: #FFFFFF; padding: 24px; border-bottom: 1px solid #000000;">
-							<div class="flex items-center space-x-4">
-								<div class="flex items-center justify-center flex-shrink-0">
-									<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<!-- Header with icon and title for first item -->
+				{#if index === 0}
+					<div style="background-color: rgba(255, 255, 255, 0.85); padding: 24px; border-bottom: 1px solid #000000;">
+						<div class="flex items-center space-x-4">
+							<div class="flex items-center justify-center flex-shrink-0">
+								<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_9843_6009)">
 											<path d="M27.045 6.58511L25.755 8.02511C23.61 6.36011 20.91 5.35511 18 5.35511C16.395 5.35511 14.865 5.65511 13.455 6.19511L11.355 1.26011C13.41 0.435107 15.645 -0.0148926 17.985 -0.0148926C20.835 -0.0148926 23.52 0.645107 25.92 1.83011L23.415 3.61511L27.03 6.57011L27.045 6.58511Z" fill="#721C17"/>
 											<path d="M36 17.9999C36 18.8549 35.94 19.7099 35.82 20.5349L30.6 19.0199C30.63 18.6899 30.645 18.3449 30.645 17.9999C30.645 14.4899 29.205 11.2949 26.88 8.99989L29.19 6.40489L25.875 3.70489L27.375 2.63989C32.55 5.80489 36 11.5049 36 17.9999Z" fill="#721C17"/>
@@ -152,12 +152,12 @@
 						</div>
 					{/if}
 					
-					<!-- Collapsible header -->
-					<button 
-						class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-						style="padding: 24px; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"
-						onclick={() => toggleItem2(itemId)}
-					>
+				<!-- Collapsible header -->
+				<button 
+					class="w-full text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+					style="padding: 24px; background-color: rgba(255, 255, 255, 0.85); cursor: pointer;"
+					onclick={() => toggleItem2(itemId)}
+				>
 						<h3 class="text-base font-medium text-black pr-4" style="font-family: 'Roboto', sans-serif;">
 							{(m as any)[`moreInfo.items.${itemId}.title`]()}
 						</h3>
@@ -168,12 +168,12 @@
 						/>
 					</button>
 					
-					<!-- Collapsible content -->
-					{#if expandedItems2.has(itemId)}
-						<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.5);">
-							<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
-								{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
-							</p>
+				<!-- Collapsible content -->
+				{#if expandedItems2.has(itemId)}
+					<div style="padding: 0 24px 24px 24px; background-color: rgba(255, 255, 255, 0.85);">
+						<p class="text-black leading-relaxed mb-4" style="font-family: 'Roboto', sans-serif;">
+							{@html (m as any)[`moreInfo.items.${itemId}.content`]()}
+						</p>
 							{#if (m as any)[`moreInfo.items.${itemId}.url`]}
 								<a 
 									href={(m as any)[`moreInfo.items.${itemId}.url`]()} 

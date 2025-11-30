@@ -25,14 +25,25 @@
 	function acceptCookies() {
 		localStorage.setItem('cookieConsent', 'accepted');
 		showBanner = false;
-		// TODO: Zde můžete aktivovat Google Analytics
-		console.log('Cookies accepted');
+		
+		// Aktivovat Google Analytics
+		if (typeof gtag !== 'undefined') {
+			gtag('consent', 'update', {
+				'analytics_storage': 'granted'
+			});
+		}
 	}
 
 	function rejectCookies() {
 		localStorage.setItem('cookieConsent', 'rejected');
 		showBanner = false;
-		console.log('Cookies rejected');
+		
+		// Zajistit, že GA zůstane vypnuté
+		if (typeof gtag !== 'undefined') {
+			gtag('consent', 'update', {
+				'analytics_storage': 'denied'
+			});
+		}
 	}
 </script>
 

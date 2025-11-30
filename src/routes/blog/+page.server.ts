@@ -1,17 +1,14 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getLocale } from '$lib/paraglide/runtime';
 
 export const load: PageServerLoad = async () => {
 	try {
-		const locale = getLocale();
-		
-		// Načtení všech blog postů z content/blog adresáře
+		// Načtení všech blog postů z content/blog adresáře (pouze české)
 		const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
 		
-		const posts = Object.entries(allModules)
-			.map(([path, module]) => {
-				const { metadata } = module as any;
+	const posts = Object.entries(allModules)
+		.map(([_path, module]) => {
+			const { metadata } = module as any;
 				
 				return {
 					slug: metadata.slug,
@@ -19,11 +16,10 @@ export const load: PageServerLoad = async () => {
 					excerpt: metadata.excerpt || '',
 					date: metadata.date || new Date().toISOString().split('T')[0],
 					category: metadata.category || '',
-					published: metadata.published !== false,
-					locale: metadata.locale || 'cs'
+					published: metadata.published !== false
 				};
 			})
-			.filter(post => post.published && post.locale === locale)
+			.filter(post => post.published)
 			.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 		return {

@@ -2,17 +2,28 @@
 	// Header komponenta pro navigaci
 	import { Menu, Facebook, Linkedin, Youtube, Github, Globe } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
-	import { setLocale, getLocale } from '$lib/paraglide/runtime';
+	import { getLocale } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
 
 	let mobileMenuOpen = $state(false);
-	let currentLocale = $state(getLocale());
+	const currentLocale = getLocale();
 	let isScrolled = $state(false);
 	
+	// Language switcher - redirect to correct URL for static site
 	function toggleLocale() {
-		const newLocale = currentLocale === 'cs' ? 'en' : 'cs';
-		setLocale(newLocale);
-		currentLocale = newLocale;
+		if (typeof window === 'undefined') return;
+		
+		const currentPath = window.location.pathname;
+		const hash = window.location.hash;
+		
+		if (currentLocale === 'cs') {
+			// Switch to English: add /en prefix
+			window.location.href = '/en' + currentPath + hash;
+		} else {
+			// Switch to Czech: remove /en prefix
+			const newPath = currentPath.replace(/^\/en/, '') || '/';
+			window.location.href = newPath + hash;
+		}
 	}
 	
 	onMount(() => {
