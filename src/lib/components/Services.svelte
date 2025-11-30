@@ -42,7 +42,7 @@
 			</div>
 
 			<!-- Vydejte se za archeology - fialová karta vpravo nahoře -->
-			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/images/bg-service-atlas.png'); background-size: cover; background-position: center; padding: 32px;">
+			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/images/bg-service-atlas.webp'); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 35, 118, 0.9); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
@@ -62,7 +62,7 @@
 			</div>
 
 		<!-- Poznávejte Prahu - červená karta vlevo dole -->
-		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-prague.png'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
+		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-prague.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(198, 54, 46, 0.9); padding: 16px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>
@@ -85,7 +85,7 @@
 		</div>
 
 		<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
-		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-c14.png'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
+		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-c14.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(128, 142, 152, 0.9); padding: 16px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>
@@ -108,7 +108,7 @@
 		</div>
 
 		<!-- Neztraťte se v pojmech - hnědá karta vpravo dole -->
-		<div class="lg:col-span-2 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-teater.png'); background-size: cover; background-position: center; padding: 24px 32px; min-height: 550px;">
+		<div class="lg:col-span-2 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-teater.webp'); background-size: cover; background-position: center; padding: 24px 32px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(219, 145, 52, 0.9); padding: 24px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>

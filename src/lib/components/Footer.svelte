@@ -2,13 +2,20 @@
 	// Footer komponenta
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
-	import { getLocale } from '$lib/paraglide/runtime';
+	import { onMount } from 'svelte';
 	
 	// Props pro callback na otevření cookie banneru
 	let { onOpenCookies } = $props<{ onOpenCookies: () => void }>();
 	
-	const locale = getLocale();
-	const isEnglish = locale === 'en';
+	let isEnglish = $state(false);
+	
+	onMount(() => {
+		isEnglish = typeof window !== 'undefined' && window.location.pathname.startsWith('/en');
+	});
+	
+	function getBasePath(): string {
+		return isEnglish ? '/en' : '';
+	}
 </script>
 
 <footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb;">
@@ -146,7 +153,7 @@
 			<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
 				<span>{@html m['footer.copyright']()}</span>
 				<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
-				<a href="/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
+				<a href="{getBasePath()}/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
 				<button onclick={onOpenCookies} class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</button>
 				<span>{m['footer.designBy']()}</span>
 			</div>
@@ -188,7 +195,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: url('/images/bg-footer.png');
+		background-image: url('/images/bg-footer.webp');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

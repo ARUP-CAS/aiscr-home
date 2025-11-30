@@ -27,12 +27,12 @@ const config = {
 				'/blog',
 				'/en/blog',
 				// Blog posts - explicitly list them for both locales
-				'/blog/digitalizace-sbirek',
-				'/blog/nove-objevy-doba-bronzova',
-				'/blog/stredoveke-hradiste',
-				'/en/blog/digitalizace-sbirek',
-				'/en/blog/nove-objevy-doba-bronzova',
-				'/en/blog/stredoveke-hradiste',
+				'/blog/blog-aiscr-vic-nez-aktuality',
+				'/blog/doi-v-amcr-digitalni-rodne-cislo',
+				'/blog/atrium-3d-summer-school-brno',
+				'/en/blog/blog-aiscr-vic-nez-aktuality',
+				'/en/blog/doi-v-amcr-digitalni-rodne-cislo',
+				'/en/blog/atrium-3d-summer-school-brno',
 			],
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'

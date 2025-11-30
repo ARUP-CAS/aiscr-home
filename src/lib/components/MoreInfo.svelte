@@ -195,7 +195,7 @@
 
 <style>
 	.more-info-section {
-		background-image: url('/images/bg-more-info.png');
+		background-image: url('/images/bg-more-info.webp');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

@@ -28,7 +28,7 @@
 <style>
 	.hero-section {
 		position: relative;
-		background-image: url('/images/bg-hero.jpg');
+		background-image: url('/images/bg-hero.webp');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -41,7 +41,7 @@
 		top: 0;
 		bottom: 0;
 		width: 50%;
-		background-image: url('/images/bg-hero-right.png');
+		background-image: url('/images/bg-hero-right.webp');
 		background-size: contain;
 		background-position: right center;
 		background-repeat: no-repeat;

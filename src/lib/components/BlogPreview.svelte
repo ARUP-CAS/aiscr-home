@@ -30,7 +30,7 @@
 				author: metadata.author || 'AIS CR Team',
 				authorRole: metadata.authorRole || '',
 				authorImage: metadata.authorImage || '',
-				image: metadata.image || '/images/blog/placeholder.png',
+				image: metadata.image || '/images/blog/placeholder.webp',
 				readTime: metadata.readingTime || '5 minut'
 			};
 		})
@@ -207,7 +207,7 @@
 
 <style>
 	.blog-section {
-		background-image: url('/images/bg-blog.png');
+		background-image: url('/images/bg-blog.webp');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

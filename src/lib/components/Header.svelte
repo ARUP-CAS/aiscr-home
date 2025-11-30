@@ -2,12 +2,22 @@
 	// Header komponenta pro navigaci
 	import { Menu, Facebook, Linkedin, Youtube, Github, Globe } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
-	import { getLocale } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
 
 	let mobileMenuOpen = $state(false);
-	const currentLocale = getLocale();
+	let currentLocale = $state('cs');
 	let isScrolled = $state(false);
+	
+	// Detect locale from URL
+	function detectLocale(): string {
+		if (typeof window === 'undefined') return 'cs';
+		return window.location.pathname.startsWith('/en') ? 'en' : 'cs';
+	}
+	
+	// Get base path for links (empty for CS, '/en' for EN)
+	function getBasePath(): string {
+		return currentLocale === 'en' ? '/en' : '';
+	}
 	
 	// Language switcher - redirect to correct URL for static site
 	function toggleLocale() {
@@ -27,6 +37,9 @@
 	}
 	
 	onMount(() => {
+		// Detect locale on mount
+		currentLocale = detectLocale();
+		
 		const handleScroll = () => {
 			isScrolled = window.scrollY > 50;
 		};
@@ -43,7 +56,7 @@
 	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
 			<!-- Logo -->
-			<a href="/" class="flex items-center">
+			<a href={currentLocale === 'en' ? '/en' : '/'} class="flex items-center">
 				<img src="/images/logos/Logo AIS kratke.svg" alt="AIS CR Logo" class="logo-img" />
 			</a>
 			
@@ -51,12 +64,12 @@
 			<div class="hidden lg:flex items-center">
 				<!-- Navigační menu -->
 				<nav class="flex items-center" style="gap: 32px;">
-					<a href="/#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
-					<a href="/#blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
-					<a href="/#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
-					<a href="/#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
-					<a href="/#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
-					<a href="/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
+					<a href="{getBasePath()}/#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
+					<a href="{getBasePath()}/#blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
+					<a href="{getBasePath()}/#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
+					<a href="{getBasePath()}/#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
+					<a href="{getBasePath()}/#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
+					<a href="{getBasePath()}/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
 				</nav>
 
 				<!-- Language switcher -->
@@ -117,12 +130,12 @@
 	{#if mobileMenuOpen}
 		<div class="lg:hidden border-t border-gray-800 bg-black">
 			<div class="px-2 pt-2 pb-3 space-y-1">
-				<a href="/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.services']()}</a>
-				<a href="/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.blog']()}</a>
-				<a href="/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.faq']()}</a>
-				<a href="/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.terms']()}</a>
-				<a href="/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.about']()}</a>
-				<a href="/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.contact']()}</a>
+				<a href="{getBasePath()}/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.services']()}</a>
+				<a href="{getBasePath()}/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.blog']()}</a>
+				<a href="{getBasePath()}/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.faq']()}</a>
+				<a href="{getBasePath()}/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.terms']()}</a>
+				<a href="{getBasePath()}/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.about']()}</a>
+				<a href="{getBasePath()}/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.contact']()}</a>
 			</div>
 				<!-- Mobile social icons -->
 				<div class="px-5 py-3 border-t border-gray-800">
