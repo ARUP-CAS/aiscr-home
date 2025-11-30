@@ -1,12 +1,9 @@
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
-import { getLocale } from '$lib/paraglide/runtime';
+import type { PageLoad, EntryGenerator } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
 	try {
-		const locale = getLocale();
-		
-		// Načti všechny verze článku (cs i en)
+		// Načti všechny články (pouze české)
 		const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
 		
 		const allArticles = Object.entries(modules).map(([path, module]) => ({
@@ -15,10 +12,8 @@ export const load: PageLoad = async ({ params }) => {
 			metadata: (module as any).metadata
 		}));
 		
-		// Najdi článek podle slug a locale
-		const article = allArticles.find(a => 
-			a.metadata.slug === params.slug && a.metadata.locale === locale
-		);
+		// Najdi článek podle slug
+		const article = allArticles.find(a => a.metadata.slug === params.slug);
 		
 		if (!article) {
 			throw error(404, 'Blog post nenalezen');
@@ -33,18 +28,13 @@ export const load: PageLoad = async ({ params }) => {
 				date: metadata.date || new Date().toISOString().split('T')[0],
 				category: metadata.category || '',
 				slug: params.slug,
-				locale: metadata.locale,
 				readingTime: metadata.readingTime || '5 minut',
 				author: metadata.author || 'AIS CR',
 				authorRole: metadata.authorRole || 'Archeologický informační systém',
 				authorImage: metadata.authorImage || '/images/people/ais-staff.png',
 				image: metadata.image || '/Content.jpg',
 				content
-			},
-			// Vrátíme všechny dostupné verze pro přepínání jazyka
-			availableLocales: allArticles
-				.filter(a => a.metadata.slug === params.slug)
-				.map(a => a.metadata.locale)
+			}
 		};
 	} catch (err) {
 		console.error('Error loading blog post:', err);
@@ -52,3 +42,14 @@ export const load: PageLoad = async ({ params }) => {
 	}
 };
 
+// Generate entries for all blog posts (for prerendering)
+export const entries: EntryGenerator = async () => {
+	const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+	
+	const slugs = Object.entries(modules).map(([path, module]) => {
+		const { metadata } = module as any;
+		return { slug: metadata.slug };
+	});
+	
+	return slugs;
+};

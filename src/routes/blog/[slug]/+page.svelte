@@ -15,6 +15,9 @@
 			day: 'numeric'
 		});
 	}
+	
+	const locale = getLocale();
+	const blogUrl = locale === 'en' ? '/en/blog' : '/blog';
 </script>
 
 <svelte:head>
@@ -31,7 +34,7 @@
 			<!-- Left Column (1/3) -->
 			<div class="lg:col-span-1">
 				<!-- Tlačítko zpět -->
-				<a href="/blog" class="inline-flex items-center text-black hover:text-gray-700 mb-4 md:mb-6" style="font-family: 'Roboto', sans-serif; font-size: 14px; md:font-size: 16px;">
+				<a href={blogUrl} class="inline-flex items-center text-black hover:text-gray-700 mb-4 md:mb-6" style="font-family: 'Roboto', sans-serif; font-size: 14px; md:font-size: 16px;">
 					<ChevronLeft size="20" class="mr-2" />
 					{m['blog.backToBlog']()}
 				</a>
@@ -44,7 +47,7 @@
 						</span>
 					{/if}
 					<span style="font-family: 'Roboto', sans-serif; font-size: 12px; md:font-size: 14px; color: #666;">
-						Čas čtení {data.post.readingTime}
+						{m['blog.readTime']({ time: data.post.readingTime })}
 					</span>
 				</div>
 				
@@ -55,7 +58,7 @@
 				
 				<!-- Datum publikace -->
 				<time datetime={data.post.date} class="text-sm md:text-base" style="font-family: 'Roboto', sans-serif; color: #666;">
-					Publikováno {formatDate(data.post.date)}
+					{m['blog.published']()} {formatDate(data.post.date)}
 				</time>
 			</div>
 			

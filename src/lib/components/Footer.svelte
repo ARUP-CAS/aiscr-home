@@ -2,13 +2,20 @@
 	// Footer komponenta
 	import { MapPin, User, Globe, Mail, Facebook, Linkedin, Youtube, Github, CircleUser, Compass, MailOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
-	import { getLocale } from '$lib/paraglide/runtime';
+	import { onMount } from 'svelte';
 	
 	// Props pro callback na otevření cookie banneru
 	let { onOpenCookies } = $props<{ onOpenCookies: () => void }>();
 	
-	const locale = getLocale();
-	const isEnglish = locale === 'en';
+	let isEnglish = $state(false);
+	
+	onMount(() => {
+		isEnglish = typeof window !== 'undefined' && window.location.pathname.startsWith('/en');
+	});
+	
+	function getBasePath(): string {
+		return isEnglish ? '/en' : '';
+	}
 </script>
 
 <footer id="contact" class="footer-section py-16 border-t border-black" style="font-family: 'Roboto', sans-serif; background-color: #e5e7eb;">
@@ -110,28 +117,30 @@
 		<!-- ROR registration -->
 		<div class="mb-12">
 			<div class="text-sm text-black border-t border-dashed border-gray-400 pt-8 flex items-center" style="font-family: 'Roboto', sans-serif;">
-				<span>{m['footer.rorRegistered']()} <a href="https://ror.org/01a7rqj69" class="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">https://ror.org/01a7rqj69</a></span>
-				<img src="/images/logos/ror-logo_BW.png" alt="ROR" class="ml-2" style="max-height: 24px; width: auto;" />
+				<span>{m['footer.rorRegistered']()}</span>
+				<a href="https://ror.org/01a7rqj69" target="_blank" rel="noopener noreferrer" class="ml-2 hover:opacity-80 transition-opacity">
+					<img src="/images/logos/ror-logo_BW.png" alt="ROR - Research Organization Registry" style="max-height: 24px; width: auto;" />
+				</a>
 			</div>
 		</div>
 
 		<!-- Partner logos -->
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
-				<a href="/" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="max-height: 48px; width: auto;" />
+				<a href="/" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="max-height: 48px; width: auto;" />
+				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="max-height: 48px; width: auto;" />
+				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="max-height: 48px; width: auto;" />
+				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
-				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-					<img src="/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="max-height: 48px; width: auto;" />
+				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
+					<img src="/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
 				</a>
 			</div>
 		</div>
@@ -144,7 +153,7 @@
 			<div class="flex flex-wrap items-center space-x-6 text-sm text-black" style="font-family: 'Roboto', sans-serif;">
 				<span>{@html m['footer.copyright']()}</span>
 				<a href="https://amcr-help.aiscr.cz/zakladni-info/osobni-udaje.html" class="hover:text-gray-700 underline" target="_blank" rel="noopener noreferrer">{m['footer.privacyPolicy']()}</a>
-				<a href="/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
+				<a href="{getBasePath()}/#terms" class="hover:text-gray-700 underline">{m['footer.termsOfUse']()}</a>
 				<button onclick={onOpenCookies} class="hover:text-gray-700 underline">{m['footer.cookiePolicy']()}</button>
 				<span>{m['footer.designBy']()}</span>
 			</div>
@@ -186,7 +195,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: url('/images/bg-footer.png');
+		background-image: url('/images/bg-footer.webp');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

@@ -30,7 +30,7 @@
 			</p>
 				
 				<div style="margin-bottom: 24px;">
-					<img src="/images/bg-about-info.png" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
+					<img src="/images/bg-about-info.webp" alt="O AIS CR" style="width: 100%; max-width: 500px; height: auto;" />
 				</div>
 				
 				<!-- Quote -->
@@ -205,10 +205,10 @@
 				</div>
 			</div>
 			
-			<!-- Team photo -->
-		<div style="margin-top: 48px;">
-			<img src="/images/people/ais-staff.png" alt="Tým AIS CR" style="width: 100%; height: auto;" />
-		</div>
+		<!-- Team photo -->
+	<div style="margin-top: 48px; position: relative; z-index: 10;">
+		<img src="/images/people/ais-staff.webp" alt="Tým AIS CR" style="width: 100%; height: auto;" />
+	</div>
 	</div>
 </section>
 
@@ -239,7 +239,7 @@
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 lg:gap-32 justify-items-center">
 		<div class="text-center">
 			<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
-				<img src="/images/people/lecbychova.png" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="/images/people/lecbychova.webp" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -253,7 +253,7 @@
 
 		<div class="text-center">
 			<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
-				<img src="/images/people/novak.png" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="/images/people/novak.webp" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -267,7 +267,7 @@
 
 		<div class="text-center">
 			<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
-				<img src="/images/people/pajdla.png" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="/images/people/pajdla.webp" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -281,7 +281,7 @@
 
 			<div class="text-center">
 				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/svejcar.png" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/svejcar.webp" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -324,7 +324,7 @@
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4">
 			<div class="text-center">
 				<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/eichert.png" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/eichert.webp" alt="Stefan Eichert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.nhm-wien.ac.at/stefan_eichert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -338,7 +338,7 @@
 
 			<div class="text-center">
 				<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/dunning.png" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/dunning.webp" alt="Cynthia Dunning Thierstein" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.archaeoconcept.com/en/organisation/team/dr-cynthia-dunning/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -352,7 +352,7 @@
 
 			<div class="text-center">
 				<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/hilpert.png" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/hilpert.webp" alt="Johanna Hilpert" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://ufg.phil-fak.uni-koeln.de/mitarbeiterinnen/wissenschaftliche-mitarbeiterinnen/dr-johanna-hilpert" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -366,7 +366,7 @@
 
 			<div class="text-center">
 				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/posluschny.png" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/posluschny.webp" alt="Axel G. Posluschny" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 			<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 				<a href="https://www.keltenwelt-glauberg.de/forschungszentrum/forschungszentrum/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -380,7 +380,7 @@
 
 			<div class="text-center">
 				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/stranak.png" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/stranak.webp" alt="Pavel Straňák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 			<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 				<a href="https://ufal.mff.cuni.cz/pavel-stranak" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -394,7 +394,7 @@
 
 			<div class="text-center">
 				<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer">
-					<img src="/images/people/stular.png" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="/images/people/stular.webp" alt="Benjamin Štular" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://iza2.zrc-sazu.si/en/sodelavci/benjamin-stular-en" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -424,7 +424,7 @@
 						</h3>
 					</div>
 					
-					<img src="/images/bg-finance.png" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
+					<img src="/images/bg-finance.webp" alt="Financování" style="width: 100%; height: auto; margin-top: -64px; position: relative; z-index: 1;" />
 				</div>
 
 				<!-- Right column - Funding description -->
@@ -519,7 +519,7 @@
 
 		<div class="flex items-center justify-center">
 			<a href="https://www.npu.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-				<img src="/images/partners/{isEnglish ? 'npu-en.jpg' : 'npu.png'}" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
+				<img src="/images/partners/{isEnglish ? 'npu-en.webp' : 'npu.png'}" alt="Národní památkový ústav" style="max-height: 80px; width: auto;" />
 			</a>
 		</div>
 
@@ -575,7 +575,7 @@
 
 <style>
 	.about-section {
-		background-image: url('/images/bg-about.png');
+		background-image: url('/images/bg-about.webp');
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
