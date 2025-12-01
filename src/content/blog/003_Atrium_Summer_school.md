@@ -3,13 +3,13 @@ slug: atrium-3d-summer-school-brno
 title: "Ohlédnutí za ATRIUM 3D Models Summer School v Brně"
 excerpt: "Jak probíhala mezinárodní letní škola zaměřená na 3D modely v archeologii? Přečtěte si zážitky z pěti intenzivních dnů."
 date: "2025-11-30"
-category: "Události"
+# category: "Události"
 published: true
 locale: "cs"
 readingTime: "5 minut"
 author: "David Spáčil"
 authorRole: "Datový kurátor ARÚB"
-authorImage: "/images/people/ais-staff.webp"
+authorImage: "/images/blog/Spacil_David.jpg"
 image: "/images/blog/003/003_000_nahled.webp"
 ---
 
@@ -39,7 +39,7 @@ Práce v reálných podmínkách přinesla cenné lekce o vlivu světla a počas
 
 Středa přinesla změnu měřítka. Od katedrály jsme se přesunuli k drobné archeologii. Vojtěch Nosek seznámil studenty se specifiky dokumentace artefaktů. Účastníci si vyzkoušeli práci s replikami – od bronzové sekery a dýky až po Venuši. Došlo i na práci s profesionálním skenerem Artec Leo.
 
-[Jak poznamenala Barbara Ritterová](https://atrium-research.eu/blog/report-from-atrium-3-d-summer-school/), práce s malými objekty byla překvapivě náročná, protože i drobné odlesky či stíny mohly zásadně ovlivnit výsledek. Zaslouženou odměnou byl společenský večer plný networkingu a mezikulturní výměny, který si účastníci nemohli vynachválit.
+Jak poznamenala [Barbara Ritterová](https://atrium-research.eu/blog/report-from-atrium-3-d-summer-school/), práce s malými objekty byla překvapivě náročná, protože i drobné odlesky či stíny mohly zásadně ovlivnit výsledek. Zaslouženou odměnou byl společenský večer plný networkingu a mezikulturní výměny, který si účastníci nemohli vynachválit.
 
 ## Virtuální světy a budoucnost oboru
 
@@ -51,7 +51,7 @@ Středa přinesla změnu měřítka. Od katedrály jsme se přesunuli k drobné 
 
 Závěrečný den byl věnován rekapitulaci, technice RTI a základům post-processingu modelů v programu Blender. Když se v pátek odpoledne účastníci loučili, neodváželi si jen nové dovednosti v tvorbě a úpravě 3D modelů. Odváželi si především pocit sounáležitosti.
 
-[Marco Brunello to shrnul nejlépe](https://atrium-research.eu/blog/my-atrium-3-d-summer-school-brno/): *„Byl to týden intenzivního učení, ale také smysluplných sociálních interakcí, které v naší skupině vytvořily skvělý pocit komunity".* I to je jedním z cílů projektu ATRIUM – propojovat badatele a sdílet know-how napříč hranicemi.
+[Marco Brunello](https://atrium-research.eu/blog/my-atrium-3-d-summer-school-brno/) to shrnul nejlépe: *„Byl to týden intenzivního učení, ale také smysluplných sociálních interakcí, které v naší skupině vytvořily skvělý pocit komunity".* I to je jedním z cílů projektu ATRIUM – propojovat badatele a sdílet know-how napříč hranicemi.
 
 *Grantové schéma Transnational Access (TNA) projektu ATRIUM pokračuje čtvrtou výzvou, která je aktuálně otevřena pro přijímání žádostí. V tomto kole je možné žádat o podporu na individuální výzkumné pobyty (Individual Access). Badatelé a badatelky v humanitních vědách mohou získat plně hrazený pobyt (včetně cesty a ubytování) na jedné ze 14 hostitelských institucí v Evropě. Stáže jsou určeny pro rozvoj vlastních výzkumných témat s využitím expertního zázemí a nástrojů hostitele. Uzávěrka přihlášek pro toto kolo je stanovena na 31. prosince 2025.*
 
@@ -65,9 +65,10 @@ Závěrečný den byl věnován rekapitulaci, technice RTI a základům post-pro
 
 ## Chcete vědět víc?
 
-- Jak summer school probíhala z pohledu účastníků: [Insights and recap – ATRIUM 3D Models Training School](https://arup-cas.github.io/atrium-school3d/report.html)
+- Jak summer school probíhala z pohledu účastníků si můžete prohlédnout na stránkách akce: [Insights and recap – ATRIUM 3D Models Training School](https://arup-cas.github.io/atrium-school3d/report.html)
 - Materiály používané během summer school: [Materials and data](https://arup-cas.github.io/atrium-school3d/materials.html)
 - Více o schématu TNA v projektu ATRIUM: [Transnational Access Scheme Grants](https://atrium-research.eu/travel-grants/)
 - K tvorbě modelů byl použit především RealityScan: [https://realityscan.com/](https://realityscan.com/)
 - K úpravě modelů Blender: [https://www.blender.org/](https://www.blender.org/)
 - Návody k tvorbě 3D modelů pomocí fotogrammetrie: [Epic Developer Community](https://dev.epicgames.com/community/realityscan/learning?types=tutorial)
+
