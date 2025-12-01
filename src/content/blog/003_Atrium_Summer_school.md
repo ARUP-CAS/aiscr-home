@@ -8,7 +8,7 @@ published: true
 locale: "cs"
 readingTime: "5 minut"
 author: "David Spáčil"
-authorRole: "Datový kurátor ARÚB"
+authorRole: "Datový kurátor"
 authorImage: "/images/blog/Spacil_David.jpg"
 image: "/images/blog/003/003_000_nahled.webp"
 ---
@@ -71,4 +71,5 @@ Závěrečný den byl věnován rekapitulaci, technice RTI a základům post-pro
 - K tvorbě modelů byl použit především RealityScan: [https://realityscan.com/](https://realityscan.com/)
 - K úpravě modelů Blender: [https://www.blender.org/](https://www.blender.org/)
 - Návody k tvorbě 3D modelů pomocí fotogrammetrie: [Epic Developer Community](https://dev.epicgames.com/community/realityscan/learning?types=tutorial)
+
 
