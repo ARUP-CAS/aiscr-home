@@ -2,6 +2,7 @@
 	// FAQ sekce - Časté dotazy
 	import { BadgeHelp, ChevronDown, MessageSquarePlus } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { base } from '$app/paths';
 	
 	let expandedItems = $state(new Set());
 	
@@ -28,7 +29,7 @@
 	}
 </script>
 
-<section id="faq" class="faq-section" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF; padding-top: 128px; padding-bottom: 80px;">
+<section id="faq" class="faq-section" style="font-family: 'Roboto', sans-serif; background-color: #FFFFFF; padding-top: 128px; padding-bottom: 80px; --faq-bg: url('{base}/images/bg-faq.webp');">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -96,7 +97,7 @@
 
 <style>
 	.faq-section {
-		background-image: url('/images/bg-faq.webp');
+		background-image: var(--faq-bg);
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

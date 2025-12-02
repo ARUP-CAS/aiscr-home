@@ -3,19 +3,22 @@
 	import { Menu, Facebook, Linkedin, Youtube, Github, Globe } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	let mobileMenuOpen = $state(false);
 	let currentLocale = $state('cs');
 	let isScrolled = $state(false);
 	
-	// Detect locale from URL
+	// Detect locale from URL - respektuje base path
 	function detectLocale(): string {
 		if (typeof window === 'undefined') return 'cs';
-		return window.location.pathname.startsWith('/en') ? 'en' : 'cs';
+		// Odstranit base path z pathname pro správnou detekci
+		const pathname = window.location.pathname.replace(base, '');
+		return pathname.startsWith('/en') ? 'en' : 'cs';
 	}
 	
-	// Get base path for links (empty for CS, '/en' for EN)
-	function getBasePath(): string {
+	// Get locale path for links (empty for CS, '/en' for EN)
+	function getLocalePath(): string {
 		return currentLocale === 'en' ? '/en' : '';
 	}
 	
@@ -23,16 +26,17 @@
 	function toggleLocale() {
 		if (typeof window === 'undefined') return;
 		
-		const currentPath = window.location.pathname;
+		// Odstranit base path z pathname
+		const pathname = window.location.pathname.replace(base, '');
 		const hash = window.location.hash;
 		
 		if (currentLocale === 'cs') {
 			// Switch to English: add /en prefix
-			window.location.href = '/en' + currentPath + hash;
+			window.location.href = base + '/en' + pathname + hash;
 		} else {
 			// Switch to Czech: remove /en prefix
-			const newPath = currentPath.replace(/^\/en/, '') || '/';
-			window.location.href = newPath + hash;
+			const newPath = pathname.replace(/^\/en/, '') || '/';
+			window.location.href = base + newPath + hash;
 		}
 	}
 	
@@ -56,20 +60,20 @@
 	<div class="mx-auto px-4 sm:px-6 lg:px-8 h-full" style="max-width: 1312px;">
 		<div class="flex justify-between items-center h-full">
 			<!-- Logo -->
-			<a href={currentLocale === 'en' ? '/en' : '/'} class="flex items-center">
-				<img src="/images/logos/Logo AIS kratke.svg" alt="AIS CR Logo" class="logo-img" />
+			<a href="{base}{currentLocale === 'en' ? '/en' : '/'}" class="flex items-center">
+				<img src="{base}/images/logos/Logo AIS kratke.svg" alt="AIS CR Logo" class="logo-img" />
 			</a>
 			
 			<!-- Menu a ikony zarovnané doprava -->
 			<div class="hidden lg:flex items-center">
 				<!-- Navigační menu -->
 				<nav class="flex items-center" style="gap: 32px;">
-					<a href="{getBasePath()}/#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
-					<a href="{getBasePath()}/#blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
-					<a href="{getBasePath()}/#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
-					<a href="{getBasePath()}/#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
-					<a href="{getBasePath()}/#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
-					<a href="{getBasePath()}/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
+					<a href="{base}{getLocalePath()}/#services" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.services']()}</a>
+					<a href="{base}{getLocalePath()}/#blog" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.blog']()}</a>
+					<a href="{base}{getLocalePath()}/#faq" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.faq']()}</a>
+					<a href="{base}{getLocalePath()}/#terms" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.terms']()}</a>
+					<a href="{base}{getLocalePath()}/#about" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.about']()}</a>
+					<a href="{base}{getLocalePath()}/#contact" class="text-white hover:text-gray-300 transition-colors" style="font-size: 16px;">{m['nav.contact']()}</a>
 				</nav>
 
 				<!-- Language switcher -->
@@ -130,12 +134,12 @@
 	{#if mobileMenuOpen}
 		<div class="lg:hidden border-t border-gray-800 bg-black">
 			<div class="px-2 pt-2 pb-3 space-y-1">
-				<a href="{getBasePath()}/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.services']()}</a>
-				<a href="{getBasePath()}/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.blog']()}</a>
-				<a href="{getBasePath()}/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.faq']()}</a>
-				<a href="{getBasePath()}/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.terms']()}</a>
-				<a href="{getBasePath()}/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.about']()}</a>
-				<a href="{getBasePath()}/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.contact']()}</a>
+				<a href="{base}{getLocalePath()}/#services" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.services']()}</a>
+				<a href="{base}{getLocalePath()}/#blog" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.blog']()}</a>
+				<a href="{base}{getLocalePath()}/#faq" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.faq']()}</a>
+				<a href="{base}{getLocalePath()}/#terms" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.terms']()}</a>
+				<a href="{base}{getLocalePath()}/#about" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.about']()}</a>
+				<a href="{base}{getLocalePath()}/#contact" class="block px-3 py-2 text-white hover:text-gray-300 font-medium" style="font-size: 16px;" onclick={() => mobileMenuOpen = false}>{m['nav.contact']()}</a>
 			</div>
 				<!-- Mobile social icons -->
 				<div class="px-5 py-3 border-t border-gray-800">

@@ -5,6 +5,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import CookieBanner from '$lib/components/CookieBanner.svelte';
 	import { setLocale } from '$lib/paraglide/runtime';
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -19,7 +20,9 @@
 	// Initialize locale from URL on mount (for client-side hydration)
 	onMount(() => {
 		if (typeof window !== 'undefined') {
-			const locale = window.location.pathname.startsWith('/en') ? 'en' : 'cs';
+			// Odstranit base path z pathname pro správnou detekci locale
+			const pathname = window.location.pathname.replace(base, '');
+			const locale = pathname.startsWith('/en') ? 'en' : 'cs';
 			setLocale(locale);
 		}
 	});

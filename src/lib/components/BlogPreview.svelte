@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Preview nejnovějších blog postů
-	import { resolve } from '$app/paths';
+	import { base } from '$app/paths';
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import { m } from '$lib/paraglide/messages.js';
@@ -8,7 +8,7 @@
 	
 	function getBlogUrl(slug: string) {
 		const locale = getLocale();
-		return locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`;
+		return locale === 'en' ? `${base}/en/blog/${slug}` : `${base}/blog/${slug}`;
 	}
 	
 	// Synchronní načtení blog postů při SSR i CSR
@@ -106,7 +106,7 @@
 	}
 </script>
 
-<section id="blog" class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px;">
+<section id="blog" class="blog-section" style="font-family: 'Roboto', sans-serif; background-color: #EDE9E5; padding-top: 112px; padding-bottom: 80px; --blog-bg: url('{base}/images/bg-blog.webp');">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header with icon -->
@@ -138,7 +138,7 @@
 					<article class="flex-none bg-white shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col" style="scroll-snap-align: start; width: 390px; height: 629px; padding: 24px;">
 						<!-- Image -->
 						<div class="overflow-hidden" style="height: 300px; width: 100%;">
-							<img src={post.image} alt={post.title} class="w-full h-full object-cover" />
+							<img src="{base}{post.image}" alt={post.title} class="w-full h-full object-cover" />
 						</div>
 						
 						<div class="flex flex-col flex-1" style="margin-top: 24px;">
@@ -164,7 +164,7 @@
 							<!-- Author and meta info - always at bottom -->
 							<div class="flex items-start space-x-3 mt-auto" style="font-family: 'Roboto', sans-serif;">
 								{#if post.authorImage}
-									<img src={post.authorImage} alt={post.author} class="rounded-full flex-shrink-0 object-cover" style="width: 48px; height: 48px;" />
+									<img src="{base}{post.authorImage}" alt={post.author} class="rounded-full flex-shrink-0 object-cover" style="width: 48px; height: 48px;" />
 								{:else}
 									<div class="bg-gray-400 rounded-full flex-shrink-0" style="width: 48px; height: 48px;"></div>
 								{/if}
@@ -207,7 +207,7 @@
 
 <style>
 	.blog-section {
-		background-image: url('/images/bg-blog.webp');
+		background-image: var(--blog-bg);
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

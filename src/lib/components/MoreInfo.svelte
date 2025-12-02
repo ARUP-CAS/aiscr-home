@@ -2,6 +2,7 @@
 	// Rozbalovací sekce "Chcete vědět víc?"
 	import { ChevronDown } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { base } from '$app/paths';
 	
 	let expandedItems = $state(new Set());
 	let expandedItems2 = $state(new Set());
@@ -29,7 +30,7 @@
 	}
 </script>
 
-<section id="moreInfo" class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; padding-top: 34px; padding-bottom: 80px;">
+<section id="moreInfo" class="more-info-section" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE; padding-top: 34px; padding-bottom: 80px; --more-info-bg: url('{base}/images/bg-more-info.webp');">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		
 		<!-- Header -->
@@ -195,7 +196,7 @@
 
 <style>
 	.more-info-section {
-		background-image: url('/images/bg-more-info.webp');
+		background-image: var(--more-info-bg);
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;

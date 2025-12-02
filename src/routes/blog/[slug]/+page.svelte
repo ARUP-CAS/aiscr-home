@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
+	import { base } from '$app/paths';
 	import { ChevronLeft, Facebook, Linkedin, Link } from '@lucide/svelte';
 	
 	let { data }: { data: PageData } = $props();
@@ -17,7 +18,7 @@
 	}
 	
 	const locale = getLocale();
-	const blogUrl = locale === 'en' ? '/en/blog' : '/blog';
+	const blogUrl = locale === 'en' ? `${base}/en/blog` : `${base}/blog`;
 </script>
 
 <svelte:head>
@@ -65,7 +66,7 @@
 			<!-- Right Column (2/3) - Image -->
 			<div class="lg:col-span-2 mt-6 lg:mt-0">
 				<img 
-					src={data.post.image} 
+					src="{base}{data.post.image}" 
 					alt={data.post.title}
 					class="w-full h-auto rounded-lg"
 				/>
@@ -87,7 +88,7 @@
 					</h3>
 					<div class="flex items-center gap-3 mb-6 md:mb-8">
 						<img 
-							src={data.post.authorImage} 
+							src="{base}{data.post.authorImage}" 
 							alt={data.post.author}
 							class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover"
 						/>

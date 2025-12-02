@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { base } from '$app/paths';
 	import type { PageData } from './$types';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
@@ -17,7 +17,7 @@
 	
 	function getBlogUrl(slug: string) {
 		const locale = getLocale();
-		return locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`;
+		return locale === 'en' ? `${base}/en/blog/${slug}` : `${base}/blog/${slug}`;
 	}
 </script>
 

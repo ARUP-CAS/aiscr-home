@@ -2,9 +2,10 @@
 	// Hero sekce s hlavním obsahem
 	import { ChevronRight } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { base } from '$app/paths';
 </script>
 
-<section class="hero-section flex items-center" style="font-family: 'Roboto', sans-serif; min-height: 780px;">
+<section class="hero-section flex items-center" style="font-family: 'Roboto', sans-serif; min-height: 780px; --hero-bg: url('{base}/images/bg-hero.webp'); --hero-bg-right: url('{base}/images/bg-hero-right.webp');">
 	<!-- Vnitřní div vycentrovaný s max 1100px a šířka 100% -->
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto; position: relative; z-index: 10;">
 		<!-- Blok omezený na 800px zarovnaný doleva -->
@@ -17,7 +18,7 @@
 				{m['hero.subtitle']()}
 			</p>
 			
-		<a href="/#services" class="inline-flex items-center bg-white text-black px-6 py-3 hover:bg-gray-100 transition-colors" style="font-family: 'Roboto', sans-serif; font-size: 16px; border: 1px solid #000000;">
+		<a href="{base}/#services" class="inline-flex items-center bg-white text-black px-6 py-3 hover:bg-gray-100 transition-colors" style="font-family: 'Roboto', sans-serif; font-size: 16px; border: 1px solid #000000;">
 			<span class="mr-3">{m['hero.cta']()}</span>
 			<ChevronRight size="16" color="#000000" />
 		</a>
@@ -28,7 +29,7 @@
 <style>
 	.hero-section {
 		position: relative;
-		background-image: url('/images/bg-hero.webp');
+		background-image: var(--hero-bg);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -41,7 +42,7 @@
 		top: 0;
 		bottom: 0;
 		width: 50%;
-		background-image: url('/images/bg-hero-right.webp');
+		background-image: var(--hero-bg-right);
 		background-size: contain;
 		background-position: right center;
 		background-repeat: no-repeat;

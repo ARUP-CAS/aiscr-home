@@ -2,6 +2,7 @@
 	// Služby AIS CR - bento grid layout
 	import { Flag, Church, Atom, BookOpen } from '@lucide/svelte';
 	import { m } from '$lib/paraglide/messages.js';
+	import { base } from '$app/paths';
 </script>
 
 <section id="services" class="bg-gray-100" style="font-family: 'Roboto', sans-serif; padding: 128px 0 80px 0;">
@@ -22,11 +23,11 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch" style="margin-top: 80px; grid-auto-rows: 1fr;">
 			
 			<!-- Mapujte a objevujte - velká karta vlevo nahoře -->
-			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/images/bg-service-amcr.png'); background-size: cover; background-position: center; padding: 32px;">
+			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('{base}/images/bg-service-amcr.png'); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(114, 28, 23, 0.9); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
-							<img src="/images/logos/amcr-pin.svg" alt="AMČR" width="48" height="48" class="mb-6" />
+							<img src="{base}/images/logos/amcr-pin.svg" alt="AMČR" width="48" height="48" class="mb-6" />
 							<h3 class="font-bold mb-4" style="font-family: 'Roboto Slab', serif; font-size: 40px;">
 								{m['services.amcr.title']()}
 							</h3>
@@ -42,7 +43,7 @@
 			</div>
 
 			<!-- Vydejte se za archeology - fialová karta vpravo nahoře -->
-			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('/images/bg-service-atlas.webp'); background-size: cover; background-position: center; padding: 32px;">
+			<div class="md:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden" style="background-image: url('{base}/images/bg-service-atlas.webp'); background-size: cover; background-position: center; padding: 32px;">
 				<div class="text-white rounded-xl h-full" style="background-color: rgba(128, 35, 118, 0.9); padding: 24px;">
 					<div class="h-full flex flex-col justify-between">
 						<div>
@@ -62,7 +63,7 @@
 			</div>
 
 		<!-- Poznávejte Prahu - červená karta vlevo dole -->
-		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-prague.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
+		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('{base}/images/bg-service-prague.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(198, 54, 46, 0.9); padding: 16px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>
@@ -85,7 +86,7 @@
 		</div>
 
 		<!-- Využijte 14C - tmavě šedá karta uprostřed dole -->
-		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-c14.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
+		<div class="lg:col-span-1 overflow-hidden h-full flex" style="background-image: url('{base}/images/bg-service-c14.webp'); background-size: cover; background-position: center; padding: 24px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(128, 142, 152, 0.9); padding: 16px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>
@@ -108,7 +109,7 @@
 		</div>
 
 		<!-- Neztraťte se v pojmech - hnědá karta vpravo dole -->
-		<div class="lg:col-span-2 overflow-hidden h-full flex" style="background-image: url('/images/bg-service-teater.webp'); background-size: cover; background-position: center; padding: 24px 32px; min-height: 550px;">
+		<div class="lg:col-span-2 overflow-hidden h-full flex" style="background-image: url('{base}/images/bg-service-teater.webp'); background-size: cover; background-position: center; padding: 24px 32px; min-height: 550px;">
 			<div class="text-white rounded-xl flex-1" style="background-color: rgba(219, 145, 52, 0.9); padding: 24px;">
 				<div class="h-full flex flex-col justify-between">
 					<div>
