@@ -1,152 +1,187 @@
-# AIS CR - Archeologický informační systém České republiky
+# AIS CR Web
 
-Oficiální webová prezentace Archeologického informačního systému České republiky.
-
-## 📚 Dokumentace
-
-**Pro detailní informace o architektuře a principech vývoje viz [ARCHITECTURE.md](./ARCHITECTURE.md)**
-
-Dokumentace obsahuje:
-- Technologický stack a architektura
-- Svelte 5 runes a best practices
-- Styling s Tailwind CSS 4.0
-- Internacionalizace (i18n)
-- Struktura projektu a konvence
+Statická webová prezentace Archeologického informačního systému České republiky.
 
 ## 🚀 Quick Start
 
-### Instalace závislostí
-
-```sh
+```bash
+# Instalace
 pnpm install
-```
 
-### Vývoj
-
-Spuštění vývojového serveru:
-
-```sh
+# Vývoj
 pnpm dev
 
-# nebo otevřít v prohlížeči
-pnpm dev -- --open
-```
-
-Aplikace běží na `http://localhost:5173`
-
-### Build
-
-Vytvoření production verze:
-
-```sh
+# Production build
 pnpm build
-```
 
-Náhled production buildu:
-
-```sh
+# Preview
 pnpm preview
 ```
 
-### Type-checking
+## 📚 Dokumentace
 
-```sh
-pnpm check
+### Pro editory:
+- **[BLOG_QUICKSTART.md](BLOG_QUICKSTART.md)** - Rychlý návod pro přidání blog článku (5 kroků)
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Kompletní dokumentace pro správu obsahu
 
-# nebo s watch mode
-pnpm check:watch
-```
+### Pro vývojáře:
+- **[docs/BLOG_SYSTEM_TECHNICAL.md](docs/BLOG_SYSTEM_TECHNICAL.md)** - Jak funguje blog s MDSvex
+- **[docs/I18N_STATIC_PRERENDER.md](docs/I18N_STATIC_PRERENDER.md)** - Internacionalizace ve statickém režimu
+- **[docs/I18N_CHEATSHEET.md](docs/I18N_CHEATSHEET.md)** - i18n quick reference
+- **[docs/COOKIE_CONSENT_GA.md](docs/COOKIE_CONSENT_GA.md)** - Cookie consent a Google Analytics
 
-### Linting a formátování
-
-```sh
-pnpm lint      # Zkontrolovat code style
-pnpm format    # Formátovat všechny soubory
-```
+### Architektura:
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Architektura a konvence projektu
+- **[.cursor/rules/architektura.mdc](.cursor/rules/architektura.mdc)** - Cursor rules
 
 ## 🛠️ Technologie
 
 - **SvelteKit 2.x** - Full-stack framework
 - **Svelte 5** - UI framework s runes API
-- **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS 4.0** - Utility-first CSS
 - **Paraglide JS** - i18n (cs/en)
 - **MDSvex** - Markdown support
+- **TypeScript** - Type safety
 - **Vite 7** - Build tool
 
 ## 📁 Struktura projektu
 
 ```
-src/
-├── lib/
-│   └── components/    # Svelte komponenty
-├── routes/            # SvelteKit routing
-├── content/           # Markdown obsah
-└── app.css            # Globální styly
-
-static/
-└── images/            # Statické obrázky
-
-messages/
-├── cs.json            # České překlady
-└── en.json            # Anglické překlady
+aiscr-home/
+├── src/
+│   ├── lib/
+│   │   └── components/      # Svelte komponenty
+│   ├── routes/              # SvelteKit routes (file-based)
+│   └── content/
+│       └── blog/            # Blog články (.md)
+├── static/
+│   └── images/              # Statické obrázky
+├── messages/
+│   ├── cs.json              # České překlady
+│   └── en.json              # Anglické překlady
+├── scripts/                 # Optimalizační skripty
+└── build/                   # Build output (statické HTML)
 ```
 
-## 🌍 Vícejazyčnost
+## 🌍 Jazyky
 
-Aplikace podporuje češtinu (cs) a angličtinu (en).
+- **Česká verze:** `/` (root URL)
+- **Anglická verze:** `/en/` (prefixované URL)
 
-Překlady jsou spravovány pomocí [Paraglide JS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs) a uloženy v `messages/`.
+Blog články jsou **pouze v češtině**. Anglická verze webu (`/en/`) má anglické UI, ale české blog články.
 
-## 📝 Přidání blog článku
+## 📝 Blog články
 
-1. Vytvořte markdown soubor v `src/content/blog/`:
-   - `nazev-clanku.md` (česká verze)
-   - `nazev-clanku.en.md` (anglická verze)
+### Přidat nový článek:
 
-2. Přidejte frontmatter metadata:
+1. Vytvoř `.md` soubor v `src/content/blog/`
+2. Přidej obrázky do `static/images/blog/XXX/`
+3. Optimalizuj obrázky: `./scripts/optimize-blog-article.sh XXX`
+4. Aktualizuj `svelte.config.js` (přidej slug do `prerender.entries`)
+5. Build: `pnpm build`
+6. Commit a push
 
-```markdown
----
-slug: nazev-clanku
-title: Název článku
-excerpt: Krátký popis...
-date: 2024-01-15
-category: Technologie
-published: true
-locale: cs
-author: Jméno Autora
-authorRole: Pozice
-authorImage: /images/people/autor.png
-image: /images/blog/obrazek.png
-readingTime: 5 minut
----
+**Detailní návod:** [BLOG_QUICKSTART.md](BLOG_QUICKSTART.md)
 
-# Obsah článku
+## 🎨 Optimalizace obrázků
+
+### Pomocné skripty:
+
+```bash
+# Optimalizovat jeden blog článek (číslo 004)
+./scripts/optimize-blog-article.sh 004
+
+# Optimalizovat všechny obrázky v projektu
+./scripts/resize-images.sh
+./scripts/optimize-images.sh
 ```
 
-3. Článek se automaticky objeví na webu po rebuildu.
+### Manuální optimalizace:
+
+```bash
+# Resize (max 1600px)
+magick obrazek.png -resize "1600x1600>" obrazek_small.png
+
+# Konverze do WebP
+magick obrazek.png -quality 85 obrazek.webp
+
+# Kombinovaně
+magick obrazek.png -resize "1600x1600>" -quality 85 obrazek.webp
+```
 
 ## 🚢 Deployment
 
-Aplikace je postavena jako statický web a může být nasazena na:
-- Netlify
-- Vercel
-- GitHub Pages
-- Cloudflare Pages
-- AWS S3 + CloudFront
-- Jakýkoliv statický hosting
+### Automatický (GitHub Actions)
 
-Build vytvoří statické soubory ve složce `build/`.
+1. **Push do main** → automatický build
+2. **Vytvoř release na GitHubu** → automaticky přidá ZIP
+
+### Manuální (Nginx)
+
+```bash
+# Build
+pnpm build
+
+# Deploy
+rsync -av build/ /var/www/aiscr.cz/
+```
+
+Web je **čistě statický** - nepotřebuje Node.js runtime ani server-side kód.
+
+## 📦 Build Output
+
+Složka `build/` obsahuje:
+
+```
+build/
+├── index.html          # CS homepage
+├── en.html             # EN homepage
+├── blog/               # Blog články (CS i EN)
+├── images/             # Optimalizované obrázky
+├── _app/               # JS/CSS
+├── atRium/             # Legacy redirects
+├── atrium3d/
+├── mapa_DPZ/
+└── vystupy/
+```
+
+**Velikost buildu:** ~10-15 MB (včetně obrázků)
+
+## 🔧 Užitečné příkazy
+
+```bash
+pnpm dev            # Dev server (http://localhost:5173)
+pnpm build          # Production build
+pnpm preview        # Preview buildu (http://localhost:4173)
+pnpm check          # TypeScript kontrola
+pnpm compile        # Kompilace i18n překladů
+pnpm format         # Prettier formátování
+pnpm lint           # ESLint
+```
+
+## 🌐 Internacionalizace
+
+Překlady jsou v `messages/cs.json` a `messages/en.json`.
+
+### Přidat nový překlad:
+
+1. Přidej klíč do obou souborů
+2. Spusť `pnpm compile`
+3. Použij v komponentě: `{m['hero.title']()}`
+
+**Detaily:** [CONTRIBUTING.md](CONTRIBUTING.md#internacionalizace-překlady)
+
+## 🔗 Odkazy
+
+- **Web:** https://www.aiscr.cz
+- **AMČR:** https://amcr-info.aiscr.cz/
+- **ARÚB:** https://www.arub.cz
+- **ARÚ Praha:** https://www.arup.cas.cz
 
 ## 📄 Licence
 
-Viz [LICENSE](./LICENSE) soubor.
-
-## 👥 Autoři
-
-Archeologický ústav AV ČR, Praha a Brno
+© 2025 Archeologický informační systém České republiky
 
 ---
 
-**Pro více informací o vývoji viz [ARCHITECTURE.md](./ARCHITECTURE.md)**
+**Pro problémy a dotazy:** Viz [CONTRIBUTING.md](CONTRIBUTING.md) nebo kontaktuj tým AIS CR.
