@@ -131,19 +131,19 @@
 		<div class="mb-12">
 			<div class="flex flex-wrap gap-8 items-center">
 				<a href="{base}/" class="hover:opacity-80 transition-opacity flex items-center">
-					<img src="{base}/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'ais-cr-black-en.png' : 'ais-cr-black.png'}" alt="Archeologický informační systém" style="width: 140px; height: auto;" />
 				</a>
 				<a href="https://www.arub.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
-					<img src="{base}/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'logo-arub-en.png' : 'logo-arub.png'}" alt="ARUB" style="width: 182px; height: auto;" />
 				</a>
 				<a href="https://www.arup.cas.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
-					<img src="{base}/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="height: {isEnglish ? '42px' : '48px'}; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'logo-aru-en.png' : 'logo-aru.png'}" alt="Archeologický ústav AV ČR Praha" style="width: 138px; height: auto;" />
 				</a>
 				<a href="https://www.avcr.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
-					<img src="{base}/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'akademie-ved-black-en.png' : 'akademie-ved-black.png'}" alt="Akademie věd České republiky" style="width: 134px; height: auto;" />
 				</a>
 				<a href="https://www.vyzkumne-infrastruktury.cz" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity flex items-center">
-					<img src="{base}/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="height: {isEnglish ? '36px' : '48px'}; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'infra-black-en.png' : 'infra-black.png'}" alt="Velké výzkumné infrastruktury" style="width: 148px; height: auto;" />
 				</a>
 			</div>
 		</div>

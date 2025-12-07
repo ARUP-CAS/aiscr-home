@@ -3,13 +3,13 @@ slug: atrium-3d-summer-school-brno
 title: "Ohlédnutí za ATRIUM 3D Models Summer School v Brně"
 excerpt: "Jak probíhala mezinárodní letní škola zaměřená na 3D modely v archeologii? Přečtěte si zážitky z pěti intenzivních dnů."
 date: "2025-11-30"
-# category: "Události"
+category: "Událost"
 published: true
 locale: "cs"
 readingTime: "5 minut"
 author: "David Spáčil"
 authorRole: "Datový kurátor"
-authorImage: "/images/blog/Spacil_David.jpg"
+authorImage: "/images/blog/author/spacil.jpg"
 image: "/images/blog/003/003_000_nahled.webp"
 ---
 

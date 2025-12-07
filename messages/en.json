@@ -181,7 +181,7 @@
 	"moreInfo.items.zenodo.title": "Downloadable documents on Zenodo",
 	"moreInfo.items.zenodo.content": "Articles, methodological guidelines, posters, presentations and other AIS CR outputs are easily accessible in our community on the Zenodo repository.",
 	"moreInfo.items.otherTools.title": "Other tools and applications",
-	"moreInfo.items.otherTools.content": "• <a href=\"https://aiscr-webamcr.readthedocs.io/en/stable/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">AMCR software documentation</a><br>• <a href=\"https://amcr-convert.aiscr.cz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">SHP to WKT converter</a> – a tool for converting SHP data into WKT format, structured for import into the AMCR.<br>• <a href=\"https://github.com/ufal/atrium-page-classification\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">Page classification tool</a> – a tool for basic classification of page content in digitised documents.",
+	"moreInfo.items.otherTools.content": "• <a href=\"https://aiscr-webamcr.readthedocs.io/en/stable/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">AMCR software documentation</a><br>• <a href=\"https://amcr-convert.aiscr.cz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">a tool for converting SHP data</a> into WKT format, structured for import into the AMCR.<br>• <a href=\"https://github.com/ufal/atrium-page-classification\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">a tool for basic classification of page content</a> in digitised documents.",
 	"moreInfo.buttonText": "Visit",
 	"moreInfo.items.amcrMap.url": "https://amcr.aiscr.cz/",
 	"moreInfo.items.digitalArchive.url": "https://digiarchiv.aiscr.cz/",

@@ -3,13 +3,13 @@ slug: blog-aiscr-vic-nez-aktuality
 title: "Blog AIS CR: víc než jen aktuality"
 excerpt: "Proč vzniká Blog AIS CR a jaké články vás čekají? Chceme mluvit víc po lopatě o digitální archeologii."
 date: "2025-11-30"
-# category: "AIS CR"
+category: "Novinka"
 published: true
 locale: "cs"
 readingTime: "4 minuty"
 author: "Tým AIS CR"
 authorRole: "Archeologický informační systém"
-authorImage: "/images/blog/AISCR.jpg"
+authorImage: "/images/blog/author/team.jpg"
 image: "/images/blog/001/001_000_nahled.webp"
 ---
 

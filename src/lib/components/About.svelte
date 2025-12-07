@@ -173,7 +173,7 @@
 </section>
 
 <!-- Who creates AIS CR section -->
-<section class="pt-16 pb-16 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
+<section class="pt-16 pb-0 bg-gray-200 border-t border-dashed border-gray-400" style="font-family: 'Roboto', sans-serif;">
 	<div class="w-full px-4 sm:px-6 lg:px-8" style="max-width: 1312px; margin: 0 auto;">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 				
@@ -240,7 +240,7 @@
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 lg:gap-32 justify-items-center">
 		<div class="text-center">
 			<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer">
-				<img src="{base}/images/people/lecbychova.webp" alt="Olga Lečbychová" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="{base}/images/people/lecbychova.webp" alt="Olga Lečbychová" class="rounded-full mb-4 mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/lecbychova-olga/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -254,7 +254,7 @@
 
 		<div class="text-center">
 			<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer">
-				<img src="{base}/images/people/novak.webp" alt="David Novák" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="{base}/images/people/novak.webp" alt="David Novák" class="rounded-full mb-4 mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/novak/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -268,7 +268,7 @@
 
 		<div class="text-center">
 			<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer">
-				<img src="{base}/images/people/pajdla.webp" alt="Petr Pajdla" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+				<img src="{base}/images/people/pajdla.webp" alt="Petr Pajdla" class="rounded-full mb-4 mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 			</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arub.cz/pracovnici/pajdla-petr/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -282,7 +282,7 @@
 
 			<div class="text-center">
 				<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer">
-					<img src="{base}/images/people/svejcar.webp" alt="Ondřej Švejcar" class="rounded-full mb-4 object-cover mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
+					<img src="{base}/images/people/svejcar.webp" alt="Ondřej Švejcar" class="rounded-full mb-4 mx-auto hover:opacity-80 transition-opacity" style="width: 80px; height: 80px;" />
 				</a>
 				<h4 class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">
 					<a href="https://www.arup.cas.cz/kontakty/personalia/aktivni-zamestnanci/svejcar/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">
@@ -580,9 +580,5 @@
 		background-size: 1312px;
 		background-position: center top;
 		background-repeat: no-repeat;
-	}
-	
-	.about-section section {
-		opacity: 0.9;
 	}
 </style>
