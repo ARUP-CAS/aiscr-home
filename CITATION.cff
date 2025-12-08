@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+title: Archaeological Information System of the Czech Republic - Website
+message: "If you use this software, please cite it using the metadata from this file or generic citation: AIS CR: Archaeological Information System of the Czech Republic - Website. doi:10.5281/zenodo.17769386. Website: https://www.aiscr.cz/. [cit. YYYY-MM-DD]."
+authors:
+  - family-names: Lečbychová
+    given-names: Olga
+    orcid: 'https://orcid.org/0000-0001-5123-1261'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Novák
+    given-names: David
+    orcid: 'https://orcid.org/0000-0001-6592-6291'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Prague'
+  - family-names: Harasim
+    given-names: Ronald
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Filip
+    given-names: Milan
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Kopáčová
+    given-names: Zuzana
+    orcid: 'https://orcid.org/0009-0008-1323-112X'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Pavloň
+    given-names: Tomáš
+    orcid: 'https://orcid.org/0009-0007-4387-6976'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Švejcar
+    given-names: Ondřej
+    orcid: 'https://orcid.org/0009-0006-3764-9454'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Prague'
+  - family-names: Pajdla
+    given-names: Petr
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+    orcid: 'https://orcid.org/0000-0001-7050-9572'
+  - family-names: Matulová
+    given-names: Klára
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+  - family-names: Buchtová
+    given-names: Eva
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Brno'
+    orcid: 'https://orcid.org/0009-0001-0934-5836'
+  - family-names: Křivánková
+    given-names: Dana
+    orcid: 'https://orcid.org/0000-0001-5718-9447'
+    affiliation: 'Czech Academy of Sciences, Institute of Archaeology, Prague'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17769386
+repository-code: 'https://github.com/ARUP-CAS/aiscr-home'
+url: 'https://www.aiscr.cz/'
+abstract: "Main website of the Archaeological Information System of the Czech Republic (AIS CR) large research infrastructure."
+license: CC-BY-NC-4.0
+date-released: 2025-12-08
+version: v0.1.0
+type: software
