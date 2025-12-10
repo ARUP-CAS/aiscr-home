@@ -174,9 +174,6 @@ Překlady jsou v `messages/cs.json` a `messages/en.json`.
 ## 🔗 Odkazy
 
 - **Web:** https://www.aiscr.cz
-- **AMČR:** https://amcr-info.aiscr.cz/
-- **ARÚB:** https://www.arub.cz
-- **ARÚ Praha:** https://www.arup.cas.cz
 
 ## 📄 Licence
 
