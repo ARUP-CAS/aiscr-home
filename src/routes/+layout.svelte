@@ -30,7 +30,7 @@
 <svelte:head>
 	<link rel="icon" type="image/png" href="{base}/ais-mini.png" />
 	<title>AIS CR - Archeologický informační systém České republiky</title>
-	<meta name="description" content="Objevte bohaté archeologické dědictví České republiky prostřednictvím našich moderních informačních systémů a databází." />
+	<meta name="description" content="AIS CR nabízí jednotné a přehledné digitální prostředí pro archeologická data z České republiky." />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">
