@@ -29,19 +29,30 @@
 <style>
 	.hero-section {
 		position: relative;
+		background: linear-gradient(to right, #e8e2db 50%, #beb8b2 50%);
+	}
+	
+	.hero-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		background-image: var(--hero-bg);
-		background-size: cover;
+		background-size: 1920px auto;
 		background-position: center;
 		background-repeat: no-repeat;
+		z-index: 0;
 	}
 	
 	.hero-section::after {
 		content: '';
 		position: absolute;
-		right: 0;
+		right: max(0px, calc((100vw - 1312px) / 2));
 		top: 0;
 		bottom: 0;
-		width: 50%;
+		width: 656px; /* 50% z 1312px */
 		background-image: var(--hero-bg-right);
 		background-size: contain;
 		background-position: right center;
@@ -50,8 +61,8 @@
 		z-index: 1;
 	}
 	
-	/* Schovat pravý obrázek na mobilech */
-	@media (max-width: 768px) {
+	/* Schovat pravý obrázek na mobilech a tabletech */
+	@media (max-width: 1024px) {
 		.hero-section::after {
 			display: none;
 		}
