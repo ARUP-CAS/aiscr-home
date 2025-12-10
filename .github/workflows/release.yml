@@ -12,7 +12,7 @@ jobs:
     
     steps:
       - name: Download latest build artifact
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@v11
         with:
           workflow: build.yml
           branch: main
