@@ -5,6 +5,7 @@
 	import CookieBanner from '$lib/components/CookieBanner.svelte';
 	import { setLocale } from '$lib/paraglide/runtime';
 	import { base } from '$app/paths';
+	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 
 	let { children } = $props();
@@ -25,10 +26,14 @@
 			setLocale(locale);
 		}
 	});
+	
+	// Canonical URL pro SEO - vždy odkazuje na produkční doménu
+	const canonicalUrl = $derived(`https://www.aiscr.cz${page.url.pathname}`);
 </script>
 
 <svelte:head>
 	<link rel="icon" type="image/png" href="{base}/ais-mini.png" />
+	<link rel="canonical" href={canonicalUrl} />
 	<title>AIS CR - Archeologický informační systém České republiky</title>
 	<meta name="description" content="AIS CR nabízí jednotné a přehledné digitální prostředí pro archeologická data z České republiky." />
 </svelte:head>
