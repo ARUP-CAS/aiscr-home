@@ -2,7 +2,7 @@
 slug: atrium-3d-summer-school-brno
 title: "Ohlédnutí za ATRIUM 3D Models Summer School v Brně"
 excerpt: "Jak probíhala mezinárodní letní škola zaměřená na 3D modely v archeologii? Přečtěte si zážitky z pěti intenzivních dnů."
-date: "2025-11-30"
+date: "2025-12-01"
 category: "Událost"
 published: true
 locale: "cs"
@@ -71,5 +71,6 @@ Závěrečný den byl věnován rekapitulaci, technice RTI a základům post-pro
 - K tvorbě modelů byl použit především RealityScan: [https://realityscan.com/](https://realityscan.com/)
 - K úpravě modelů Blender: [https://www.blender.org/](https://www.blender.org/)
 - Návody k tvorbě 3D modelů pomocí fotogrammetrie: [Epic Developer Community](https://dev.epicgames.com/community/realityscan/learning?types=tutorial)
+
 
 
