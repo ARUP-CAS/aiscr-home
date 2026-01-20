@@ -33,9 +33,11 @@ const config = {
 				'/blog/blog-aiscr-vic-nez-aktuality',
 				'/blog/doi-v-amcr-digitalni-rodne-cislo',
 				'/blog/atrium-3d-summer-school-brno',
+				'/blog/prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende',
 				'/en/blog/blog-aiscr-vic-nez-aktuality',
 				'/en/blog/doi-v-amcr-digitalni-rodne-cislo',
 				'/en/blog/atrium-3d-summer-school-brno',
+				'/en/blog/prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende',
 			],
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'
