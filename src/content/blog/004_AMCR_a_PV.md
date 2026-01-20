@@ -11,8 +11,6 @@ authorImage: "/images/blog/author/kudlikova.png"
 image: "/images/blog/004/004_000_nahled.png"
 ---
 
-# Časopis Přehled výzkumů a AMČR: propojení článků a oborové evidence
-
 Časopis [*Přehled výzkumů*](https://www.arub.cz/prehled-vyzkumu/o-casopisu/) (PV), vydávaný od roku 1956, patří dlouhodobě k základním volně dostupným informačním zdrojům o archeologických výzkumech na Moravě a ve Slezsku. Vydává jej dvakrát ročně Archeologický ústav AV ČR, Brno, v. v. i., a jeho struktura kombinuje recenzované odborné studie s nerecenzovanými částmi Varia a Přehled výzkumů na Moravě a ve Slezsku (výzkumné zprávy). Každý rok tak vzniká jedinečný souhrnný  přehled terénní archeologické činnosti, který v této podobě nenajdeme v žádném jiném zdroji – od rozsáhlých záchranných výzkumů až po jednotlivé nálezy.
 
 Tyto zprávy jsou charakteristické svou stručností a přehledností. Dlouhodobě zprostředkovávají základní informace o tom, kde, kdy a v jakém rozsahu výzkum proběhl a jaké přinesl výsledky. Zásadní změnu přinesl rok 2018, kdy byl celý archiv časopisu zpřístupněn online, včetně možnosti vyhledávání a filtrování obsahu. Od té doby jsou nové ročníky vedle tištěné podoby systematicky publikovány také [online](https://www.arub.cz/prehled-vyzkumu/vyhledat-clanek/).
@@ -103,4 +101,5 @@ Zvláštní význam má jednotný identifikátor v prostředí AMČR-PAS při pr
 - Návod na editaci samostatné akce v AMČR [Správa akcí – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/akce.html)
 - Návod na editaci samostatného nálezu V AMČR [Správa samostatných nálezů – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/amcr-pas/amater.html#zapsat)
 - Postup pro zpracování nálezových zpráv z akcí drobného rozsahu [Akce drobného rozsahu – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/drobne-akce.html)
+
 
