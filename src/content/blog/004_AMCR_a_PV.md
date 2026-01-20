@@ -1,4 +1,5 @@
 ---
+slug: prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende
 title: "Časopis Přehled výzkumů a AMČR: propojení článků a oborové evidence"
 date: "2026-01-19"
 published: true
@@ -102,3 +103,4 @@ Zvláštní význam má jednotný identifikátor v prostředí AMČR-PAS při pr
 - Návod na editaci samostatné akce v AMČR [Správa akcí – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/akce.html)
 - Návod na editaci samostatného nálezu V AMČR [Správa samostatných nálezů – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/amcr-pas/amater.html#zapsat)
 - Postup pro zpracování nálezových zpráv z akcí drobného rozsahu [Akce drobného rozsahu – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/drobne-akce.html)
+
