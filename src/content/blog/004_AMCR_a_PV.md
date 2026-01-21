@@ -5,9 +5,9 @@ date: "2026-01-19"
 published: true
 locale: "cs"
 readingTime: "7 minut"
-author: "Martina Kudlíková a Tomáš Pavloň"
+author: "Tomáš Pavloň a Martina Kudlíková"
 authorRole: "Technická redaktorka PV a Datový kurátor AMČR"
-authorImage: "/images/blog/author/kudlikova.png"
+authorImage: "/images/blog/author/pavlon.jpg"
 image: "/images/blog/004/004_000_nahled.png"
 ---
 
@@ -101,5 +101,6 @@ Zvláštní význam má jednotný identifikátor v prostředí AMČR-PAS při pr
 - Návod na editaci samostatné akce v AMČR [Správa akcí – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/akce.html)
 - Návod na editaci samostatného nálezu V AMČR [Správa samostatných nálezů – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/amcr-pas/amater.html#zapsat)
 - Postup pro zpracování nálezových zpráv z akcí drobného rozsahu [Akce drobného rozsahu – Dokumentace AMČR](https://amcr-help.aiscr.cz/amcr/drobne-akce.html)
+
 
 
