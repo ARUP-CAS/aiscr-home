@@ -49,7 +49,7 @@ identifiers:
 repository-code: 'https://github.com/ARUP-CAS/aiscr-home'
 url: 'https://www.aiscr.cz/'
 abstract: "Main website of the Archaeological Information System of the Czech Republic (AIS CR) large research infrastructure."
-license: CC-BY-NC-4.0
+license: MIT
 date-released: 2026-01-21
 version: v1.0.2
 type: software

@@ -177,7 +177,7 @@ Překlady jsou v `messages/cs.json` a `messages/en.json`.
 
 ## 📄 Licence
 
-© 2025 Archeologický informační systém České republiky
+Viz [LICENSE](LICENSE) soubor.
 
 ---
 
