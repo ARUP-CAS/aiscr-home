@@ -72,5 +72,8 @@ Závěrečný den byl věnován rekapitulaci, technice RTI a základům post-pro
 - K úpravě modelů Blender: [https://www.blender.org/](https://www.blender.org/)
 - Návody k tvorbě 3D modelů pomocí fotogrammetrie: [Epic Developer Community](https://dev.epicgames.com/community/realityscan/learning?types=tutorial)
 
+*Obr. 1: autor Vojtěch Nosek.  
+Obr. 2–4: autor Tomáš Chlup.*
+
 
 
