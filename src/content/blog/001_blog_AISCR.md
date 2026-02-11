@@ -1,6 +1,6 @@
 ---
 slug: blog-aiscr-vic-nez-aktuality
-title: "Blog AIS CR: víc než jen aktuality / AIS CR Blog: Not Just Another News Feed"
+title: "Blog AIS CR: víc než jen aktuality | AIS CR Blog: Not Just Another News Feed"
 excerpt: "Proč vzniká Blog AIS CR a jaké články vás čekají? Chceme mluvit víc po lopatě o digitální archeologii."
 date: "2025-11-29"
 category: "Novinka"
@@ -88,3 +88,4 @@ The AIS CR Blog is being created to:
 - AMCR Newsletter: [https://amcr-help.aiscr.cz/zpravodaj/](https://amcr-help.aiscr.cz/zpravodaj/)
 - AIS CR on Facebook: [https://www.facebook.com/ArcheologickyInformacniSystem](https://www.facebook.com/ArcheologickyInformacniSystem)
 - AIS CR on YouTube: [https://www.youtube.com/@aiscr253](https://www.youtube.com/@aiscr253)  
+
