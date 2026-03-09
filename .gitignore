@@ -24,3 +24,10 @@ vite.config.ts.timestamp-*
 
 # Paraglide
 src/lib/paraglide
+
+# vscode
+.vscode/
+
+# agents
+.codex/
+.claude/
