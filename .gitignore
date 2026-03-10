@@ -31,3 +31,4 @@ src/lib/paraglide
 # agents
 .codex/
 .claude/
+.cursor/
