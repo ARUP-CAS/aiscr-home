@@ -1,13 +1,15 @@
 ---
 slug: prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende
 title: "Časopis Přehled výzkumů a AMČR: propojení článků a oborové evidence"
+excerpt: "Jaké změny a výhody přináší propojení časopisu Přehled výzkumů a Archeologické mapy ČR?"
+category: "Novinka"
 date: "2026-01-19"
 published: true
 locale: "cs"
 readingTime: "7 minut"
-author: "Tomáš Pavloň a Martina Kudlíková"
-authorRole: "Datový kurátor AMČR a Výkonná redaktorka PV"
-authorImage: "/images/blog/author/pavlon.jpg"
+author: "Tomáš Pavloň, Martina Kudlíková"
+authorRole: "Datový kurátor AMČR, Výkonná redaktorka PV"
+authorImage: "/images/blog/author/pavlon.jpg, /images/blog/author/kudlikova.png"
 image: "/images/blog/004/004_000_nahled.png"
 ---
 
