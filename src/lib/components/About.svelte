@@ -407,6 +407,26 @@
 				</p>
 			</div>
 			</div>
+			<!-- Former members -->
+			<div class="mt-12">
+				<h4 class="font-semibold text-black mb-6" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+					{m['about.advisoryFormerTitle']()}
+				</h4>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div>
+						<p class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">Jan Kolář</p>
+						<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">University College London, Institute of Archaeology</p>
+					</div>
+					<div>
+						<p class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">Ladislav Šmejda</p>
+						<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">Česká zemědělská univerzita v Praze, Fakulta životního prostředí, Katedra prostorových věd</p>
+					</div>
+					<div>
+						<p class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">Evžen Neustupný</p>
+						<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">Západočeská univerzita v Plzni, Fakulta filozofická, Katedra archeologie</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
