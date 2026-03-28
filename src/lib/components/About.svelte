@@ -589,6 +589,33 @@
 			</a>
 		</div>
 	</div>
+
+		<!-- Third row of partner logos -->
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-8">
+			<div class="flex items-center justify-center">
+				<a href="https://stredoceskykraj.cz/web/urad" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="{base}/images/partners/stedocech-logo.jpg" alt="Středočeský kraj" style="max-height: 25px; width: auto;" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://www.muzeumbrna.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="{base}/images/partners/mmb-logo.webp" alt="Muzeum města Brna" style="max-height: 50px; width: auto;" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://www.kraj-lbc.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="{base}/images/partners/liberec-logo.webp" alt="Liberecký kraj" style="max-height: 40px; width: auto;" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://www.jmk.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="{base}/images/partners/jihomorava-logo.webp" alt="Jihomoravský kraj" style="max-height: 80px; width: auto;" />
+				</a>
+			</div>
+		</div>
 		</div>
 	</div>
 </section>
