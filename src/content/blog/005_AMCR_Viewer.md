@@ -65,7 +65,7 @@ Otevřu si tedy postupně nad každou z vrstev (body, linie, polygony) filtračn
 
 > *Příklad vizualizace proběhlých výzkumů (archeologických akcí) v Jihomoravském kraji, při kterých byly nalezeny památky z doby laténské.*
 
-Doufáme, že vám bude plugin k užitku\!
+Doufáme, že vám bude plugin k užitku!
 
 *Plugin je dostupný ke stažení v nástroji Manage and install plugins přímo v prostředí QGIS.* 
 
