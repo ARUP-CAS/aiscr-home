@@ -8,7 +8,7 @@ published: true
 locale: "cs"
 readingTime: "3 minuty"
 author: "David Spáčil"
-authorRole: Datový kurátor"
+authorRole: "Datový kurátor"
 authorImage: "/images/blog/author/spacil.jpg"
 image: "/images/blog/005/005_000_nahled.webp"
 ---
