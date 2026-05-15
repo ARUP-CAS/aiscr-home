@@ -20,7 +20,7 @@ V AIS CR se vám snažíme přinášet vždy nové a užitečné služby, ale �
 V tomto ohledu je AMČR Viewer šikovný nástroj umožňující přímé využití dat spravovaných v rámci AMČR. 
 
 
-## Co tedy vlastně AMČR Viewer vlastně umí?
+## Co tedy AMČR Viewer vlastně umí?
 
 Přes API [Digitálního archivu AMČR](https://digiarchiv.aiscr.cz) **přistupuje k datům o archeologických *akcích* a *lokalitách***.
 Nabízí **filtrování na základě vybraných metadat** (kromě prostorových a administrativních dat jde zejména o filtrování pomocí kontextuálních informací – pole **datace a typ areálu**).
