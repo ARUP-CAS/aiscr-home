@@ -294,6 +294,23 @@
 				</p>
 			</div>
 			</div>
+
+		<!-- Former members -->
+		<div class="mt-12">
+			<h4 class="font-semibold text-black mb-6" style="font-family: 'Roboto', sans-serif; font-size: 18px;">
+				{m['about.executiveFormerTitle']()}
+			</h4>
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+				<div>
+					<p class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">Martin Kuna</p>
+					<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">ARÚ</p>
+				</div>
+				<div>
+					<p class="font-semibold text-black text-sm" style="font-family: 'Roboto', sans-serif;">Klára Matulová</p>
+					<p class="text-xs text-black" style="font-family: 'Roboto', sans-serif;">ARÚB</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -613,6 +630,12 @@
 			<div class="flex items-center justify-center">
 				<a href="https://www.jmk.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
 					<img src="{base}/images/partners/jihomorava-logo.webp" alt="Jihomoravský kraj" style="max-height: 80px; width: auto;" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<a href="https://www.khk.cz/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+					<img src="{base}/images/partners/kralovehradecky-kraj.png" alt="Královéhradecký kraj" style="max-height: 40px; width: auto;" />
 				</a>
 			</div>
 		</div>
