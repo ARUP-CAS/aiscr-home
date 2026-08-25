@@ -46,10 +46,17 @@ export const load: PageLoad = async ({ params }) => {
 export const entries: EntryGenerator = async () => {
 	const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
 	
-	const slugs = Object.entries(modules).map(([path, module]) => {
-		const { metadata } = module as any;
-		return { slug: metadata.slug };
-	});
+	const slugs = Object.entries(modules)
+		.map(([path, module]) => {
+			const metadata = (module as any).metadata;
+			if (!metadata?.slug) {
+				console.warn(`[blog] ${path}: chybí nebo je nevalidní frontmatter (slug), článek se nevyrenderuje`);
+				return null;
+			}
+			if (metadata.published === false) return null;
+			return { slug: metadata.slug as string };
+		})
+		.filter((entry): entry is { slug: string } => entry !== null);
 	
 	return slugs;
 };

@@ -10,7 +10,7 @@ published: false # true/false pro zveřejněný, resp. skrytý příspěvek
 locale: "cs" # Jazyk
 readingTime: "5 minut" # Doba čtení
 author: "AIS CR" # Autor příspěvku
-authorRole: Infrastruktura" # Role autora, které se zobrazí pod jménem.
+authorRole: "Infrastruktura" # Role autora, které se zobrazí pod jménem.
 authorImage: "/images/blog/author/<...>" # Fotka/obrázek autora.
 image: "/images/blog/<...>" # Cover fotografie.
 ---
