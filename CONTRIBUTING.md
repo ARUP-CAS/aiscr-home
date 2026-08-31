@@ -15,111 +15,17 @@ Tento návod popisuje, jak přidat nové blog články, aktualizovat překlady a
 
 ## Přidání nového blog článku
 
-Rychlý návod viz [BLOG_QUICKSTART.md](BLOG_QUICKSTART.md).
+Články se **nepíší do tohoto repozitáře**. Obsah blogu žije ve sdíleném
+newsfeedu [ARUP-CAS/aiscr-news](https://github.com/ARUP-CAS/aiscr-news) —
+článek se tam napíše jednou v Markdownu (včetně obrázků a autorů), po merge
+do `main` ho GitHub Action publikuje jako JSON feed a tento web ho zobrazí
+**bez rebuildu** (seznam na `/blog/` a homepage se obnovují za běhu).
 
-### 1. Vytvoření markdown souboru
+Postup je v README repa aiscr-news. Pro zobrazení na tomto webu musí mít
+článek v `item.yaml` uvedený web `aiscr`.
 
-Vytvoř nový soubor v `src/content/blog/` s názvem například `005_nazev-clanku.md`:
-
-```markdown
----
-slug: nazev-clanku-url
-title: "Název článku"
-excerpt: "Krátký popis článku pro preview (1-2 věty)"
-date: "2026-03-01"
-category: "Technologie"
-published: true
-locale: "cs"
-readingTime: "5 minut"
-author: "Jméno Autora"
-authorRole: "Role autora"
-authorImage: "/images/blog/author/foto.webp"
-image: "/images/blog/005/005_000_nahled.webp"
----
-
-## Úvod
-
-Text článku v markdown formátu...
-
-![Popis obrázku](/images/blog/005/005_001.webp)
-```
-
-### 2. Parametry frontmatter
-
-| Parametr | Povinný | Popis | Příklad |
-|----------|---------|-------|---------|
-| `slug` | Ano | URL článku (bez diakritiky) | `doi-v-amcr` |
-| `title` | Ano | Název článku | `"DOI v AMČR"` |
-| `excerpt` | Ano | Krátký popis (preview) | `"Co je DOI..."` |
-| `date` | Ano | Datum publikace | `"2026-03-01"` |
-| `category` | Ano | Kategorie článku | `"Technologie"` |
-| `published` | Ano | Publikovat? | `true` nebo `false` |
-| `locale` | Ano | Jazyk článku | `"cs"` |
-| `readingTime` | Ano | Odhad čtení | `"5 minut"` |
-| `author` | Ano | Jméno autora (čárkou více) | `"Jan Novák"` |
-| `authorRole` | Ano | Role autora (čárkou více) | `"Datový kurátor"` |
-| `authorImage` | Ano | Cesta k fotce (čárkou více) | `/images/blog/author/...` |
-| `image` | Ano | Hlavní obrázek | `/images/blog/005/...` |
-
-**Více autorů:** Oddělte čárkou (name, role i image musí mít stejný počet položek):
-
-```yaml
-author: "Tomáš Pavloň, Martina Kudlíková"
-authorRole: "Datový kurátor AMČR, Výkonná redaktorka PV"
-authorImage: "/images/blog/author/pavlon.jpg, /images/blog/author/kudlikova.png"
-```
-
-### 3. Kategorie článků
-
-| Kategorie | Barva badge |
-|-----------|-------------|
-| `"AIS CR"` | Zelená |
-| `"Technologie"` | Modrá |
-| `"Události"` | Fialová |
-| `"Objevy"` | Fialová |
-| `"Návody"` | Zelená |
-
----
-
-## Přidání obrázků k článku
-
-### Struktura složek
-
-```
-static/images/blog/
-├── 001/
-│   ├── 001_000_nahled.webp  (hlavní obrázek - 1200x1200px)
-│   └── 001_001.webp         (obrázky v článku - max 1600px)
-├── 002/
-│   └── ...
-└── author/                  (fotky autorů)
-    └── novak.webp
-```
-
-### Pojmenování souborů
-
-- `XXX_000_nahled.webp` - hlavní náhledový obrázek (používá se v preview)
-- `XXX_001.webp`, `XXX_002.webp`, ... - obrázky v článku
-
----
-
-## Aktualizace prerender konfigurace
-
-Po přidání nového článku aktualizuj `svelte.config.js`:
-
-```javascript
-prerender: {
-    entries: [
-        '/',
-        '/en',
-        '/blog',
-        '/en/blog',
-        '/blog/nazev-clanku-url',     // nový slug
-        '/en/blog/nazev-clanku-url',  // nový slug (EN)
-        // ... ostatní články
-    ]
-}
-```
+Jak je napojení technicky uděláno (prerender, SPA fallback pro nové články,
+konfigurace hostingu) popisuje [docs/NEWSFEED.md](docs/NEWSFEED.md).
 
 ---
 
@@ -180,10 +86,12 @@ Odkazy v komponentách musí respektovat locale:
 
 ### Doporučené rozměry
 
+Obrázky blog článků se spravují v repu
+[aiscr-news](https://github.com/ARUP-CAS/aiscr-news) (limity hlídá jeho CI).
+Zde jde jen o obrázky webu samotného:
+
 | Typ obrázku | Max rozměry | Formát |
 |-------------|-------------|--------|
-| Blog náhledy | 1200x1200px | WebP, 85% |
-| Blog obrázky | 1600x1600px | WebP, 85% |
 | Pozadí sekcí | 2600px | WebP |
 | Fotky lidí (velké) | 400px | WebP |
 | Loga | 800px | PNG/WebP |
@@ -191,9 +99,6 @@ Odkazy v komponentách musí respektovat locale:
 ### Automatizovaně
 
 ```bash
-# Optimalizovat jeden blog článek
-./scripts/optimize-blog-article.sh 005
-
 # Optimalizovat všechny obrázky v projektu
 ./scripts/resize-images.sh
 ./scripts/optimize-images.sh
@@ -227,14 +132,17 @@ pnpm lint           # ESLint
 1. Push do `main` - automatický build
 2. Vytvoření release na GitHubu - automaticky přidá ZIP
 
-### Manuální deployment (Nginx)
+### Manuální deployment
 
 ```bash
 pnpm build
 rsync -av build/ /var/www/aiscr.cz/
 ```
 
-Web je čistě statický - nepotřebuje Node.js runtime.
+Web je čistě statický - nepotřebuje Node.js runtime. Hosting běží na Apache;
+build obsahuje `.htaccess`, díky kterému fungují i detaily článků
+publikovaných do newsfeedu po posledním buildu (SPA fallback `404.html`) —
+detaily a ověření viz [docs/NEWSFEED.md](docs/NEWSFEED.md).
 
 ---
 
@@ -253,15 +161,23 @@ Web je čistě statický - nepotřebuje Node.js runtime.
 
 Zkontroluj cestu a formát:
 ```bash
-ls -la static/images/blog/005/005_001.webp
-# Správně: /images/blog/005/005_001.webp
+ls -la static/images/logos/logo.webp
+# Správně: /images/logos/logo.webp
 ```
 
 ### Článek se nezobrazuje v blog listu
 
-1. Zkontroluj frontmatter: `published: true`
-2. Přidej slug do `svelte.config.js`
-3. Rebuild: `pnpm build`
+1. V repu [aiscr-news](https://github.com/ARUP-CAS/aiscr-news) zkontroluj
+   `published: true` a web `aiscr` v `item.yaml` článku
+2. Ověř, že článek je ve feedu:
+   `curl https://arup-cas.github.io/aiscr-news/feed/aiscr/cs.json`
+3. GitHub Pages cachuje feed ~10 minut — chvíli počkej
+
+### Detail nového článku vrací 404
+
+Články publikované po posledním buildu webu potřebují na hostingu SPA
+fallback (`404.html`) — viz [docs/NEWSFEED.md](docs/NEWSFEED.md). Bez něj
+detail funguje až po rebuildu a nasazení webu.
 
 ### Překlady nefungují
 
@@ -278,13 +194,11 @@ Použij locale-aware odkazy (viz [Internacionalizace](#internacionalizace-překl
 
 ## Checklist pro nový článek
 
-- [ ] Markdown soubor má správný frontmatter (všechny povinné pole)
-- [ ] Slug je unikátní
-- [ ] Obrázky jsou optimalizované (WebP, správné rozměry)
-- [ ] Cesty k obrázkům jsou správné (`/images/blog/XXX/...`)
-- [ ] Slug přidán do `svelte.config.js` v `prerender.entries`
-- [ ] Build projde bez chyb (`pnpm build`)
-- [ ] Článek se zobrazuje v blog listu (CS i EN)
+Nový článek se přidává v repu
+[aiscr-news](https://github.com/ARUP-CAS/aiscr-news) — checklist a validace
+(CI) jsou tam. Na tomto webu pak stačí ověřit:
+
+- [ ] Článek se zobrazuje v blog listu a na homepage (do ~10 minut po publikaci)
 - [ ] Detail článku funguje (`/blog/slug` i `/en/blog/slug`)
 
 ---

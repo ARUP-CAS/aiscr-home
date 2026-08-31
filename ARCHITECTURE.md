@@ -34,7 +34,7 @@ Tento dokument popisuje obecné principy, architektonické rozhodnutí a konvenc
 
 ### Další nástroje
 - **Paraglide JS** - i18n řešení pro vícejazyčnost (cs/en)
-- **MDSvex** - Markdown preprocessor pro Svelte
+- **Sdílený newsfeed** - články se stahují za běhu z [aiscr-news](https://github.com/ARUP-CAS/aiscr-news) (viz [docs/NEWSFEED.md](docs/NEWSFEED.md))
 - **Lucide Svelte** - Ikony
 - **ESLint + Prettier** - Code linting a formátování
 
@@ -57,14 +57,10 @@ aiscr-home/
 │   │   ├── +layout.svelte       # Root layout
 │   │   ├── +layout.ts           # Root layout load
 │   │   ├── +page.svelte         # Homepage
-│   │   └── blog/                # Blog routes
-│   │       ├── +page.server.ts  # Server-side načítání dat
+│   │   └── blog/                # Blog routes (obsah ze sdíleného newsfeedu)
+│   │       ├── +page.ts         # Načtení seznamu článků z feedu
 │   │       ├── +page.svelte     # Blog listing
-│   │       └── [slug]/          # Dynamické blog stránky
-│   ├── content/                 # Markdown obsah
-│   │   └── blog/
-│   │       ├── *.md             # České články
-│   │       └── *.en.md          # Anglické články
+│   │       └── [slug]/          # Detaily článků
 │   ├── app.css                  # Globální Tailwind import
 │   ├── app.html                 # HTML template
 │   ├── hooks.server.ts          # Server hooks (i18n middleware)
@@ -82,7 +78,7 @@ aiscr-home/
 
 1. **Komponenty v `src/lib/components/`** - Všechny znovupoužitelné UI komponenty
 2. **Routes v `src/routes/`** - File-based routing dle SvelteKit konvencí
-3. **Obsah v `src/content/`** - Markdown soubory (blog články)
+3. **Články ze sdíleného newsfeedu** - obsah blogu žije v repu [aiscr-news](https://github.com/ARUP-CAS/aiscr-news)
 4. **Statické soubory v `static/`** - Obrázky, fonty, robots.txt
 5. **Překlady v `messages/`** - JSON soubory pro i18n
 
@@ -127,30 +123,21 @@ Data se předávají explicitně skrze props z rodičovské komponenty do potomk
 Komponenty jsou **autonomní** - získávají data buď:
 1. Z props (když data přicházejí z rodiče)
 2. Z i18n (překlady)
-3. Z vlastního načtení (např. BlogPreview načítá markdown soubory)
+3. Z vlastního načtení (např. BlogPreview se za běhu obnovuje ze sdíleného feedu)
 
-### Server load functions
+### Load functions
 
-Pro server-side data loading se používají `+page.server.ts` soubory:
+Pro načítání dat se používají univerzální `+page.ts` loady — běží při prerenderu
+(build) i v prohlížeči. Články se stahují ze sdíleného newsfeedu:
 
 ```typescript
-// routes/blog/+page.server.ts
-export const load: PageServerLoad = async () => {
-  const locale = getLocale();
-  const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-  
-  const posts = Object.entries(allModules)
-    .map(([path, module]) => {
-      const { metadata } = module as any;
-      return {
-        slug: metadata.slug,
-        title: metadata.title,
-        // ...
-      };
-    })
-    .filter(post => post.published && post.locale === locale);
-  
-  return { posts };
+// routes/blog/+page.ts
+import { fetchNews, toListPost, localeFromPathname } from '$lib/feed';
+
+export const load: PageLoad = async ({ fetch, url }) => {
+  const locale = localeFromPathname(url.pathname);
+  const items = await fetchNews(fetch, locale);
+  return { posts: items.map(toListPost) };
 };
 ```
 
@@ -401,74 +388,22 @@ Generuje statické HTML soubory do složky `build/`.
 
 ---
 
-## Markdown obsah
+## Obsah článků (sdílený newsfeed)
 
-### MDSvex konfigurace
+Články už nejsou v tomto repozitáři — píší se jednou v repu
+[aiscr-news](https://github.com/ARUP-CAS/aiscr-news) a publikují se jako JSON
+feed na GitHub Pages. Tento web feed stahuje při buildu (prerender detailů
+`/blog/<slug>/`) i za běhu v prohlížeči (seznam a homepage se obnovují živě,
+takže nový článek se objeví bez rebuildu webu).
 
-```javascript
-// svelte.config.js
-import { mdsvex } from 'mdsvex';
-
-const config = {
-  preprocess: [
-    vitePreprocess(), 
-    mdsvex({
-      extensions: ['.md', '.svx']
-    })
-  ],
-  extensions: ['.svelte', '.svx', '.md']
-};
-```
-
-### Struktura článků
-
-```
-src/content/blog/
-├── digitalizace-sbirek.md        # Český článek
-├── digitalizace-sbirek.en.md     # Anglický překlad
-├── nove-objevy-doba-bronzova.md
-└── nove-objevy-doba-bronzova.en.md
-```
-
-### Frontmatter metadata
-
-```markdown
----
-slug: digitalizace-sbirek
-title: Digitalizace sbírek
-excerpt: Krátký popis článku...
-date: 2024-01-15
-category: Technologie
-published: true
-locale: cs
-author: AIS CR Team
-authorRole: Výzkumný tým
-authorImage: /images/people/ais-staff.png
-image: /images/blog/placeholder.png
-readingTime: 5 minut
----
-
-# Obsah článku
-
-Text článku v markdown formátu...
-```
+Podrobnosti: [docs/NEWSFEED.md](docs/NEWSFEED.md). Klient feedu: `src/lib/feed.ts`.
 
 ### Načítání článků
 
 ```typescript
-// Globální import všech markdown souborů
-const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-
-const posts = Object.entries(allModules)
-  .map(([path, module]) => {
-    const { metadata } = module as any;
-    return {
-      slug: metadata.slug,
-      title: metadata.title,
-      // ...
-    };
-  })
-  .filter(post => post.published && post.locale === locale);
+// src/lib/feed.ts — články z JSON feedu, řazené od nejnovějších
+const items = await fetchNews(fetch, locale);       // seznam (type: "news")
+const item = await fetchNewsItem(fetch, locale, slug); // jeden článek
 ```
 
 ---

@@ -1,4 +1,3 @@
-import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -6,17 +5,15 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: [
-		vitePreprocess(), 
-		mdsvex({
-			extensions: ['.md', '.svx']
-		})
-	],
+	preprocess: [vitePreprocess()],
 	kit: {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			// SPA fallback: články publikované do newsfeedu po posledním buildu
+			// nemají vygenerované HTML — hosting pro ně servíruje 404.html,
+			// které článek načte z feedu v prohlížeči (viz docs/NEWSFEED.md).
+			fallback: '404.html',
 			precompress: false,
 			strict: true
 		}),
@@ -28,22 +25,16 @@ const config = {
 				'/',
 				'/en',
 				'/blog',
-				'/en/blog',
-				// Blog posts - explicitly list them for both locales
-				'/blog/blog-aiscr-vic-nez-aktuality',
-				'/blog/doi-v-amcr-digitalni-rodne-cislo',
-				'/blog/atrium-3d-summer-school-brno',
-				'/blog/prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende',
-				'/en/blog/blog-aiscr-vic-nez-aktuality',
-				'/en/blog/doi-v-amcr-digitalni-rodne-cislo',
-				'/en/blog/atrium-3d-summer-school-brno',
-				'/en/blog/prehled-vyzkumu-a-amcr-propojeni-clanku-a-oborove-evidende',
+				'/en/blog'
+				// Detaily článků /blog/<slug> se generují z newsfeedu — viz
+				// entries() v src/routes/blog/[slug]/+page.ts; anglické varianty
+				// najde crawler z odkazů na /en/blog.
 			],
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'
 		}
 	},
-	extensions: ['.svelte', '.svx', '.md']
+	extensions: ['.svelte']
 };
 
 export default config;

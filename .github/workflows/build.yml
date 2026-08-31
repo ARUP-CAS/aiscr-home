@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  # PR gate: build závisí na živém newsfeedu (aiscr-news), takže build + check
+  # u PR odhalí regresi smlouvy s feedem už před mergem.
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -27,16 +32,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Type check
+        run: pnpm check
+
       - name: Build project
         run: pnpm build
 
       - name: Create ZIP archive
+        if: github.event_name == 'push'
         run: |
           cd build
           zip -r ../aiscr-home-latest.zip .
           cd ..
 
       - name: Upload build artifact
+        if: github.event_name == 'push'
         uses: actions/upload-artifact@v6
         with:
           name: build-artifact

@@ -1,14 +1,29 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { page } from '$app/state';
 	import type { PageData } from './$types';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
-	
+	import { fetchNews, toListPost, localeFromPathname, type NewsListPost } from '$lib/feed';
+
 	let { data }: { data: PageData } = $props();
+
+	// Prerenderovaný seznam se v prohlížeči obnoví z živého feedu,
+	// takže články publikované po posledním buildu webu se objeví hned.
+	let livePosts: Record<string, NewsListPost[]> = $state({});
+	const feedLocale = $derived(localeFromPathname(page.url.pathname));
+	const posts = $derived(livePosts[feedLocale] ?? data.posts);
+
+	$effect(() => {
+		const locale = feedLocale;
+		fetchNews(fetch, locale).then((items) => {
+			if (items.length) livePosts[locale] = items.map(toListPost);
+		});
+	});
 
 	function formatDate(dateString: string) {
 		const date = new Date(dateString);
-		return date.toLocaleDateString('cs-CZ', {
+		return date.toLocaleDateString(getLocale() === 'cs' ? 'cs-CZ' : 'en-US', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric'
@@ -36,7 +51,7 @@
 </div>
 
 <div class="grid gap-8">
-	{#each data.posts as post}
+	{#each posts as post}
 		<article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
 			<div class="p-8">
 				<div class="flex items-center gap-4 text-sm text-black mb-4">
@@ -49,7 +64,9 @@
 				</div>
 				
 				<h2 class="text-2xl font-bold text-black mb-4 hover:text-blue-600">
-					<a href={getBlogUrl(post.slug)}>{post.title}</a>
+					<!-- data-sveltekit-reload: plné načtení jde přímo na statické HTML
+					     (nebo .htaccess fallback), takže proklik nezávisí na dostupnosti feedu -->
+					<a href={getBlogUrl(post.slug)} data-sveltekit-reload>{post.title}</a>
 				</h2>
 				
 				{#if post.excerpt}
@@ -58,7 +75,7 @@
 					</p>
 				{/if}
 				
-				<a href={getBlogUrl(post.slug)} class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+				<a href={getBlogUrl(post.slug)} data-sveltekit-reload class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
 					{m['blog.readMore']()}
 					<svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -69,7 +86,7 @@
 	{/each}
 </div>
 
-{#if data.posts.length === 0}
+{#if posts.length === 0}
 	<div class="text-center py-12">
 		<p class="text-black text-lg">{m['blog.noArticles']()}</p>
 	</div>
