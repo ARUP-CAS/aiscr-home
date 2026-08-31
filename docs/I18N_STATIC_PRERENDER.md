@@ -185,30 +185,33 @@ const posts = Object.entries(allModules)
 - Na `/blog/` i `/en/blog/` se zobrazují stejné články
 - Liší se jen UI (překlady okolo článku)
 
+> **Aktuální stav:** články se už nenačítají z markdownu v repu, ale ze
+> sdíleného newsfeedu (`src/lib/feed.ts`, viz [NEWSFEED.md](NEWSFEED.md)).
+> Princip zůstal: článek bez anglické verze se na `/en/blog` zobrazí česky.
+
 ---
 
 ### 7. Blog detail - entries pro oba locales
 
 **Soubor:** `src/routes/blog/[slug]/+page.ts`
 
-**Přidáno:**
+**Aktuální podoba** (slugy se čtou ze živého newsfeedu):
 ```typescript
 export const entries = async () => {
-    const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-    const slugs = Object.values(allModules).map((module: any) => module.metadata.slug);
-    const uniqueSlugs = Array.from(new Set(slugs));
-
-    return uniqueSlugs.flatMap(slug => [
-        { slug },              // Pro /blog/slug
-        { slug, locale: 'en' } // Pro /en/blog/slug
-    ]);
+    const res = await fetch(`${FEED_BASE}/feed/aiscr/cs.json`);
+    const feed = await res.json();
+    return feed.items
+        .filter((item) => item.type === 'news')
+        .map((item) => ({ slug: item.slug }));
 };
 ```
 
 **Důvod:**
 - Bez `entries()` by SvelteKit nevěděl, které slugy má prerenderovat
-- Každý slug musí být vygenerován 2x (CS a EN verze)
-- EN verze má anglické UI, ale český článek
+- CS detaily generuje `entries()`, EN varianty (`/en/blog/slug`) najde
+  prerender crawler z odkazů na stránce `/en/blog`
+- Články publikované do feedu po buildu obslouží SPA fallback `404.html`
+  (viz [NEWSFEED.md](NEWSFEED.md))
 
 ---
 
@@ -305,23 +308,28 @@ onMount(async () => {
 });
 ```
 
-**Po:**
-```svelte
-// Synchronní načtení při SSR/prerender
-const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-const posts = Object.entries(allModules)
-    .map(([_path, module]) => ({ ... }))
-    .filter(post => post.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+**Po (aktuální stav):** počáteční data předává homepage load
+(`src/routes/+page.ts`, běží i při prerenderu), v prohlížeči se seznam
+navíc obnoví ze živého feedu:
 
-let blogPosts = $state<any[]>(posts);
+```svelte
+let { posts: initialItems = [] }: { posts?: FeedItem[] } = $props();
+
+let liveItems: Record<string, FeedItem[]> = $state({});
+const blogPosts = $derived((liveItems[feedLocale] ?? initialItems).map(toCard));
+
+$effect(() => {
+    const locale = feedLocale;
+    fetchNews(fetch, locale).then((items) => {
+        if (items.length) liveItems[locale] = items;
+    });
+});
 ```
 
 **Důvod:**
-- `onMount` se spustí jen na klientovi, ne během prerender
-- Prerendované HTML by mělo prázdný seznam článků
-- Synchronní načtení zajistí že posty jsou v HTML
+- `$effect`/`onMount` běží jen na klientovi, ne během prerenderu
+- Prerendované HTML by bez dat z loadu mělo prázdný seznam článků
+- Živé obnovení zajistí, že nové články se objeví bez rebuildu webu
 
 ---
 

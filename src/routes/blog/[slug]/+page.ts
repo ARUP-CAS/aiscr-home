@@ -1,62 +1,22 @@
 import { error } from '@sveltejs/kit';
+import { fetchNewsItem, fetchNewsSlugs, localeFromPathname } from '$lib/feed';
 import type { PageLoad, EntryGenerator } from './$types';
 
-export const load: PageLoad = async ({ params }) => {
-	try {
-		// Načti všechny články (pouze české)
-		const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-		
-		const allArticles = Object.entries(modules).map(([path, module]) => ({
-			path,
-			module,
-			metadata: (module as any).metadata
-		}));
-		
-		// Najdi článek podle slug
-		const article = allArticles.find(a => a.metadata.slug === params.slug);
-		
-		if (!article) {
-			throw error(404, 'Blog post nenalezen');
-		}
+export const load: PageLoad = async ({ params, fetch, url }) => {
+	const locale = localeFromPathname(url.pathname);
+	const item = await fetchNewsItem(fetch, locale, params.slug);
 
-		const { metadata, default: content } = article.module as any;
-
-		return {
-			post: {
-				title: metadata.title || 'Bez názvu',
-				excerpt: metadata.excerpt || '',
-				date: metadata.date || new Date().toISOString().split('T')[0],
-				category: metadata.category || '',
-				slug: params.slug,
-				readingTime: metadata.readingTime || '5 minut',
-				author: metadata.author || 'AIS CR',
-				authorRole: metadata.authorRole || 'Archeologický informační systém',
-				authorImage: metadata.authorImage || '/images/people/ais-staff.png',
-				image: metadata.image || '/Content.jpg',
-				content
-			}
-		};
-	} catch (err) {
-		console.error('Error loading blog post:', err);
-		throw error(404, 'Blog post nenalezen');
+	if (!item) {
+		throw error(404, 'Článek nenalezen');
 	}
+
+	return { post: item };
 };
 
-// Generate entries for all blog posts (for prerendering)
+// Články známé v době buildu se prerenderují (zpětná kompatibilita URL
+// /blog/<slug>/). Články publikované později obslouží SPA fallback
+// (404.html) — detail se pak načte z feedu až v prohlížeči.
 export const entries: EntryGenerator = async () => {
-	const modules = import.meta.glob('/src/content/blog/*.md', { eager: true });
-	
-	const slugs = Object.entries(modules)
-		.map(([path, module]) => {
-			const metadata = (module as any).metadata;
-			if (!metadata?.slug) {
-				console.warn(`[blog] ${path}: chybí nebo je nevalidní frontmatter (slug), článek se nevyrenderuje`);
-				return null;
-			}
-			if (metadata.published === false) return null;
-			return { slug: metadata.slug as string };
-		})
-		.filter((entry): entry is { slug: string } => entry !== null);
-	
-	return slugs;
+	const slugs = await fetchNewsSlugs(fetch);
+	return slugs.map((slug) => ({ slug }));
 };

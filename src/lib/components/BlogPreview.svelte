@@ -1,44 +1,55 @@
 <script lang="ts">
-	// Preview nejnovějších blog postů
+	// Preview nejnovějších článků ze sdíleného newsfeedu
 	import { base } from '$app/paths';
+	import { page } from '$app/state';
 	import { Shovel, ArrowLeft, ArrowRight } from '@lucide/svelte';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
+	import { fetchNews, localeFromPathname, type FeedItem } from '$lib/feed';
 
 	function getBlogUrl(slug: string) {
 		const locale = getLocale();
 		return locale === 'en' ? `${base}/en/blog/${slug}` : `${base}/blog/${slug}`;
 	}
 
-	// Synchronní načtení blog postů při SSR i CSR
-	const allModules = import.meta.glob('/src/content/blog/*.md', { eager: true });
+	// Články načtené při buildu (prerender) předává stránka; v prohlížeči
+	// se seznam obnoví z živého feedu, takže nové články se objeví bez rebuildu.
+	let { posts: initialItems = [] }: { posts?: FeedItem[] } = $props();
 
-	const blogPosts = Object.entries(allModules)
-		.map(([_path, module]) => {
-			const { metadata } = module as any;
+	function toCard(item: FeedItem) {
+		const authorNames = item.authors.map((a) => a.name);
+		return {
+			slug: item.slug,
+			title: item.title,
+			excerpt: item.excerpt,
+			date: item.date,
+			category: item.badge ?? '',
+			categoryColor: item.badge === 'Objevy' ? 'bg-purple-600' :
+						   item.badge === 'Technologie' ? 'bg-blue-600' : 'bg-green-600',
+			authorNames,
+			authorImages: item.authors.map((a) => a.photo),
+			authorDisplay: authorNames.join(', ') || 'AIS CR',
+			image: item.image ?? `${base}/images/blog/placeholder.webp`,
+			readTime: item.readingTime
+		};
+	}
 
-			const authorNames = (metadata.author || 'AIS CR Team').split(',').map((s: string) => s.trim());
-			const authorImages = (metadata.authorImage || '').split(',').map((s: string) => s.trim());
+	let liveItems: Record<string, FeedItem[]> = $state({});
+	const feedLocale = $derived(localeFromPathname(page.url.pathname));
+	const blogPosts = $derived((liveItems[feedLocale] ?? initialItems).map(toCard));
 
-			return {
-				slug: metadata.slug,
-				title: metadata.title || 'Bez názvu',
-				excerpt: metadata.excerpt || '',
-				date: metadata.date || new Date().toISOString().split('T')[0],
-				category: metadata.category || '',
-				published: metadata.published !== false,
-				categoryColor: metadata.category === 'Objevy' ? 'bg-purple-600' :
-							   metadata.category === 'Technologie' ? 'bg-blue-600' : 'bg-green-600',
-				authorNames,
-				authorImages,
-				authorDisplay: authorNames.join(', '),
-				image: metadata.image || '/images/blog/placeholder.webp',
-				readTime: metadata.readingTime || '5 minut'
-			};
-		})
-		.filter(post => post.published)
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	$effect(() => {
+		const locale = feedLocale;
+		fetchNews(fetch, locale).then((items) => {
+			if (items.length) liveItems[locale] = items;
+		});
+	});
+
+	$effect(() => {
+		void blogPosts;
+		tick().then(updateScrollButtons);
+	});
 
 	function formatDate(dateString: string) {
 		const locale = getLocale();
@@ -133,10 +144,12 @@
 				onscroll={updateScrollButtons}
 			>
 				{#each blogPosts as post}
-					<a href={getBlogUrl(post.slug)} class="flex-none bg-white shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col cursor-pointer" style="scroll-snap-align: start; width: 390px; height: 629px; padding: 24px; text-decoration: none; color: inherit;">
+					<!-- data-sveltekit-reload: plné načtení jde přímo na statické HTML
+					     (nebo .htaccess fallback), takže proklik nezávisí na dostupnosti feedu -->
+					<a href={getBlogUrl(post.slug)} data-sveltekit-reload class="flex-none bg-white shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col cursor-pointer" style="scroll-snap-align: start; width: 390px; height: 629px; padding: 24px; text-decoration: none; color: inherit;">
 						<!-- Image -->
 						<div class="overflow-hidden" style="height: 300px; width: 100%;">
-							<img src="{base}{post.image}" alt={post.title} class="w-full h-full object-cover" />
+							<img src={post.image} alt={post.title} class="w-full h-full object-cover" />
 						</div>
 
 						<div class="flex flex-col flex-1" style="margin-top: 24px;">
@@ -164,7 +177,7 @@
 									{#each post.authorImages as authorImg, i}
 										{#if authorImg}
 											<img
-												src="{base}{authorImg}"
+												src={authorImg}
 												alt={post.authorNames[i] || ''}
 												class="rounded-full object-cover"
 												style="width: 48px; height: 48px; border: 2px solid white; {i > 0 ? 'margin-left: -16px;' : ''}"
@@ -176,8 +189,10 @@
 									<div class="font-bold text-black" style="font-size: 14px;">{post.authorDisplay}</div>
 									<div class="text-black flex items-center space-x-2" style="font-size: 14px;">
 										<span>{formatDate(post.date)}</span>
-										<span>&bull;</span>
-										<span>{post.readTime}</span>
+										{#if post.readTime}
+											<span>&bull;</span>
+											<span>{post.readTime}</span>
+										{/if}
 									</div>
 								</div>
 							</div>

@@ -7,6 +7,9 @@
 	import FAQ from '$lib/components/FAQ.svelte';
 	import Terms from '$lib/components/Terms.svelte';
 	import About from '$lib/components/About.svelte';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 </script>
 
 <svelte:head>
@@ -17,7 +20,7 @@
 <Features />
 <Services />
 <MoreInfo />
-<BlogPreview />
+<BlogPreview posts={data.news} />
 <FAQ />
 <Terms />
 <About />

@@ -1,0 +1,15 @@
+# Konfigurace pro Apache hosting (nasazuje se automaticky s buildem).
+#
+# Detaily článků /blog/<slug>/ známé v době buildu jsou vygenerované jako
+# statické HTML. Články publikované do sdíleného newsfeedu
+# (https://github.com/ARUP-CAS/aiscr-news) později žádný soubor nemají —
+# pro ně server podá SPA fallback 404.html, který článek načte z feedu
+# přímo v prohlížeči. Bez tohoto pravidla by nové články fungovaly až po
+# dalším buildu a nasazení webu. Detaily viz docs/NEWSFEED.md.
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(en/)?blog/ /404.html [L]
+</IfModule>
+ErrorDocument 404 /404.html
