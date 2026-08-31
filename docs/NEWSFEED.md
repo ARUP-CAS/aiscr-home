@@ -60,6 +60,16 @@ Po nasazení ověř otevřením `/blog/neexistujici-slug/` — má naskočit web
 potřeba stejné pravidlo přidat do vhost konfigurace (nebo povolit
 `AllowOverride FileInfo`).
 
+Záměrné chování `.htaccess` (dvě různé věci):
+
+- `RewriteRule` platí jen pro `/blog/*` a `/en/blog/*`: neexistující cesta
+  tam vrací fallback se **statusem 200**, aby crawleři indexovali nové
+  články (daň: i překlep v slugu vypadá pro roboty jako živá stránka).
+- `ErrorDocument 404` je **globální pro celý web**: jakákoli jiná
+  neexistující cesta (včetně chybějících assetů) vrátí stránku webu
+  s poctivým statusem 404 místo výchozí Apache chybové stránky —
+  návštěvník uvidí web s hláškou o nenalezené stránce.
+
 Nginx (kdyby se hosting měnil):
 
 ```nginx
@@ -76,7 +86,14 @@ zobrazují vždy).
 - GitHub Pages cachuje feed ~10 minut — tak dlouho může trvat, než se
   publikovaný článek objeví u návštěvníků.
 - `pnpm build` potřebuje přístup na `arup-cas.github.io` (prerender čte živý
-  feed). Když feed není dostupný, build selže v `entries()`.
+  feed). Když feed není dostupný nebo vrací chyby, build záměrně selže,
+  aby se nezapekl prázdný blog. **Smlouva s aiscr-news:** český feed
+  (`feed/aiscr/cs.json`) musí existovat vždy; překladové feedy (`en.json`)
+  smí chybět — použije se fallback na češtinu.
+- HTML článků sanitizuje generátor feedu; v prohlížeči se sanitizuje ještě
+  jednou přes DOMPurify (obrana do hloubky). Prerenderovaný výstup (to, co
+  vidí crawleři a návštěvníci bez JS) spoléhá jen na sanitizaci generátoru —
+  zbytkové riziko kompromitovaného feedu v době buildu je vědomě přijaté.
 - OG metadata (náhledy na sociálních sítích) mají jen články prerenderované
   při buildu; články servírované přes SPA fallback je nastavují až klientsky.
   Po publikaci důležitého článku se proto hodí web přebuildit a nasadit.

@@ -70,8 +70,11 @@ export async function fetchNews(fetchFn: FetchFn, locale: string): Promise<FeedI
 	const locales = locale === 'cs' ? ['cs'] : [locale, 'cs'];
 	const feeds = await Promise.all(locales.map((loc) => fetchJson(fetchFn, feedUrl(loc))));
 
+	// Tvrdě selhat smí jen chybějící český feed — bez něj by se zapekl prázdný
+	// blog. Chybějící překladový feed (např. en.json) má fallback na češtinu
+	// stejně jako jednotlivé články.
 	if (building) {
-		const missing = feeds.findIndex((f) => !f);
+		const missing = feeds.findIndex((f, i) => !f && locales[i] === 'cs');
 		if (missing !== -1) {
 			throw new Error(`Newsfeed pro prerender neexistuje: ${feedUrl(locales[missing])}`);
 		}
