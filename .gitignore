@@ -1,4 +1,5 @@
-node_modules
+# Node
+node_modules/
 
 # Output
 .output
@@ -28,7 +29,5 @@ src/lib/paraglide
 # vscode
 .vscode/
 
-# agents
-.codex/
-.claude/
-.cursor/
+# venv
+.venv/
