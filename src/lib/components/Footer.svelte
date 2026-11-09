@@ -6,7 +6,7 @@
 	import { base } from '$app/paths';
 	
 	// Props pro callback na otevření cookie banneru
-	let { onOpenCookies } = $props<{ onOpenCookies: () => void }>();
+	let { onOpenCookies }: { onOpenCookies: () => void } = $props();
 	
 	let isEnglish = $state(false);
 	
