@@ -2,7 +2,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 	import { onMount } from 'svelte';
 
-	let { shouldOpen = $bindable(false) } = $props<{ shouldOpen?: boolean }>();
+	let { shouldOpen = $bindable(false) }: { shouldOpen?: boolean } = $props();
 	let showBanner = $state(false);
 
 	onMount(() => {

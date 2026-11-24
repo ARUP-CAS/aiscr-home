@@ -12,7 +12,7 @@ jobs:
     
     steps:
       - name: Download latest build artifact
-        uses: dawidd6/action-download-artifact@v14
+        uses: dawidd6/action-download-artifact@v21
         with:
           workflow: build.yml
           branch: main
@@ -24,7 +24,7 @@ jobs:
           mv aiscr-home-latest.zip aiscr-home-${{ github.event.release.tag_name }}.zip
 
       - name: Upload ZIP to Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: aiscr-home-${{ github.event.release.tag_name }}.zip
         env:
