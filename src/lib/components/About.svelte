@@ -491,7 +491,7 @@
 					</p>
 					
 				<div style="margin-top: 24px;">
-					<img src="{base}/images/logos/eu-msmt.png" alt="EU a MŠMT" style="max-height: 60px; width: auto;" />
+					<img src="{base}/images/logos/{isEnglish ? 'eu-msmt-cerne-en.webp' : 'eu-msmt-cerne.webp'}" alt="{isEnglish ? 'Co-funded by the European Union / Ministry of Education, Youth and Sports of the Czech Republic' : 'Spolufinancováno Evropskou unií / Ministerstvo školství, mládeže a tělovýchovy'}" style="max-height: 60px; width: auto;" />
 				</div>
 				</div>
 			</div>
